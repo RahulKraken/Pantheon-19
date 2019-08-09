@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -33,7 +34,9 @@ public class MainActivity extends AppCompatActivity {
         eventLiveData.observe(this, new Observer<List<Event>>() {
             @Override
             public void onChanged(List<Event> events) {
-                for (Event e : events) Log.d(TAG, "onChanged: " + e.getTitle());
+                if (events != null) {
+                    for (Event e : events) Log.d(TAG, "onChanged: " + e.getTitle());
+                }
             }
         });
 
@@ -41,9 +44,11 @@ public class MainActivity extends AppCompatActivity {
         event.observe(this, new Observer<Event>() {
             @Override
             public void onChanged(Event event) {
-                Log.d(TAG, "onChanged: " + event.getTitle());
-                Log.d(TAG, "onChanged: " + event.getDescription());
-                Log.d(TAG, "onChanged: " + event.getVenue());
+                if (event != null) {
+                    Log.d(TAG, "onChanged: " + event.getTitle());
+                    Log.d(TAG, "onChanged: " + event.getDescription());
+                    Log.d(TAG, "onChanged: " + event.getVenue());
+                }
             }
         });
 
@@ -54,7 +59,9 @@ public class MainActivity extends AppCompatActivity {
         triviaLiveData.observe(this, new Observer<List<Trivia>>() {
             @Override
             public void onChanged(List<Trivia> trivias) {
-                for (Trivia t : trivias) Log.d(TAG, "onChanged: " + t.getTitle());
+                if (trivias != null) {
+                    for (Trivia t : trivias) Log.d(TAG, "onChanged: " + t.getTitle());
+                }
             }
         });
 
@@ -64,7 +71,9 @@ public class MainActivity extends AppCompatActivity {
         winnerLiveData.observe(this, new Observer<Winner>() {
             @Override
             public void onChanged(Winner winner) {
-                Log.d(TAG, "onChanged: " + winner.getFirst());
+                if (winner != null) {
+                    Log.d(TAG, "onChanged: " + winner.getFirst());
+                }
             }
         });
     }
