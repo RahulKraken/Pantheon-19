@@ -1,4 +1,4 @@
-package com.kraken.pantheon19.Entitties;
+package com.kraken.pantheon19.Entities;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

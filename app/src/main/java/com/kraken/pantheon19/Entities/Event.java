@@ -1,4 +1,4 @@
-package com.kraken.pantheon19.Entitties;
+package com.kraken.pantheon19.Entities;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -16,13 +16,14 @@ public class Event {
     private String status;
     private String time;
     private String venue;
+    private int day;
 
     @ColumnInfo(name = "team_size")
     private int teamSize;
 
     private String coordinators;
 
-    public Event(String title, String description, String status, String time, String venue, int teamSize, String coordinators) {
+    public Event(String title, String description, String status, String time, String venue, int teamSize, String coordinators, int day) {
         this.title = title;
         this.description = description;
         this.status = status;
@@ -30,6 +31,7 @@ public class Event {
         this.venue = venue;
         this.teamSize = teamSize;
         this.coordinators = coordinators;
+        this.day = day;
     }
 
     public void setId(int eventId) {
@@ -66,5 +68,9 @@ public class Event {
 
     public String getCoordinators() {
         return coordinators;
+    }
+
+    public int getDay() {
+        return day;
     }
 }
