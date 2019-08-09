@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "event_table")
 public class Event {
 
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
     @ColumnInfo(name = "event_id")
     private int eventId;
 
@@ -23,19 +23,16 @@ public class Event {
 
     private String coordinators;
 
-    public Event(String title, String description, String status, String time, String venue, int teamSize, String coordinators, int day) {
+    public Event(int eventId, String title, String description, String status, String time, String venue, int day, int teamSize, String coordinators) {
+        this.eventId = eventId;
         this.title = title;
         this.description = description;
         this.status = status;
         this.time = time;
         this.venue = venue;
+        this.day = day;
         this.teamSize = teamSize;
         this.coordinators = coordinators;
-        this.day = day;
-    }
-
-    public void setId(int eventId) {
-        this.eventId = eventId;
     }
 
     public int getEventId() {
@@ -62,15 +59,15 @@ public class Event {
         return venue;
     }
 
+    public int getDay() {
+        return day;
+    }
+
     public int getTeamSize() {
         return teamSize;
     }
 
     public String getCoordinators() {
         return coordinators;
-    }
-
-    public int getDay() {
-        return day;
     }
 }

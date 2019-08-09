@@ -3,11 +3,13 @@ package com.kraken.pantheon19.Entities;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.PrimaryKey;
 
 @Entity(tableName = "winners_table",
         foreignKeys = @ForeignKey(entity = Event.class, parentColumns = "event_id", childColumns = "event_id", onDelete = ForeignKey.CASCADE))
-public class Winners {
+public class Winner {
 
+    @PrimaryKey
     @ColumnInfo(name = "event_id")
     private int eventId;
 
@@ -15,7 +17,7 @@ public class Winners {
     private String second;
     private String third;
 
-    public Winners(int eventId, String first, String second, String third) {
+    public Winner(int eventId, String first, String second, String third) {
         this.eventId = eventId;
         this.first = first;
         this.second = second;

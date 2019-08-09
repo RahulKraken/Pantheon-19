@@ -8,25 +8,23 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import com.kraken.pantheon19.Entities.Trivia;
-
-import java.util.List;
+import com.kraken.pantheon19.Entities.Winner;
 
 @Dao
-public interface TriviaDao {
+public interface WinnerDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insert(Trivia trivia);
+    void insert(Winner winner);
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
-    void update(Trivia trivia);
+    void update(Winner winner);
 
     @Delete
-    void delete(Trivia trivia);
+    void delete(Winner winner);
 
-    @Query("DELETE FROM TRIVIA_TABLE")
-    void deleteAllTrivia();
+    @Query("DELETE FROM WINNERS_TABLE")
+    void deleteAllWinners();
 
-    @Query("SELECT * FROM TRIVIA_TABLE ORDER BY trivia_id DESC")
-    LiveData<List<Trivia>> getAllTrivia();
+    @Query("SELECT * FROM winners_table WHERE event_id = :event_id LIMIT 1")
+    LiveData<Winner> getWinner(int event_id);
 }

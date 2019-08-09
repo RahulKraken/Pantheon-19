@@ -10,21 +10,26 @@ import androidx.room.Update;
 
 import com.kraken.pantheon19.Entities.Event;
 
+import java.util.List;
+
 @Dao
 public interface EventDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertEvent(Event... events);
+    void insert(Event event);
 
-    @Update
-    void updateEvent(Event event);
+    @Update(onConflict = OnConflictStrategy.REPLACE)
+    void update(Event event);
 
     @Delete
-    void deleteEvent(Event event);
+    void delete(Event event);
 
-    @Query("DELETE FROM EVENT_TABLE")
-    void deleteAllEvents();
+    @Query("DELETE FROM event_table")
+    void deleteAll();
 
-    @Query("SELECT * FROM EVENT_TABLE WHERE event_id = :eventId")
+    @Query("SELECT * FROM event_table")
+    LiveData<List<Event>> getAllEvents();
+
+    @Query("SELECT * FROM EVENT_TABLE WHERE event_id = :eventId LIMIT 1")
     LiveData<Event> getEvent(int eventId);
 }
