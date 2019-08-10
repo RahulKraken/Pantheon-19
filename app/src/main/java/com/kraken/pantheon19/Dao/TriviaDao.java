@@ -27,6 +27,9 @@ public interface TriviaDao {
     @Query("DELETE FROM TRIVIA_TABLE")
     void deleteAllTrivia();
 
+    @Query("SELECT * FROM TRIVIA_TABLE ORDER BY trivia_id DESC LIMIT 1")
+    LiveData<Trivia> getTrivia();
+
     @Query("SELECT * FROM TRIVIA_TABLE ORDER BY trivia_id DESC")
     LiveData<List<Trivia>> getAllTrivia();
 }
