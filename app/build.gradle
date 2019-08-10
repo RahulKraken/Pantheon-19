@@ -27,6 +27,16 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
+    // Volley
+    implementation 'com.android.volley:volley:1.1.1'
+
+    // Gson
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.1.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+
     // Lifecycle components version
     def lifecycle_version = "2.0.0"
     // ViewModel and LiveData dependency
