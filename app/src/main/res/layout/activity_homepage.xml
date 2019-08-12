@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#f5f5f5"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g0"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_percent="0.15"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g1"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <androidx.appcompat.widget.Toolbar
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:background="#ffffff"
+        android:layout_height="?attr/actionBarSize">
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/g0"
+        app:layout_constraintBottom_toTopOf="@id/g1">
+
+        <in.goodiebag.carouselpicker.CarouselPicker
+            android:id="@+id/carouselPicker"
+            android:background="#DDD"
+            android:paddingLeft="-50dp"
+            android:paddingRight="-50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:items_visible="three">
+        </in.goodiebag.carouselpicker.CarouselPicker>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/groupofbuttons"
+        app:layout_constraintBottom_toTopOf="@id/links"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="bottom">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/events_button"
+                android:text="Events"
+                android:textColor="#000000"
+                android:background="@drawable/homepage_buttons"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:paddingVertical="32dp"
+                android:paddingTop="32dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/homepage_buttons"
+                android:layout_margin="10dp"
+                android:paddingBottom="32dp"
+                android:paddingTop="32dp"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/homepage_buttons"
+                android:paddingBottom="32dp"
+                android:paddingTop="32dp"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/homepage_buttons"
+                android:layout_margin="10dp"
+                android:paddingBottom="32dp"
+                android:paddingTop="32dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:background="@drawable/homepage_buttons"
+                android:paddingBottom="32dp"
+                android:paddingTop="32dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+                android:background="@drawable/homepage_buttons"
+                android:paddingBottom="32dp"
+                android:paddingTop="32dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/links"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="70dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
