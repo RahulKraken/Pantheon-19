@@ -4,17 +4,49 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import com.kraken.pantheon19.Events.Event;
+import com.kraken.pantheon19.Events.EventAdapter;
+
+import java.util.ArrayList;
 
 public class Day1Fragment extends Fragment {
+    private RecyclerView recyclerView;
+    private EventAdapter adapter;
+    private ArrayList<Event> eventsArrayList;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.activity_day1,container,false);
+        View rootview=inflater.inflate(R.layout.activity_day1,container,false);
+        recyclerView = rootview.findViewById(R.id.recyclerView1);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        eventsArrayList = new ArrayList<>();
+        adapter = new EventAdapter(getContext(), eventsArrayList);
+        recyclerView.setAdapter(adapter);
+        createListData();
+        return rootview;
+    }
+    private void createListData() {
+        Event event = new Event("Event 1", "This is Event 1");
+        eventsArrayList.add(event);
+        event = new Event("Event 2", "This is Event 2");
+        eventsArrayList.add(event);
+        event = new Event("Event 3", "This is Event 3");
+        eventsArrayList.add(event);
+        event = new Event("Event 4", "This is Event 4");
+        eventsArrayList.add(event);
+        event = new Event("Event 5", "This is Event 5");
+        eventsArrayList.add(event);
+        event = new Event("Event 6", "This is Event 6");
+        eventsArrayList.add(event);
+        event = new Event("Event 7", "This is Event 7");
+        eventsArrayList.add(event);
+        adapter.notifyDataSetChanged();
     }
 }
 
