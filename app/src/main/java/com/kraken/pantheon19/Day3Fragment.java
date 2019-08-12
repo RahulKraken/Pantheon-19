@@ -32,19 +32,19 @@ public class Day3Fragment extends Fragment {
         return rootview;
     }
     private void createListData() {
-        Event event = new Event("Event 1", "This is Event 1");
+        Event event = new Event("Event 1", "This is Event 1","1-2 Hours","10:00 A.M");
         eventsArrayList.add(event);
-        event = new Event("Event 2", "This is Event 2");
+        event = new Event("Event 2", "This is Event 2","1-2 Hours","11:00 A.M");
         eventsArrayList.add(event);
-        event = new Event("Event 3", "This is Event 3");
+        event = new Event("Event 3", "This is Event 3","1-2 Hours","12:00 P.M");
         eventsArrayList.add(event);
-        event = new Event("Event 4", "This is Event 4");
+        event = new Event("Event 4", "This is Event 4","1-2 Hours","1:00 P.M");
         eventsArrayList.add(event);
-        event = new Event("Event 5", "This is Event 5");
+        event = new Event("Event 5", "This is Event 5","1-2 Hours","2:00 P.M");
         eventsArrayList.add(event);
-        event = new Event("Event 6", "This is Event 6");
+        event = new Event("Event 6", "This is Event 6","1-2 Hours","3:00 P.M");
         eventsArrayList.add(event);
-        event = new Event("Event 7", "This is Event 7");
+        event = new Event("Event 7", "This is Event 7","1-2 Hours","4:00 P.M");
         eventsArrayList.add(event);
         adapter.notifyDataSetChanged();
     }

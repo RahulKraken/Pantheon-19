@@ -11,15 +11,19 @@ import com.kraken.pantheon19.R;
 import java.util.ArrayList;
 
 class EventHolder extends RecyclerView.ViewHolder {
-    private TextView txtName, txtDes;
+    private TextView txtName,txtDes,duration,starttime;
     public EventHolder(View itemView) {
         super(itemView);
         txtName = itemView.findViewById(R.id.txtName);
         txtDes = itemView.findViewById(R.id.txtDes);
+        duration=itemView.findViewById(R.id.duration);
+        starttime=itemView.findViewById(R.id.starting_time);
     }
     public void setDetails(Event event) {
         txtName.setText(event.getEventName());
         txtDes.setText(event.getEventDescription());
+        duration.setText(event.getEventDuration());
+        starttime.setText(event.getEventStartTime());
     }
 }
 public class EventAdapter extends RecyclerView.Adapter<EventHolder>{

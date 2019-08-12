@@ -13,6 +13,15 @@
         android:background="#ffffff"
         android:layout_height="?attr/actionBarSize">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_marginEnd="16dp"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:text="HOME"
+            android:gravity="center_horizontal"/>
+
     </androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
@@ -33,32 +42,39 @@
 
             <Button
                 android:id="@+id/events_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/homepage_buttons"
+                android:paddingVertical="36dp"
+                android:paddingTop="32dp"
                 android:text="Events"
                 android:textColor="#000000"
-                android:background="@drawable/homepage_buttons"
-                android:layout_width="wrap_content"
-                android:layout_weight="1"
-                android:layout_margin="10dp"
-                android:paddingVertical="32dp"
-                android:paddingTop="32dp"
-                android:layout_height="wrap_content" />
+                android:textSize="12sp" />
 
             <Button
+                android:text="Speakers"
+                android:textColor="#000"
+                android:textSize="12sp"
                 android:layout_width="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/homepage_buttons"
                 android:layout_margin="10dp"
-                android:paddingBottom="32dp"
-                android:paddingTop="32dp"
+                android:paddingBottom="36dp"
+                android:paddingTop="36dp"
                 android:layout_height="wrap_content"/>
 
             <Button
+                android:text="standings"
+                android:textColor="#000"
                 android:layout_weight="1"
+                android:textSize="12sp"
                 android:layout_width="wrap_content"
                 android:layout_margin="10dp"
                 android:background="@drawable/homepage_buttons"
-                android:paddingBottom="32dp"
-                android:paddingTop="32dp"
+                android:paddingBottom="36dp"
+                android:paddingTop="36dp"
                 android:layout_height="wrap_content"/>
 
         </LinearLayout>
@@ -69,30 +85,38 @@
             android:orientation="horizontal">
 
             <Button
+                android:text="sponsors"
                 android:layout_width="wrap_content"
                 android:layout_weight="1"
+                android:textSize="12sp"
                 android:background="@drawable/homepage_buttons"
                 android:layout_margin="10dp"
-                android:paddingBottom="32dp"
-                android:paddingTop="32dp"
+                android:paddingBottom="36dp"
+                android:paddingTop="36dp"
                 android:layout_height="wrap_content" />
 
             <Button
+                android:text="FAQ"
+                android:textColor="#000"
                 android:layout_width="wrap_content"
                 android:layout_weight="1"
+                android:textSize="12sp"
                 android:layout_margin="10dp"
                 android:background="@drawable/homepage_buttons"
-                android:paddingBottom="32dp"
-                android:paddingTop="32dp"
+                android:paddingBottom="36dp"
+                android:paddingTop="36dp"
                 android:layout_height="wrap_content" />
 
             <Button
+                android:text="About Us"
+                android:textColor="#000"
                 android:layout_weight="1"
+                android:textSize="12sp"
                 android:layout_margin="10dp"
                 android:layout_width="wrap_content"
                 android:background="@drawable/homepage_buttons"
-                android:paddingBottom="32dp"
-                android:paddingTop="32dp"
+                android:paddingBottom="36dp"
+                android:paddingTop="36dp"
                 android:layout_height="wrap_content" />
 
         </LinearLayout>
@@ -102,7 +126,7 @@
     <LinearLayout
         android:id="@+id/links"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="30dp"
         android:layout_marginBottom="70dp"
         android:layout_marginRight="50dp"
         android:layout_marginLeft="50dp"
@@ -122,6 +146,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:src="@drawable/instagram"/>
+
+        <ImageView
+            android:id="@+id/youtube"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/youtube"/>
 
         <ImageView
             android:id="@+id/web"

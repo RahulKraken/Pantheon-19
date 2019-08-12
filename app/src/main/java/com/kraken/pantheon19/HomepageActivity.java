@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class HomepageActivity extends AppCompatActivity {
 
     Button eventsButton;
-    ImageView facebook,instagram,web;
+    ImageView facebook,instagram,youtube,web;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -23,6 +23,7 @@ public class HomepageActivity extends AppCompatActivity {
         eventsButton=findViewById(R.id.events_button);
         facebook=findViewById(R.id.facebook);
         instagram=findViewById(R.id.instagram);
+        youtube=findViewById(R.id.youtube);
         web=findViewById(R.id.web);
         eventsButton.setOnClickListener(new View.OnClickListener() {
             @Override
