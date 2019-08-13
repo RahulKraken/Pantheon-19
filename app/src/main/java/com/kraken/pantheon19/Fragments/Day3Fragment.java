@@ -1,4 +1,4 @@
-package com.kraken.pantheon19;
+package com.kraken.pantheon19.Fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,7 +14,9 @@ import com.kraken.pantheon19.Events.EventAdapter;
 
 import java.util.ArrayList;
 
-public class Day2Fragment extends Fragment {
+import com.kraken.pantheon19.R;
+
+public class Day3Fragment extends Fragment {
     private RecyclerView recyclerView;
     private EventAdapter adapter;
     private ArrayList<Event> eventsArrayList;

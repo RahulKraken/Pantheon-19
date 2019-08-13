@@ -1,4 +1,4 @@
-package com.kraken.pantheon19;
+package com.kraken.pantheon19.Activities;
 
 import android.os.Bundle;;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +8,10 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
+import com.kraken.pantheon19.Fragments.Day1Fragment;
+import com.kraken.pantheon19.Fragments.Day2Fragment;
+import com.kraken.pantheon19.Fragments.Day3Fragment;
+import com.kraken.pantheon19.R;
 
 public class EventsActivity extends AppCompatActivity {
 

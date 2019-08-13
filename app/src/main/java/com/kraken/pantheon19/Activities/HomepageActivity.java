@@ -1,4 +1,4 @@
-package com.kraken.pantheon19;
+package com.kraken.pantheon19.Activities;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -10,6 +10,8 @@ import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.kraken.pantheon19.R;
 
 public class HomepageActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.kraken.pantheon19;
+package com.kraken.pantheon19.Fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,7 +14,9 @@ import com.kraken.pantheon19.Events.EventAdapter;
 
 import java.util.ArrayList;
 
-public class Day3Fragment extends Fragment {
+import com.kraken.pantheon19.R;
+
+public class Day1Fragment extends Fragment {
     private RecyclerView recyclerView;
     private EventAdapter adapter;
     private ArrayList<Event> eventsArrayList;
@@ -45,6 +47,10 @@ public class Day3Fragment extends Fragment {
         event = new Event("Event 6", "This is Event 6","1-2 Hours","3:00 P.M");
         eventsArrayList.add(event);
         event = new Event("Event 7", "This is Event 7","1-2 Hours","4:00 P.M");
+        eventsArrayList.add(event);
+        event = new Event("Event 8", "This is Event 8","1-2 Hours","5:00 P.M");
+        eventsArrayList.add(event);
+        event = new Event("Event 9", "This is Event 9","1-2 Hours","6:00 P.M");
         eventsArrayList.add(event);
         adapter.notifyDataSetChanged();
     }
