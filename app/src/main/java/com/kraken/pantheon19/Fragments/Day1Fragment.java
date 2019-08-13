@@ -1,4 +1,4 @@
-package com.kraken.pantheon19;
+package com.kraken.pantheon19.Fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,11 +9,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class Day2Fragment extends Fragment {
+import com.kraken.pantheon19.R;
+
+public class Day1Fragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.activity_day2,container,false);
+        return inflater.inflate(R.layout.activity_day1,container,false);
     }
 }
+
