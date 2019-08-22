@@ -7,160 +7,47 @@
     android:background="#f5f5f5"
     android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.Toolbar
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="match_parent"
-        android:background="#ffffff"
-        android:layout_height="?attr/actionBarSize">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_marginEnd="16dp"
-            android:layout_height="wrap_content"
-            android:textColor="#000"
-            android:textSize="20sp"
-            android:text="HOME"
-            android:gravity="center_horizontal"/>
-
-    </androidx.appcompat.widget.Toolbar>
-
     <LinearLayout
-        android:id="@+id/groupofbuttons"
-        app:layout_constraintBottom_toTopOf="@id/links"
+        android:id="@+id/image_main"
         android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginBottom="20dp"
-        android:layout_gravity="bottom">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/events_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/homepage_buttons"
-                android:paddingVertical="36dp"
-                android:paddingTop="32dp"
-                android:text="Events"
-                android:textColor="#000000"
-                android:textSize="12sp" />
-
-            <Button
-                android:text="Speakers"
-                android:textColor="#000"
-                android:textSize="12sp"
-                android:layout_width="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/homepage_buttons"
-                android:layout_margin="10dp"
-                android:paddingBottom="36dp"
-                android:paddingTop="36dp"
-                android:layout_height="wrap_content"/>
-
-            <Button
-                android:text="standings"
-                android:textColor="#000"
-                android:layout_weight="1"
-                android:textSize="12sp"
-                android:layout_width="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@drawable/homepage_buttons"
-                android:paddingBottom="36dp"
-                android:paddingTop="36dp"
-                android:layout_height="wrap_content"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:text="sponsors"
-                android:layout_width="wrap_content"
-                android:layout_weight="1"
-                android:textSize="12sp"
-                android:background="@drawable/homepage_buttons"
-                android:layout_margin="10dp"
-                android:paddingBottom="36dp"
-                android:paddingTop="36dp"
-                android:layout_height="wrap_content" />
-
-            <Button
-                android:text="FAQ"
-                android:textColor="#000"
-                android:layout_width="wrap_content"
-                android:layout_weight="1"
-                android:textSize="12sp"
-                android:layout_margin="10dp"
-                android:background="@drawable/homepage_buttons"
-                android:paddingBottom="36dp"
-                android:paddingTop="36dp"
-                android:layout_height="wrap_content" />
-
-            <Button
-                android:text="About Us"
-                android:textColor="#000"
-                android:layout_weight="1"
-                android:textSize="12sp"
-                android:layout_margin="10dp"
-                android:layout_width="wrap_content"
-                android:background="@drawable/homepage_buttons"
-                android:paddingBottom="36dp"
-                android:paddingTop="36dp"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
+        android:layout_height="292dp">
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/links"
+        android:id="@+id/heading"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/image_main"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_marginBottom="70dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginLeft="50dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <ImageView
-            android:id="@+id/facebook"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/facebook"/>
-
-        <ImageView
-            android:id="@+id/instagram"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/instagram"/>
-
-        <ImageView
-            android:id="@+id/youtube"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/youtube"/>
-
-        <ImageView
-            android:id="@+id/web"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/pantheon"/>
+        android:layout_height="wrap_content">
 
     </LinearLayout>
+    
+    <TableLayout
+        android:id="@+id/events_buttons"
+        app:layout_constraintTop_toBottomOf="@id/heading"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="160dp">
 
+    </TableLayout>
+
+    <LinearLayout
+        android:id="@+id/social_icons"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/events_buttons"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
