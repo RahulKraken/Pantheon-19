@@ -88,7 +88,7 @@
             <androidx.cardview.widget.CardView app:cardCornerRadius="10dp">
 
                 <ImageButton
-                    android:id="@+id/event_list_button"
+                    android:id="@+id/info_button"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:background="#1A1A1A"
@@ -114,7 +114,7 @@
                 app:cardCornerRadius="10dp">
 
                 <ImageButton
-                    android:id="@+id/event_note_button"
+                    android:id="@+id/event_list_button"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:background="#1A1A1A"
@@ -176,6 +176,7 @@
         android:layout_height="wrap_content">
 
         <ImageButton
+            android:id="@+id/facebook_btn"
             android:src="@drawable/facebook"
             android:background="@android:color/transparent"
             android:contentDescription="@string/facebook_button_desc"
@@ -183,6 +184,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <ImageButton
+            android:id="@+id/instagram_btn"
             android:src="@drawable/instagram"
             android:background="@android:color/transparent"
             android:contentDescription="@string/instagram_button_desc"
@@ -190,6 +192,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <ImageButton
+            android:id="@+id/web_btn"
             android:src="@drawable/global"
             android:background="@android:color/transparent"
             android:contentDescription="@string/web_button_desc"
@@ -197,6 +200,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <ImageButton
+            android:id="@+id/youtube_btn"
             android:src="@drawable/youtube"
             android:background="@android:color/transparent"
             android:contentDescription="@string/youtube_button_desc"
