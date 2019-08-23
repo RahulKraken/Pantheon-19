@@ -10,4 +10,5 @@
     <string name="instagram_button_desc">instagram button</string>
     <string name="web_button_desc">web button</string>
     <string name="youtube_button_desc">youtube button</string>
+    <string name="version_1_0_0">Version 1.0.0</string>
 </resources>
