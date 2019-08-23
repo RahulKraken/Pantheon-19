@@ -10,4 +10,9 @@
     <string name="instagram_button_desc">instagram button</string>
     <string name="web_button_desc">web button</string>
     <string name="youtube_button_desc">youtube button</string>
+    <string name="flagship_card_demo_title">Code it blind!</string>
+    <string name="flagship_card_demo_venue">Lab - 7</string>
+    <string name="flagship_card_demo_time">11:00 a.m.</string>
+    <string name="flagship_card_featured_image">featured image</string>
+    <string name="flagship_cad_view_btn_label">VIEW</string>
 </resources>
