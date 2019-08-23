@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Pantheon 19</string>
+    <string name="home_image_description">home_image_description</string>
+    <string name="welcome_to_pantheon_19_title">Welcome to Pantheon \'19</string>
+    <string name="welcome_to_pantheon_19_description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et</string>
+    <string name="info_btn_desc">info_btn_desc</string>
+    <string name="flagship_btn_desc">flagship btn description</string>
+    <string name="event_btn_desc">event btn description</string>
+    <string name="facebook_button_desc">facebook button</string>
+    <string name="instagram_button_desc">instagram button</string>
+    <string name="web_button_desc">web button</string>
+    <string name="youtube_button_desc">youtube button</string>
 </resources>
