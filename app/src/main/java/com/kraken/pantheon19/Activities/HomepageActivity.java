@@ -1,5 +1,6 @@
 package com.kraken.pantheon19.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -51,6 +52,7 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.flagship_list_button:
                 Log.d(TAG, "onClick: flagship btn clicked");
+                startActivity(new Intent(this, FlagshipEventActivity.class));
                 break;
             case R.id.event_list_button:
                 Log.d(TAG, "onClick: event list btn");
