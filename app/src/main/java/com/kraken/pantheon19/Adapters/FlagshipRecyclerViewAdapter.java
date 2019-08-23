@@ -40,7 +40,13 @@ public class FlagshipRecyclerViewAdapter extends RecyclerView.Adapter<FlagshipRe
 
     @Override
     public void onBindViewHolder(@NonNull FlagshipRecyclerViewHolder holder, int position) {
+        Log.d(TAG, "onBindViewHolder: binding values to views");
+        holder.title.setText(eventList.get(position).getTitle());
+        holder.venue.setText(eventList.get(position).getVenue());
+        holder.time.setText(eventList.get(position).getTime());
 
+        // TODO : replace with actual image
+        holder.img.setImageResource(R.mipmap.ic_launcher);
     }
 
     @Override
@@ -67,6 +73,7 @@ public class FlagshipRecyclerViewAdapter extends RecyclerView.Adapter<FlagshipRe
 
         @Override
         public void onClick(View view) {
+            // TODO : launch event detail page
             Log.d(TAG, "onClick: view btn clicked!!");
         }
     }
