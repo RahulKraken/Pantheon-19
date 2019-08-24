@@ -28,6 +28,8 @@ public class FlagshipEventActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flagship_event);
 
+        // TODO : app bar
+
         recyclerView = findViewById(R.id.flagship_recycler_view);
 
         setupEventList();
