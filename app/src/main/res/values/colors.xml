@@ -313,4 +313,5 @@
     <color name="md_blue_grey_800">#37474F</color>
     <color name="md_blue_grey_900">#263238</color>
     <color name="flagship_card_view_btn_text_color">#383873</color>
+    <color name="background_color">#1A1A1A</color>
 </resources>

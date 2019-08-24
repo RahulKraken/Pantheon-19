@@ -4,6 +4,7 @@ package com.kraken.pantheon19.Adapters;
  */
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.kraken.pantheon19.Activities.EventDetailActivity;
+import com.kraken.pantheon19.Activities.FlagshipEventActivity;
 import com.kraken.pantheon19.Entities.Event;
 import com.kraken.pantheon19.R;
 
@@ -73,8 +76,9 @@ public class FlagshipRecyclerViewAdapter extends RecyclerView.Adapter<FlagshipRe
 
         @Override
         public void onClick(View view) {
-            // TODO : launch event detail page
             Log.d(TAG, "onClick: view btn clicked!!");
+            // TODO : send event detail with intent
+            context.startActivity(new Intent(context, EventDetailActivity.class));
         }
     }
 }
