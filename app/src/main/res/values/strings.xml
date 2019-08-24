@@ -15,4 +15,5 @@
     <string name="flagship_card_demo_time">11:00 a.m.</string>
     <string name="flagship_card_featured_image">featured image</string>
     <string name="flagship_cad_view_btn_label">VIEW</string>
+    <string name="flagship_activity_title">Flagship</string>
 </resources>

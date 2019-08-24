@@ -1,14 +1,14 @@
 package com.kraken.pantheon19.Activities;
 
+import android.os.Bundle;
+import android.util.Log;
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SnapHelper;
-
-import android.os.Bundle;
-import android.util.Log;
-import android.widget.LinearLayout;
 
 import com.kraken.pantheon19.Adapters.FlagshipRecyclerViewAdapter;
 import com.kraken.pantheon19.Entities.Event;
@@ -29,6 +29,14 @@ public class FlagshipEventActivity extends AppCompatActivity {
         setContentView(R.layout.activity_flagship_event);
 
         // TODO : app bar
+        Toolbar toolbar = findViewById(R.id.flagship_page_toolbar);
+        setSupportActionBar(toolbar);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(getResources().getString(R.string.flagship_activity_title));
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
 
         recyclerView = findViewById(R.id.flagship_recycler_view);
 
@@ -38,10 +46,11 @@ public class FlagshipEventActivity extends AppCompatActivity {
 
     /*
     create list of events
+    TODO : replace with repository call
      */
     private void setupEventList() {
         events = new ArrayList<>();
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl", "kldsj", 2, 4, "lkfsjdflks"));
+        events.add(new Event(85, "madarchod", "bhosdika", "lauda", "gandu", "betichod", 2, 4, "bhosdiwala"));
         events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl", "kldsj", 2, 4, "lkfsjdflks"));
         events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl", "kldsj", 2, 4, "lkfsjdflks"));
         events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl", "kldsj", 2, 4, "lkfsjdflks"));
