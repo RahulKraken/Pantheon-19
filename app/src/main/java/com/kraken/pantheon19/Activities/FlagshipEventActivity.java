@@ -50,13 +50,13 @@ public class FlagshipEventActivity extends AppCompatActivity {
      */
     private void setupEventList() {
         events = new ArrayList<>();
-        events.add(new Event(85, "madarchod", "bhosdika", "lauda", "gandu", "betichod", 2, 4, "bhosdiwala"));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl", "kldsj", 2, 4, "lkfsjdflks"));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl", "kldsj", 2, 4, "lkfsjdflks"));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl", "kldsj", 2, 4, "lkfsjdflks"));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl", "kldsj", 2, 4, "lkfsjdflks"));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl", "kldsj", 2, 4, "lkfsjdflks"));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl", "kldsj", 2, 4, "lkfsjdflks"));
+        events.add(new Event(85, "madarchod", "bhosdika", "lauda", "gandu", "betichod", 2, flagship, 4, "bhosdiwala"));
+        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl", "kldsj", 2, flagship, 4, "lkfsjdflks"));
+        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl", "kldsj", 2, flagship, 4, "lkfsjdflks"));
+        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl", "kldsj", 2, flagship, 4, "lkfsjdflks"));
+        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl", "kldsj", 2, flagship, 4, "lkfsjdflks"));
+        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl", "kldsj", 2, flagship, 4, "lkfsjdflks"));
+        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl", "kldsj", 2, flagship, 4, "lkfsjdflks"));
     }
 
     private void setupRecyclerView() {
