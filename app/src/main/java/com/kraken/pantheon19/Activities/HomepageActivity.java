@@ -18,7 +18,7 @@ import com.kraken.pantheon19.R;
 
 public class HomepageActivity extends AppCompatActivity {
 
-    ImageButton eventsButton;
+    ImageButton eventsButton,speakersbutton;
     ImageButton facebook,instagram,youtube,web;
 
     @Override
@@ -26,6 +26,7 @@ public class HomepageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
         eventsButton=findViewById(R.id.event_note_button);
+        speakersbutton=findViewById(R.id.guest_speaker_btn);
         facebook=findViewById(R.id.facebook_button);
         instagram=findViewById(R.id.instagram);
         youtube=findViewById(R.id.youtube);
@@ -34,6 +35,13 @@ public class HomepageActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(HomepageActivity.this,EventsActivity.class);
+                startActivity(intent);
+            }
+        });
+        speakersbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(HomepageActivity.this,SpeakersActivity.class);
                 startActivity(intent);
             }
         });
