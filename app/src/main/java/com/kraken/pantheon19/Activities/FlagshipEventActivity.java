@@ -5,6 +5,9 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,6 +16,8 @@ import androidx.recyclerview.widget.SnapHelper;
 import com.kraken.pantheon19.Adapters.FlagshipRecyclerViewAdapter;
 import com.kraken.pantheon19.Entities.Event;
 import com.kraken.pantheon19.R;
+import com.kraken.pantheon19.Repositories.EventRepository;
+import com.kraken.pantheon19.ViewModels.FlagshipActivityViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +26,8 @@ public class FlagshipEventActivity extends AppCompatActivity {
     private static final String TAG = "FlagshipEventActivity";
 
     private RecyclerView recyclerView;
-    private List<Event> events;
+    private FlagshipActivityViewModel flagshipActivityViewModel;
+    private FlagshipRecyclerViewAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,30 +44,30 @@ public class FlagshipEventActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
+        // setup view model
+        flagshipActivityViewModel = ViewModelProviders.of(this).get(FlagshipActivityViewModel.class);
+
+        // observe event list now
+        flagshipActivityViewModel.getEventList().observe(this, new Observer<List<Event>>() {
+            @Override
+            public void onChanged(List<Event> events) {
+                Log.d(TAG, "onChanged: data changed");
+                adapter.setEventList(events);
+
+                for (Event e : events) {
+                    Log.d(TAG, "onChanged: " + e);
+                }
+            }
+        });
+
         recyclerView = findViewById(R.id.flagship_recycler_view);
 
-        setupEventList();
         setupRecyclerView();
-    }
-
-    /*
-    create list of events
-    TODO : replace with repository call
-     */
-    private void setupEventList() {
-        events = new ArrayList<>();
-        events.add(new Event(85, "madarchod", "bhosdika", "lauda", "gandu", "betichod", 2, flagship, 4, "bhosdiwala"));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl", "kldsj", 2, flagship, 4, "lkfsjdflks"));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl", "kldsj", 2, flagship, 4, "lkfsjdflks"));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl", "kldsj", 2, flagship, 4, "lkfsjdflks"));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl", "kldsj", 2, flagship, 4, "lkfsjdflks"));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl", "kldsj", 2, flagship, 4, "lkfsjdflks"));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl", "kldsj", 2, flagship, 4, "lkfsjdflks"));
     }
 
     private void setupRecyclerView() {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
-        FlagshipRecyclerViewAdapter adapter = new FlagshipRecyclerViewAdapter(this, events);
+        adapter = new FlagshipRecyclerViewAdapter(this);
 
         // set on recycler view
         Log.d(TAG, "setupRecyclerView: inflating recycler view");

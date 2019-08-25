@@ -17,14 +17,13 @@ public class Event {
     private String time;
     private String venue;
     private int day;
-    private int flagship;
 
     @ColumnInfo(name = "team_size")
     private int teamSize;
 
     private String coordinators;
 
-    public Event(int eventId, String title, String description, String status, String time, String venue, int day, int flagship, int teamSize, String coordinators) {
+    public Event(int eventId, String title, String description, String status, String time, String venue, int day, int teamSize, String coordinators) {
         this.eventId = eventId;
         this.title = title;
         this.description = description;
@@ -32,17 +31,8 @@ public class Event {
         this.time = time;
         this.venue = venue;
         this.day = day;
-        this.flagship = flagship;
         this.teamSize = teamSize;
         this.coordinators = coordinators;
-    }
-
-    public int getFlagship() {
-        return flagship;
-    }
-
-    public void setFlagship(int flagship) {
-        this.flagship = flagship;
     }
 
     public int getEventId() {
@@ -79,5 +69,20 @@ public class Event {
 
     public String getCoordinators() {
         return coordinators;
+    }
+
+    @Override
+    public String toString() {
+        return "Event{" +
+                "eventId=" + eventId +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", status='" + status + '\'' +
+                ", time='" + time + '\'' +
+                ", venue='" + venue + '\'' +
+                ", day=" + day +
+                ", teamSize=" + teamSize +
+                ", coordinators='" + coordinators + '\'' +
+                '}';
     }
 }
