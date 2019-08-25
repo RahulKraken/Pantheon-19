@@ -20,6 +20,7 @@ public class EventRepository {
     private static final String TAG = "EventRepository";
 
     private static LiveData<List<Event>> allEvents;
+    private static LiveData<List<Event>> allFlagshipEvents;
     private static LiveData<Event> event;
     private static LiveData<Winner> winner;
     private EventDao eventDao;
@@ -32,6 +33,7 @@ public class EventRepository {
 
 //        event = eventDao.getEvent(1);
         allEvents = eventDao.getAllEvents();
+        allFlagshipEvents = eventDao.getFlagshipEvents();
     }
 
     // eventDao methods
@@ -60,6 +62,11 @@ public class EventRepository {
 //        new GetAllEventAsyncTask(eventDao).execute();
         Log.d(TAG, "getAllEvents: " + allEvents.getValue());
         return allEvents;
+    }
+
+    public LiveData<List<Event>> getFlagshipEvents() {
+        Log.d(TAG, "getFlagshipEvents: " + allFlagshipEvents.getValue());
+        return allFlagshipEvents;
     }
 
     // winnerDao methods

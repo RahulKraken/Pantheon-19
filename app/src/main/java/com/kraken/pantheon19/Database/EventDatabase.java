@@ -56,9 +56,9 @@ public abstract class EventDatabase extends RoomDatabase {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            eventDao.insert(new Event(1, "event1", "desc1", "complete", "10:00", "IC", 1,  4, "Rahul", flagship));
-            eventDao.insert(new Event(2, "event2", "desc2", "complete", "11:00", "IC", 1,  4, "Rahul", flagship));
-            eventDao.insert(new Event(3, "event3", "desc3", "complete", "13:00", "IC", 2,  4, "Rahul", flagship));
+            eventDao.insert(new Event(1, "event1", "desc1", "complete", "10:00", "IC", 1,  4, "Rahul", 1));
+            eventDao.insert(new Event(2, "event2", "desc2", "complete", "11:00", "IC", 1,  4, "Rahul", 1));
+            eventDao.insert(new Event(3, "event3", "desc3", "complete", "13:00", "IC", 2,  4, "Rahul", 1));
 
             winnerDao.insert(new Winner(1, "Rahul", "Kraken", "RahulKraken"));
             winnerDao.insert(new Winner(2, "Kraken", "Rahul", "RahulKraken"));
