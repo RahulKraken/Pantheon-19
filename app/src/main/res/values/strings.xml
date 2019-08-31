@@ -10,5 +10,15 @@
     <string name="instagram_button_desc">instagram button</string>
     <string name="web_button_desc">web button</string>
     <string name="youtube_button_desc">youtube button</string>
+    <string name="flagship_card_demo_title">Code it blind!</string>
+    <string name="flagship_card_demo_venue">Lab - 7</string>
+    <string name="flagship_card_demo_time">11:00 a.m.</string>
+    <string name="flagship_card_featured_image">featured image</string>
+    <string name="flagship_cad_view_btn_label">VIEW</string>
+    <string name="flagship_activity_title">Flagship</string>
+    <string name="event_detail_image_desc">event image</string>
+    <string name="demo_point">100pt</string>
+    <string name="desc_sample_text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore</string>
+    <string name="contact_label">Contact</string>
     <string name="version_1_0_0">Version 1.0.0</string>
 </resources>

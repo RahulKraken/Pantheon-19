@@ -8,6 +8,15 @@
     <color name="colorPrimaryDark">#3b5998</color>
     <color name="colorAccent">#D81B60</color>
 
+    <!--flag ship card view button colors-->
+    <item name="btn_default" type="color">#EAF9F8</item>
+    <item name="btn_pressed" type="color">#99DCD8</item>
+    
+    <integer-array name="flagship_card_view_btn_colors">
+        <item>@color/btn_default</item>
+        <item>@color/btn_pressed</item>
+    </integer-array>
+
     <!-- google's material design colours from http://www.google.com/design/spec/style/color.html#color-ui-color-palette -->
 
     <!--reds-->
@@ -303,4 +312,6 @@
     <color name="md_blue_grey_700">#455A64</color>
     <color name="md_blue_grey_800">#37474F</color>
     <color name="md_blue_grey_900">#263238</color>
+    <color name="flagship_card_view_btn_text_color">#383873</color>
+    <color name="background_color">#1A1A1A</color>
 </resources>

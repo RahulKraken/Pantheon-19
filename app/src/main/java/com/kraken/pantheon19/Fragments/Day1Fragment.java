@@ -48,6 +48,24 @@ public class Day1Fragment extends Fragment {
         eventsArrayList.add(event);
         event = new Event("Event 7", "This is Event 7","10","20");
         eventsArrayList.add(event);
+        event = new Event("Event 8", "This is Event 7","10","20");
+        eventsArrayList.add(event);
+        event = new Event("Event 9", "This is Event 7","10","20");
+        eventsArrayList.add(event);
+        event = new Event("Event 10", "This is Event 7","10","20");
+        eventsArrayList.add(event);
+        event = new Event("Event 11", "This is Event 7","10","20");
+        eventsArrayList.add(event);
+        event = new Event("Event 12", "This is Event 7","10","20");
+        eventsArrayList.add(event);
+        event = new Event("Event 13", "This is Event 7","10","20");
+        eventsArrayList.add(event);
+        event = new Event("Event 14", "This is Event 7","10","20");
+        eventsArrayList.add(event);
+        event = new Event("Event 15", "This is Event 7","10","20");
+        eventsArrayList.add(event);
+        event = new Event("Event 16", "This is Event 7","10","20");
+        eventsArrayList.add(event);
         adapter.notifyDataSetChanged();
-    }
+}
 }
