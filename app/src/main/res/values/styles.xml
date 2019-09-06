@@ -16,6 +16,7 @@
         <item name="backgroundColor">#000</item>
         <item name="buttonColor">#1a1a1a</item>
         <item name="textColor">#fff</item>
+        <item name="colorControlNormal">#fff</item>
         <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
     </style>
 
@@ -27,6 +28,7 @@
         <item name="backgroundColor">#fff</item>
         <item name="buttonColor">@color/md_grey_300</item>
         <item name="textColor">#000</item>
+        <item name="colorControlNormal">#000</item>
         <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
     </style>
 

@@ -12,12 +12,15 @@ import androidx.recyclerview.widget.SnapHelper;
 
 import com.kraken.pantheon19.Adapters.FlagshipRecyclerViewAdapter;
 import com.kraken.pantheon19.Entities.Event;
+import com.kraken.pantheon19.Entities.SharedPrefThemes;
 import com.kraken.pantheon19.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class FlagshipEventActivity extends AppCompatActivity {
+
+    SharedPrefThemes sharedPrefThemes;
     private static final String TAG = "FlagshipEventActivity";
     private RecyclerView recyclerView;
     private List<Event> events;
@@ -25,10 +28,13 @@ public class FlagshipEventActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        sharedPrefThemes=new SharedPrefThemes(this);
+        if(sharedPrefThemes.loadNightModeState()) setTheme(R.style.AppTheme);
+        else setTheme(R.style.LightTheme);
         setContentView(R.layout.activity_flagship_event);
 
         // TODO : app bar
-        Toolbar toolbar = findViewById(R.id.flagship_page_toolbar);
+        Toolbar toolbar = findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
 
         if (getSupportActionBar() != null) {
@@ -49,13 +55,20 @@ public class FlagshipEventActivity extends AppCompatActivity {
      */
     private void setupEventList() {
         events = new ArrayList<>();
-        events.add(new Event(85, "madarchod", "bhosdika", "lauda", "gandu", "betichod", 2, 4, "bhosdiwala"));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl", "kldsj", 2, 4, "lkfsjdflks"));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl", "kldsj", 2, 4, "lkfsjdflks"));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl", "kldsj", 2, 4, "lkfsjdflks"));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl", "kldsj", 2, 4, "lkfsjdflks"));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl", "kldsj", 2, 4, "lkfsjdflks"));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl", "kldsj", 2, 4, "lkfsjdflks"));
+        events.add(new Event(85, "madarchod", "bhosdika", "lauda", "gandu","10",
+                "betichod", 2, 4, "bhosdiwala",""));
+        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
+                "kldsj", 2, 4, "lkfsjdflks",""));
+        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
+                "kldsj", 2, 4, "lkfsjdflks",""));
+        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
+                "kldsj", 2, 4, "lkfsjdflks",""));
+        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
+                "kldsj", 2, 4, "lkfsjdflks",""));
+        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
+                "kldsj", 2, 4, "lkfsjdflks",""));
+        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
+                "kldsj", 2, 4, "lkfsjdflks",""));
     }
 
     private void setupRecyclerView() {

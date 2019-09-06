@@ -12,7 +12,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.SponsersActicity"></activity>
         <activity
             android:name=".Activities.EventDetailActivity"
             android:launchMode="singleTop" />
@@ -24,6 +23,8 @@
         <activity android:name=".Activities.EventsActivity"/>
         <activity android:name=".Activities.HomepageActivity"/>
         <activity android:name=".Activities.SpeakersActivity"/>
+        <activity android:name=".Activities.LeaderBoardActivity"/>
+        <activity android:name=".Activities.SponsorsActivity"/>
         <activity android:name=".Activities.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

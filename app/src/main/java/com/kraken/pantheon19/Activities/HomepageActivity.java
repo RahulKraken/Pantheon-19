@@ -22,14 +22,16 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+
         sharedPrefThemes=new SharedPrefThemes(this);
         if(sharedPrefThemes.loadNightModeState()) setTheme(R.style.AppTheme);
         else setTheme(R.style.LightTheme);
         super.onCreate(savedInstanceState);
-        View decorview=getWindow().getDecorView();
+        View decorView=getWindow().getDecorView();
         int uiOptions=View.SYSTEM_UI_FLAG_FULLSCREEN;
-        decorview.setSystemUiVisibility(uiOptions);
+        decorView.setSystemUiVisibility(uiOptions);
         setContentView(R.layout.activity_homepage);
+
         ImageButton infoBtn = findViewById(R.id.about_us);
         ImageButton flagshipBtn = findViewById(R.id.flagship_list_button);
         ImageButton eventsBtn = findViewById(R.id.event_note_button);
@@ -41,10 +43,7 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
         ImageButton webBtn = findViewById(R.id.website);
         ImageButton youtubeBtn = findViewById(R.id.youtube);
         ImageView share=findViewById(R.id.share_button);
-        ImageButton event_note_button;
-        ImageButton about_us_button;
-        ImageButton sponser_btn;
-        // set onclick listener
+
         infoBtn.setOnClickListener(this);
         flagshipBtn.setOnClickListener(this);
         eventsBtn.setOnClickListener(this);
@@ -55,7 +54,8 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
         instagramBtn.setOnClickListener(this);
         webBtn.setOnClickListener(this);
         youtubeBtn.setOnClickListener(this);
-        event_note_button=findViewById(R.id.event_note_button);
+        share.setOnClickListener(this);
+
         Switch theme=findViewById(R.id.theme_button);
         if(sharedPrefThemes.loadNightModeState()) theme.setChecked(true);
         theme.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -71,88 +71,52 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
                 }
             }
         });
-        share.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent sendIntent = new Intent();
-                sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT, "Hey check out pantheon app at playstore");
-                sendIntent.setType("text/plain");
-                startActivity(sendIntent);
-            }
-        });
-        event_note_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(HomepageActivity.this,EventsActivity.class);
-                startActivity(intent);
-            }
-        });
-        about_us_button=findViewById(R.id.about_us);
-        about_us_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(HomepageActivity.this,AboutUsActivity.class);
-                startActivity(intent);
-            }
-        });
-        sponser_btn=findViewById(R.id.sponsors_btn);
-        sponser_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(HomepageActivity.this,SponsersActicity.class);
-                startActivity(intent);
-            }
-        });
-
-        guestSpeakerBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(HomepageActivity.this,SpeakersActivity.class);
-                startActivity(intent);
-            }
-        });
-        facebookBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openFacebookIntent();
-            }
-        });
-        instagramBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openInstagramIntent();
-            }
-        });
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.about_us:
-                Log.d(TAG, "onClick: info btn clicked");
+                Log.d(TAG, "onClick: about us btn ");
+                startActivity(new Intent(HomepageActivity.this,AboutUsActivity.class));
                 break;
             case R.id.flagship_list_button:
-                Log.d(TAG, "onClick: flagship btn clicked");
+                Log.d(TAG, "onClick: flagship btn");
                 startActivity(new Intent(this, FlagshipEventActivity.class));
                 break;
             case R.id.event_note_button:
                 Log.d(TAG, "onClick: event list btn");
+                startActivity(new Intent(HomepageActivity.this,EventsActivity.class));
                 break;
             case R.id.guest_speaker_btn:
                 Log.d(TAG, "onClick: guest speaker btn");
+                startActivity(new Intent(HomepageActivity.this,SpeakersActivity.class));
                 break;
             case R.id.leaderboard_btn:
                 Log.d(TAG, "onClick: leader board btn");
+                startActivity(new Intent(HomepageActivity.this,LeaderBoardActivity.class));
                 break;
             case R.id.sponsors_btn:
                 Log.d(TAG, "onClick: sponsors btn");
+                startActivity(new Intent(HomepageActivity.this,SponsorsActivity.class));
                 break;
             case R.id.facebook_button:
                 Log.d(TAG, "onClick: facebook btn");
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("fb://page/860738913956082")));
+                } catch(Exception e) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.facebook.com/860738913956082")));
+                }
                 break;
             case R.id.instagram:
                 Log.d(TAG, "onClick: instagram btn");
+                Uri uri = Uri.parse("https://instagram.com/pantheon_techfest?igshid=vyj3srrytza5");
+                Intent likeIng = new Intent(Intent.ACTION_VIEW, uri);
+                likeIng.setPackage("com.instagram.android");
+                try { startActivity(likeIng); }
+                catch (ActivityNotFoundException e) {
+                    startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse("https://instagram.com/pantheon_techfest?igshid=vyj3srrytza5")));
+                }
                 break;
             case R.id.website:
                 Log.d(TAG, "onClick: web btn");
@@ -160,26 +124,14 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
             case R.id.youtube:
                 Log.d(TAG, "onClick: youtube btn");
                 break;
-        }
-    }
-
-    public void openFacebookIntent() {
-        try {
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://page/860738913956082"));
-            startActivity(intent);
-        } catch(Exception e) {
-            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.facebook.com/860738913956082")));
-        }
-    }
-
-    public void openInstagramIntent() {
-        Uri uri = Uri.parse("https://instagram.com/pantheon_techfest?igshid=vyj3srrytza5");
-        Intent likeIng = new Intent(Intent.ACTION_VIEW, uri);
-        likeIng.setPackage("com.instagram.android");
-        try {
-            startActivity(likeIng);
-        } catch (ActivityNotFoundException e) {
-            startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse("https://instagram.com/pantheon_techfest?igshid=vyj3srrytza5")));
+            case  R.id.share_button:
+                Log.d(TAG, "onClick: share btn");
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "Hey check out pantheon app at playstore");
+                sendIntent.setType("text/plain");
+                startActivity(sendIntent);
+                break;
         }
     }
 }

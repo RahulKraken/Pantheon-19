@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.kraken.pantheon19.Activities.EventDetailActivity;
 import com.kraken.pantheon19.Activities.FlagshipEventActivity;
 import com.kraken.pantheon19.Entities.Event;
+import com.kraken.pantheon19.Entities.ImageNicer;
 import com.kraken.pantheon19.R;
 
 import java.util.List;
@@ -49,7 +50,9 @@ public class FlagshipRecyclerViewAdapter extends RecyclerView.Adapter<FlagshipRe
         holder.time.setText(eventList.get(position).getTime());
 
         // TODO : replace with actual image
-        holder.img.setImageResource(R.mipmap.ic_launcher);
+        //holder.img.setImageResource(R.mipmap.ic_launcher);
+        holder.img.setImageBitmap(ImageNicer.decodeSampledBitmapFromResource(context.getResources(),
+                eventList.get(position).getImage(),100,100));
     }
 
     @Override

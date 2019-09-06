@@ -1,6 +1,7 @@
 package com.kraken.pantheon19.Fragments;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,17 +9,21 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
-import com.kraken.pantheon19.Events.Event;
-import com.kraken.pantheon19.Events.EventAdapter;
+import androidx.recyclerview.widget.SnapHelper;
+
+import com.kraken.pantheon19.Adapters.EventsRecyclerViewAdapter;
+import com.kraken.pantheon19.Entities.Event;
 import com.kraken.pantheon19.R;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Day1Fragment extends Fragment {
 
+    private static final String TAG = "Day1Fragment";
     private RecyclerView recyclerView;
-    private EventAdapter adapter;
-    private ArrayList<Event> eventsArrayList;
+    private List<Event> events;
 
     @Nullable
     @Override
@@ -26,46 +31,53 @@ public class Day1Fragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View rootview=inflater.inflate(R.layout.activity_day1,container,false);
         recyclerView = rootview.findViewById(R.id.recyclerView1);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        eventsArrayList = new ArrayList<>();
-        adapter = new EventAdapter(getContext(), eventsArrayList);
-        recyclerView.setAdapter(adapter);
-        createListData();
+        setupEventList();
+        setupRecyclerView();
         return rootview;
     }
-    private void createListData() {
-        Event event = new Event("Event 1", "This is Event 1","10","20");
-        eventsArrayList.add(event);
-        event = new Event("Event 2", "This is Event 2","10","20");
-        eventsArrayList.add(event);
-        event = new Event("Event 3", "This is Event 3","10","20");
-        eventsArrayList.add(event);
-        event = new Event("Event 4", "This is Event 4","10","20");
-        eventsArrayList.add(event);
-        event = new Event("Event 5", "This is Event 5","10","20");
-        eventsArrayList.add(event);
-        event = new Event("Event 6", "This is Event 6","10","20");
-        eventsArrayList.add(event);
-        event = new Event("Event 7", "This is Event 7","10","20");
-        eventsArrayList.add(event);
-        event = new Event("Event 8", "This is Event 7","10","20");
-        eventsArrayList.add(event);
-        event = new Event("Event 9", "This is Event 7","10","20");
-        eventsArrayList.add(event);
-        event = new Event("Event 10", "This is Event 7","10","20");
-        eventsArrayList.add(event);
-        event = new Event("Event 11", "This is Event 7","10","20");
-        eventsArrayList.add(event);
-        event = new Event("Event 12", "This is Event 7","10","20");
-        eventsArrayList.add(event);
-        event = new Event("Event 13", "This is Event 7","10","20");
-        eventsArrayList.add(event);
-        event = new Event("Event 14", "This is Event 7","10","20");
-        eventsArrayList.add(event);
-        event = new Event("Event 15", "This is Event 7","10","20");
-        eventsArrayList.add(event);
-        event = new Event("Event 16", "This is Event 7","10","20");
-        eventsArrayList.add(event);
-        adapter.notifyDataSetChanged();
-}
+
+    private void setupEventList() {
+        events = new ArrayList<>();
+        events.add(new Event(85, "amit", "bhosdika", "lauda", "gandu","10",
+                "betichod", 2, 4, "bhosdiwala",""));
+        events.add(new Event(85, "2", "skdjf", "kdsjfl", "ksdjfl","10",
+                "kldsj", 2, 4, "lkfsjdflks",""));
+        events.add(new Event(85, "3", "skdjf", "kdsjfl", "ksdjfl","10",
+                "kldsj", 2, 4, "lkfsjdflks",""));
+        events.add(new Event(85, "4", "skdjf", "kdsjfl", "ksdjfl","10",
+                "kldsj", 2, 4, "lkfsjdflks",""));
+        events.add(new Event(85, "5kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
+                "kldsj", 2, 4, "lkfsjdflks",""));
+        events.add(new Event(85, "6kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
+                "kldsj", 2, 4, "lkfsjdflks",""));
+        events.add(new Event(85, "7kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
+                "kldsj", 2, 4, "lkfsjdflks",""));
+        events.add(new Event(85, "8kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
+                "kldsj", 2, 4, "lkfsjdflks",""));
+        events.add(new Event(85, "9k9jdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
+                "kldsj", 2, 4, "lkfsjdflks",""));
+        events.add(new Event(85, "10kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
+                "kldsj", 2, 4, "lkfsjdflks",""));
+        events.add(new Event(85, "11kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
+                "kldsj", 2, 4, "lkfsjdflks",""));
+        events.add(new Event(85, "12kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
+                "kldsj", 2, 4, "lkfsjdflks",""));
+        events.add(new Event(85, "13kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
+                "kldsj", 2, 4, "lkfsjdflks",""));
+        events.add(new Event(85, "14kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
+                "kldsj", 2, 4, "lkfsjdflks",""));
+    }
+
+    private void setupRecyclerView() {
+        EventsRecyclerViewAdapter adapter = new EventsRecyclerViewAdapter(getContext(), events);
+
+        // set on recycler view
+        Log.d(TAG, "setupRecyclerView: inflating events recycler view");
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setAdapter(adapter);
+
+        // snap behavior for recycler view
+        SnapHelper snapHelper = new PagerSnapHelper();
+        snapHelper.attachToRecyclerView(recyclerView);
+    }
 }

@@ -8,24 +8,12 @@
     android:layout_height="match_parent"
     tools:context=".Activities.FlagshipEventActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
+    <include
         android:id="@+id/flagship_toolbar_layout"
-        android:background="@android:color/transparent"
-        android:elevation="0dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        layout="@layout/app_bar"
+        android:layout_gravity="top"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/flagship_page_toolbar"
-            android:background="@android:color/transparent"
-            android:elevation="0dp"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize" />
-
-    </com.google.android.material.appbar.AppBarLayout>
+        android:layout_height="wrap_content" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/flagship_recycler_view"
