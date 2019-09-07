@@ -6,5 +6,6 @@
         android:radius="21dp" />
 
     <solid
-        android:color="?attr/backgroundColor" />
+        android:color="@color/btn_pressed" />
+
 </shape>

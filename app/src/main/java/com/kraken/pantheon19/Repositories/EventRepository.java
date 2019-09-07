@@ -2,6 +2,7 @@ package com.kraken.pantheon19.Repositories;
 
 import android.app.Application;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -19,6 +20,7 @@ public class EventRepository {
     private static final String TAG = "EventRepository";
 
     private static LiveData<List<Event>> allEvents;
+    private static LiveData<List<Event>> allFlagshipEvents;
     private static LiveData<Event> event;
     private static LiveData<Winner> winner;
     private EventDao eventDao;
@@ -29,8 +31,9 @@ public class EventRepository {
         eventDao = eventDatabase.eventDao();
         winnerDao = eventDatabase.winnerDao();
 
-        event = eventDao.getEvent(1);
+//        event = eventDao.getEvent(1);
         allEvents = eventDao.getAllEvents();
+        allFlagshipEvents = eventDao.getFlagshipEvents();
     }
 
     // eventDao methods
@@ -38,7 +41,7 @@ public class EventRepository {
         new InsertEventAsyncTask(eventDao).execute(event);
     }
 
-    public void upadateEvent(Event event) {
+    public void updateEvent(Event event) {
         new UpdateEventAsyncTask(eventDao).execute(event);
     }
 
@@ -56,8 +59,14 @@ public class EventRepository {
     }
 
     public LiveData<List<Event>> getAllEvents() {
-        new GetAllEventAsyncTask(eventDao).execute();
+//        new GetAllEventAsyncTask(eventDao).execute();
+        Log.d(TAG, "getAllEvents: " + allEvents.getValue());
         return allEvents;
+    }
+
+    public LiveData<List<Event>> getFlagshipEvents() {
+        Log.d(TAG, "getFlagshipEvents: " + allFlagshipEvents.getValue());
+        return allFlagshipEvents;
     }
 
     // winnerDao methods

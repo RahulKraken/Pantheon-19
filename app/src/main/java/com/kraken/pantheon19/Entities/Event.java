@@ -25,9 +25,10 @@ public class Event {
     @ColumnInfo(name = "team_size")
     private int teamSize;
     private String coordinators;
+    private int flagship;
 
     public Event(int eventId, String title, String description, String status, String time,String duration,
-                 String venue, int day, int teamSize, String coordinators,String color) {
+                 String venue, int day, int teamSize, String coordinators, int flagship, String color) {
         this.eventId = eventId;
         this.title = title;
         this.description = description;
@@ -39,6 +40,7 @@ public class Event {
         this.coordinators = coordinators;
         this.duration=duration;
         this.color=color;
+        this.flagship = flagship;
     }
 
     public int getEventId() {
@@ -78,4 +80,27 @@ public class Event {
     public String getColor() { return color; }
 
     public int getImage() { return R.drawable.cosmos; }
+
+    public int getFlagship() {
+        return flagship;
+    }
+
+    public void setFlagship(int flagship) {
+        this.flagship = flagship;
+    }
+
+    @Override
+    public String toString() {
+        return "Event{" +
+                "eventId=" + eventId +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", status='" + status + '\'' +
+                ", time='" + time + '\'' +
+                ", venue='" + venue + '\'' +
+                ", day=" + day +
+                ", teamSize=" + teamSize +
+                ", coordinators='" + coordinators + '\'' +
+                '}';
+    }
 }

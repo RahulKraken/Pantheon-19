@@ -17,9 +17,11 @@ public class EventDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         sharedPrefThemes=new SharedPrefThemes(this);
         if(sharedPrefThemes.loadNightModeState()) setTheme(R.style.AppTheme);
         else setTheme(R.style.LightTheme);
+
         setContentView(R.layout.activity_event_detail);
 
         // add app bar

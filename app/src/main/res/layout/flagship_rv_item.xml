@@ -76,7 +76,7 @@
                 android:id="@+id/flagship_card_view_btn"
                 android:text="@string/flagship_cad_view_btn_label"
                 style="@style/montserrat_semi_bold_14"
-                android:textColor="?attr/textColor"
+                android:textColor="@color/flagship_card_view_btn_text_color"
                 android:background="@drawable/flagship_card_view_button_selector"
                 android:layout_marginTop="34dp"
                 android:layout_marginBottom="16dp"

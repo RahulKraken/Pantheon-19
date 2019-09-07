@@ -10,13 +10,13 @@ import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Switch;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import com.kraken.pantheon19.Entities.SharedPrefThemes;
 import com.kraken.pantheon19.R;
 
 public class HomepageActivity extends AppCompatActivity implements View.OnClickListener {
-
     private static final String TAG = "HomepageActivity";
     SharedPrefThemes sharedPrefThemes;
 
@@ -44,6 +44,7 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
         ImageButton youtubeBtn = findViewById(R.id.youtube);
         ImageView share=findViewById(R.id.share_button);
 
+        // set onclick listener
         infoBtn.setOnClickListener(this);
         flagshipBtn.setOnClickListener(this);
         eventsBtn.setOnClickListener(this);
@@ -54,6 +55,7 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
         instagramBtn.setOnClickListener(this);
         webBtn.setOnClickListener(this);
         youtubeBtn.setOnClickListener(this);
+      
         share.setOnClickListener(this);
 
         Switch theme=findViewById(R.id.theme_button);

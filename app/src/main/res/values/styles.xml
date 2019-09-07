@@ -80,5 +80,49 @@
         <item name="android:textSize">16sp</item>
         <!--add color according to situation-->
     </style>
+    
+    <!--=================================== font styles ================================-->
+
+    <style name="montserrat_medium_20">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/md_white_1000</item>
+    </style>
+
+    <style name="montserrat_light_12">
+        <item name="android:fontFamily">@font/montserrat_light</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/md_white_1000</item>
+    </style>
+
+    <style name="montserrat_regular_12">
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/md_white_1000</item>
+    </style>
+
+    <style name="montserrat_semi_bold_22">
+        <item name="android:fontFamily">@font/montserrat_semibold</item>
+        <item name="android:textSize">22sp</item>
+        <!--add color according to situation-->
+    </style>
+
+    <style name="montserrat_semi_bold_14">
+        <item name="android:fontFamily">@font/montserrat_semibold</item>
+        <item name="android:textSize">14sp</item>
+        <!--add color according to situation-->
+    </style>
+
+    <style name="montserrat_semi_bold_16">
+        <item name="android:fontFamily">@font/montserrat_semibold</item>
+        <item name="android:textSize">16sp</item>
+        <!--add color according to situation-->
+    </style>
+
+    <style name="montserrat_medium_16">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">16sp</item>
+        <!--add color according to situation-->
+    </style>
 
 </resources>

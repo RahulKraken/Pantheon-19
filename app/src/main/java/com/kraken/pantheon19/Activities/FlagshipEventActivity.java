@@ -5,6 +5,11 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,66 +19,63 @@ import com.kraken.pantheon19.Adapters.FlagshipRecyclerViewAdapter;
 import com.kraken.pantheon19.Entities.Event;
 import com.kraken.pantheon19.Entities.SharedPrefThemes;
 import com.kraken.pantheon19.R;
+import com.kraken.pantheon19.Repositories.EventRepository;
+import com.kraken.pantheon19.ViewModels.FlagshipActivityViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class FlagshipEventActivity extends AppCompatActivity {
-
     SharedPrefThemes sharedPrefThemes;
     private static final String TAG = "FlagshipEventActivity";
+
     private RecyclerView recyclerView;
-    private List<Event> events;
+    private FlagshipActivityViewModel flagshipActivityViewModel;
+    private FlagshipRecyclerViewAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         sharedPrefThemes=new SharedPrefThemes(this);
         if(sharedPrefThemes.loadNightModeState()) setTheme(R.style.AppTheme);
         else setTheme(R.style.LightTheme);
         setContentView(R.layout.activity_flagship_event);
 
         // TODO : app bar
-        Toolbar toolbar = findViewById(R.id.app_bar);
+        Toolbar toolbar = findViewById(R.id.flagship_page_toolbar);
         setSupportActionBar(toolbar);
 
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle(getResources().getString(R.string.flagship_btn_desc));
+            getSupportActionBar().setTitle(getResources().getString(R.string.flagship_activity_title));
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
+      
+        // setup view model
+        flagshipActivityViewModel = ViewModelProviders.of(this).get(FlagshipActivityViewModel.class);
+
+        // observe event list now
+        flagshipActivityViewModel.getEventList().observe(this, new Observer<List<Event>>() {
+            @Override
+            public void onChanged(List<Event> events) {
+                Log.d(TAG, "onChanged: data changed");
+                adapter.setEventList(events);
+
+                for (Event e : events) {
+                    Log.d(TAG, "onChanged: " + e);
+                }
+            }
+        });
 
         recyclerView = findViewById(R.id.flagship_recycler_view);
 
-        setupEventList();
         setupRecyclerView();
-    }
-
-    /*
-    create list of events
-    TODO : replace with repository call
-     */
-    private void setupEventList() {
-        events = new ArrayList<>();
-        events.add(new Event(85, "madarchod", "bhosdika", "lauda", "gandu","10",
-                "betichod", 2, 4, "bhosdiwala",""));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
-                "kldsj", 2, 4, "lkfsjdflks",""));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
-                "kldsj", 2, 4, "lkfsjdflks",""));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
-                "kldsj", 2, 4, "lkfsjdflks",""));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
-                "kldsj", 2, 4, "lkfsjdflks",""));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
-                "kldsj", 2, 4, "lkfsjdflks",""));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
-                "kldsj", 2, 4, "lkfsjdflks",""));
     }
 
     private void setupRecyclerView() {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
-        FlagshipRecyclerViewAdapter adapter = new FlagshipRecyclerViewAdapter(this, events);
+        adapter = new FlagshipRecyclerViewAdapter(this);
 
         // set on recycler view
         Log.d(TAG, "setupRecyclerView: inflating recycler view");
