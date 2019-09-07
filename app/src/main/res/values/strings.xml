@@ -20,8 +20,4 @@
     <string name="demo_point">100pt</string>
     <string name="desc_sample_text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore</string>
     <string name="contact_label">Contact</string>
-
-    <string name="version_1_0_0">Version 1.0.0</string>
-    <string name="lh_1">LH - 1</string>
-
 </resources>

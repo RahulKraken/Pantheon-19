@@ -17,7 +17,6 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:layout_width="match_parent"
-        android:background="?attr/backgroundColor"
         android:layout_height="match_parent">
 
         <ImageView
@@ -76,7 +75,6 @@
                     android:id="@+id/tv_score_one"
                     android:text="@string/demo_point"
                     style="@style/montserrat_regular_12"
-                    android:textColor="?attr/textColor"
                     android:gravity="center"
                     android:layout_weight="1"
                     android:layout_width="0dp"
@@ -87,7 +85,6 @@
                     android:text="@string/demo_point"
                     style="@style/montserrat_regular_12"
                     android:gravity="center"
-                    android:textColor="?attr/textColor"
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent" />
@@ -97,7 +94,6 @@
                     android:text="@string/demo_point"
                     style="@style/montserrat_regular_12"
                     android:gravity="center"
-                    android:textColor="?attr/textColor"
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent" />
@@ -107,7 +103,7 @@
 
         <TextView
             android:id="@+id/tv_venue"
-            android:text="@string/lh_1"
+            android:text="LH - 1"
             style="@style/montserrat_semi_bold_16"
             android:textColor="@color/md_yellow_500"
             android:layout_marginStart="32dp"
@@ -132,7 +128,6 @@
             android:text="@string/desc_sample_text"
             style="@style/montserrat_light_12"
             android:layout_margin="16dp"
-            android:textColor="?attr/textColor"
             app:layout_constraintTop_toBottomOf="@id/tv_venue"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

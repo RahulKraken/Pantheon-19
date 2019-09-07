@@ -20,7 +20,7 @@ public class SplashScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-        lottieAnimationView = findViewById(R.id.pantheon_splash_animation);
+        lottieAnimationView = findViewById(R.id.walking_animation);
 
         // ============ EXPERIMENT =============
 
@@ -48,8 +48,12 @@ public class SplashScreenActivity extends AppCompatActivity {
                 lottieAnimationView.setProgress((Float)animation.getAnimatedValue());
             }
         });
-        if(lottieAnimationView.getProgress() == 0f) animator.start();
-        else lottieAnimationView.setProgress(0f);
+
+        if(lottieAnimationView.getProgress() == 0f) {
+            animator.start();
+        } else {
+            lottieAnimationView.setProgress(0f);
+        }
     }
 }
 
