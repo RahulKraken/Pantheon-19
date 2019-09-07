@@ -1,53 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="?attr/backgroundColor"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.EventDetailActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#f5f5f5">
 
-    <include
-        layout="@layout/app_bar"
-        android:layout_gravity="top"
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:id="@+id/appbar">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:layout_width="match_parent"
-        android:background="?attr/backgroundColor"
-        android:layout_height="match_parent">
-
-        <RelativeLayout
+        <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="?attr/backgroundColor">
+            android:layout_height="?attr/actionBarSize"
+            android:background="#fff"
+            android:id="@+id/events_toolbar"
+            app:layout_scrollFlags="scroll|enterAlways">
 
-            <com.google.android.material.appbar.AppBarLayout
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="?attr/backgroundColor"
-                android:id="@+id/appbar">
+                android:layout_marginEnd="16dp"
+                android:textSize="20sp"
+                android:text="EVENTS"
+                android:textColor="#000"
+                android:gravity="center_horizontal"/>
 
-                <com.google.android.material.tabs.TabLayout
-                    android:id="@+id/tab_layout"
-                    app:tabTextColor="?attr/textColor"
-                    android:background="?attr/backgroundColor"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+        </androidx.appcompat.widget.Toolbar>
 
-                <androidx.viewpager.widget.ViewPager
-                    android:id="@+id/pager"
-                    android:background="?attr/backgroundColor"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            app:tabTextColor="#000"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
-            </com.google.android.material.appbar.AppBarLayout>
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
-        </RelativeLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</RelativeLayout>

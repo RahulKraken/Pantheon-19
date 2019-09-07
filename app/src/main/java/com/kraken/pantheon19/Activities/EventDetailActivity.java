@@ -6,22 +6,14 @@ import androidx.appcompat.widget.Toolbar;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.kraken.pantheon19.Entities.SharedPrefThemes;
 import com.kraken.pantheon19.R;
 
 public class EventDetailActivity extends AppCompatActivity {
-
     private static final String TAG = "EventDetailActivity";
-    SharedPrefThemes sharedPrefThemes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        sharedPrefThemes=new SharedPrefThemes(this);
-        if(sharedPrefThemes.loadNightModeState()) setTheme(R.style.AppTheme);
-        else setTheme(R.style.LightTheme);
-
         setContentView(R.layout.activity_event_detail);
 
         // add app bar

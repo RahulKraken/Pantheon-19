@@ -5,11 +5,9 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
-
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,7 +15,6 @@ import androidx.recyclerview.widget.SnapHelper;
 
 import com.kraken.pantheon19.Adapters.FlagshipRecyclerViewAdapter;
 import com.kraken.pantheon19.Entities.Event;
-import com.kraken.pantheon19.Entities.SharedPrefThemes;
 import com.kraken.pantheon19.R;
 import com.kraken.pantheon19.Repositories.EventRepository;
 import com.kraken.pantheon19.ViewModels.FlagshipActivityViewModel;
@@ -26,7 +23,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FlagshipEventActivity extends AppCompatActivity {
-    SharedPrefThemes sharedPrefThemes;
     private static final String TAG = "FlagshipEventActivity";
 
     private RecyclerView recyclerView;
@@ -36,10 +32,6 @@ public class FlagshipEventActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        sharedPrefThemes=new SharedPrefThemes(this);
-        if(sharedPrefThemes.loadNightModeState()) setTheme(R.style.AppTheme);
-        else setTheme(R.style.LightTheme);
         setContentView(R.layout.activity_flagship_event);
 
         // TODO : app bar
@@ -51,7 +43,7 @@ public class FlagshipEventActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
-      
+
         // setup view model
         flagshipActivityViewModel = ViewModelProviders.of(this).get(FlagshipActivityViewModel.class);
 

@@ -48,6 +48,7 @@ public class FlagshipRecyclerViewAdapter extends RecyclerView.Adapter<FlagshipRe
         holder.venue.setText(eventList.get(position).getVenue());
         holder.time.setText(eventList.get(position).getTime());
 
+        // TODO : replace with actual image
         holder.img.setImageResource(R.mipmap.ic_launcher);
     }
 
