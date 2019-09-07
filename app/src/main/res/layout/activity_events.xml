@@ -1,36 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#f5f5f5">
+    android:background="@color/activity_background">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/appbar">
 
-        <androidx.appcompat.widget.Toolbar
+        <include
+            layout="@layout/app_bar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="#fff"
-            android:id="@+id/events_toolbar"
-            app:layout_scrollFlags="scroll|enterAlways">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:textSize="20sp"
-                android:text="EVENTS"
-                android:textColor="#000"
-                android:gravity="center_horizontal"/>
-
-        </androidx.appcompat.widget.Toolbar>
+            android:layout_height="wrap_content" />
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_layout"
-            app:tabTextColor="#000"
+            android:background="@color/activity_background"
+            app:tabTextColor="@color/md_white_1000"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

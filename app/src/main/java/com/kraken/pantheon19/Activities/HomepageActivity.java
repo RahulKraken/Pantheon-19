@@ -55,7 +55,7 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
                 startActivity(new Intent(this, FlagshipEventActivity.class));
                 break;
             case R.id.event_list_button:
-                Log.d(TAG, "onClick: event list btn");
+                startActivity(new Intent(this, EventsActivity.class));
                 break;
             case R.id.guest_speaker_btn:
                 Log.d(TAG, "onClick: guest speaker btn");

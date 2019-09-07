@@ -8,6 +8,9 @@
     <color name="colorPrimaryDark">#3b5998</color>
     <color name="colorAccent">#D81B60</color>
 
+    <!-- global use -->
+    <color name="activity_background">#121212</color>
+
     <!--flag ship card view button colors-->
     <item name="btn_default" type="color">#EAF9F8</item>
     <item name="btn_pressed" type="color">#99DCD8</item>

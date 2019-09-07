@@ -16,7 +16,6 @@
         android:layout_width="match_parent"
         android:layout_height="292dp">
 
-        <!--TODO: image not visible-->
         <ImageView
             android:id="@+id/pantheon_title_img"
             android:src="@drawable/pantheon_19_white"

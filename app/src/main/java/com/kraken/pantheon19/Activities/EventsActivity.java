@@ -19,12 +19,27 @@ public class EventsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events);
-        Toolbar toolbar=findViewById(R.id.events_toolbar);
-        TabLayout tabLayout=findViewById(R.id.tab_layout);
-        ViewPager viewPager=findViewById(R.id.pager);
-        if (toolbar != null) setSupportActionBar(toolbar);
+
+        Toolbar toolbar = findViewById(R.id.app_bar);
+        TabLayout tabLayout = findViewById(R.id.tab_layout);
+        ViewPager viewPager = findViewById(R.id.pager);
+
+        setSupportActionBar(toolbar);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle("EVENTS");
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+
         viewPager.setAdapter(new SectionPagerAdapter(getSupportFragmentManager()));
         tabLayout.setupWithViewPager(viewPager);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
     }
 
     public class SectionPagerAdapter extends FragmentPagerAdapter {

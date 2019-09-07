@@ -18,7 +18,9 @@
             android:name=".Activities.FlagshipEventActivity"
             android:launchMode="singleTop"
             android:parentActivityName=".Activities.HomepageActivity" />
-        <activity android:name=".Activities.EventsActivity" />
+        <activity android:name=".Activities.EventsActivity"
+            android:launchMode="singleTop"
+            android:parentActivityName=".Activities.HomepageActivity"/>
         <activity android:name=".Activities.HomepageActivity" />
         <activity android:name=".Activities.SplashScreenActivity">
             <intent-filter>
