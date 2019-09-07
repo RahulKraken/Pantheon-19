@@ -8,11 +8,77 @@
         <!--<item name="colorAccent">@color/colorAccent</item>-->
     <!--</style>-->
 
+    <!--dark theme-->
     <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">#fff</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="backgroundColor">#000</item>
+        <item name="buttonColor">#1a1a1a</item>
+        <item name="textColor">#fff</item>
+        <item name="colorControlNormal">#fff</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
+    </style>
+
+    <!--light theme-->
+    <style name="LightTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">#fff</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="backgroundColor">#fff</item>
+        <item name="buttonColor">@color/md_grey_300</item>
+        <item name="textColor">#000</item>
+        <item name="colorControlNormal">#000</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
+    </style>
+
+    <style name="WindowAnimationTransition">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:animator/fade_out</item>
+    </style>
+    
+    <!--=================================== font styles ================================-->
+
+    <style name="montserrat_medium_20">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/md_white_1000</item>
+    </style>
+
+    <style name="montserrat_light_12">
+        <item name="android:fontFamily">@font/montserrat_light</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/md_white_1000</item>
+    </style>
+
+    <style name="montserrat_regular_12">
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/md_white_1000</item>
+    </style>
+
+    <style name="montserrat_semi_bold_22">
+        <item name="android:fontFamily">@font/montserrat_semibold</item>
+        <item name="android:textSize">22sp</item>
+        <!--add color according to situation-->
+    </style>
+
+    <style name="montserrat_semi_bold_14">
+        <item name="android:fontFamily">@font/montserrat_semibold</item>
+        <item name="android:textSize">14sp</item>
+        <!--add color according to situation-->
+    </style>
+
+    <style name="montserrat_semi_bold_16">
+        <item name="android:fontFamily">@font/montserrat_semibold</item>
+        <item name="android:textSize">16sp</item>
+        <!--add color according to situation-->
+    </style>
+
+    <style name="montserrat_medium_16">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">16sp</item>
+        <!--add color according to situation-->
     </style>
     
     <!--=================================== font styles ================================-->

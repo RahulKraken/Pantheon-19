@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/background_color"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.EventDetailActivity">
+
+    <include
+        layout="@layout/app_bar"
+        android:layout_gravity="top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_width="match_parent"
+        android:background="?attr/backgroundColor"
+        android:layout_height="match_parent">
+
+
+        <com.sothree.slidinguppanel.SlidingUpPanelLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".Activities.AboutUsActivity"
+            android:gravity="bottom"
+            app:umanoFadeColor="@android:color/transparent"
+            app:umanoPanelHeight="300dp"
+            app:umanoShadowHeight="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:src="@drawable/pantheon_19_white"
+                    android:background="#000"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                </ImageView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ABOUT US"
+                    android:textColor="?attr/textColor"
+                    android:layout_centerInParent="true">
+                </TextView>
+
+            </RelativeLayout>
+
+        </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

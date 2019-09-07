@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="8dp"
+    android:background="?attr/buttonColor"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:layout_width="140dp"
+        android:src="@drawable/amit_god"
+        android:scaleType="centerCrop"
+        android:layout_height="168dp"
+        android:layout_margin="12dp"
+        android:layout_gravity="center_vertical"
+        android:background="#fff"
+        android:id="@+id/circleView">
+
+    </ImageView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="6dp">
+
+        <TextView
+            android:id="@+id/speaker_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/textColor"
+            android:textStyle="bold"
+            android:layout_marginStart="12dp"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="100dp"
+            android:id="@+id/underline"
+            android:layout_height="6dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/speaker_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="16dp"
+            android:textColor="?attr/textColor"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/speakers_venue"
+            android:textStyle="bold"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="30dp"
+            android:textColor="?attr/textColor"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/speakers_start_time"
+            android:textStyle="bold"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="20dp"
+            android:textColor="?attr/textColor"
+            android:textSize="12sp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:tint="?attr/textColor"
+                android:background="@android:color/transparent"
+                android:layout_marginStart="12sp"
+                android:layout_marginEnd="30dp"
+                android:src="@drawable/facebook" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="30dp"
+                android:layout_weight="1"
+                android:tint="?attr/textColor"
+                android:background="@android:color/transparent"
+                android:src="@drawable/instagram" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:tint="?attr/textColor"
+                android:background="@android:color/transparent"
+                android:src="@drawable/youtube"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
