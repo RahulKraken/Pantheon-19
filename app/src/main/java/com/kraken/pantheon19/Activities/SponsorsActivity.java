@@ -84,9 +84,5 @@ public class SponsorsActivity extends AppCompatActivity {
         Log.d(TAG, "setupRecyclerView: inflating speakers recycler view");
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
-
-        // snap behavior for recycler view
-        SnapHelper snapHelper = new PagerSnapHelper();
-        snapHelper.attachToRecyclerView(recyclerView);
     }
 }

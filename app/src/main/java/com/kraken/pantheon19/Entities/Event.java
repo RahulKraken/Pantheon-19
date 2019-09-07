@@ -77,6 +77,5 @@ public class Event {
 
     public String getColor() { return color; }
 
-    public int getImage() { return R.drawable.cosmos;
-    }
+    public int getImage() { return R.drawable.cosmos; }
 }

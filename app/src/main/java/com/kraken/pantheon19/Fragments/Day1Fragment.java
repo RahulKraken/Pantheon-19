@@ -75,9 +75,5 @@ public class Day1Fragment extends Fragment {
         Log.d(TAG, "setupRecyclerView: inflating events recycler view");
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(adapter);
-
-        // snap behavior for recycler view
-        SnapHelper snapHelper = new PagerSnapHelper();
-        snapHelper.attachToRecyclerView(recyclerView);
     }
 }

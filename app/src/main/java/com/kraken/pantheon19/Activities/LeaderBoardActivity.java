@@ -61,11 +61,14 @@ public class LeaderBoardActivity extends AppCompatActivity {
     private void setupTeamList() {
         teams = new ArrayList<>();
         teams.add(new Team(85, "amit", "10", "20"));
-        teams.add(new Team(85, "madarchod", "10", "20"));
-        teams.add(new Team(85, "madarchod", "10", "20"));
-        teams.add(new Team(85, "madarchod",  "10", "20"));
-        teams.add(new Team(85, "madarchod",  "10", "20"));
-        teams.add(new Team(85, "madarchod", "10", "20"));
+        teams.add(new Team(85, "1madarchod", "10", "20"));
+        teams.add(new Team(85, "2madarchod", "10", "20"));
+        teams.add(new Team(85, "3madarchod",  "10", "20"));
+        teams.add(new Team(85, "4madarchod",  "10", "20"));
+        teams.add(new Team(85, "5madarchod", "10", "20"));
+        teams.add(new Team(85, "6madarchod", "10", "20"));
+        teams.add(new Team(85, "7madarchod", "10", "20"));
+        teams.add(new Team(85, "8madarchod", "10", "20"));
     }
 
     private void setupRecyclerView() {
@@ -76,9 +79,5 @@ public class LeaderBoardActivity extends AppCompatActivity {
         Log.d(TAG, "setupRecyclerView: inflating recycler view");
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
-
-        // snap behavior for recycler view
-        SnapHelper snapHelper = new PagerSnapHelper();
-        snapHelper.attachToRecyclerView(recyclerView);
     }
 }
