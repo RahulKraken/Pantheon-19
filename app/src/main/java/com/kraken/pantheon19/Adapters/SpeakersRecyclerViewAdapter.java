@@ -14,7 +14,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.kraken.pantheon19.Entities.Event;
+import com.kraken.pantheon19.Entities.Speaker;
 import com.kraken.pantheon19.R;
 
 import java.util.List;
@@ -23,11 +23,11 @@ public class SpeakersRecyclerViewAdapter extends RecyclerView.Adapter<SpeakersRe
     private static final String TAG = "SpeakerRecyclerViewAda";
 
     private Context context;
-    private List<Event> eventList;
+    private List<Speaker> speakersList;
 
-    public SpeakersRecyclerViewAdapter(Context context, List<Event> eventList) {
+    public SpeakersRecyclerViewAdapter(Context context, List<Speaker> speakersList) {
         this.context = context;
-        this.eventList = eventList;
+        this.speakersList = speakersList;
     }
 
     @NonNull
@@ -40,20 +40,20 @@ public class SpeakersRecyclerViewAdapter extends RecyclerView.Adapter<SpeakersRe
     @Override
     public void onBindViewHolder(@NonNull SpeakersRecyclerViewHolder holder, int position) {
         Log.d(TAG, "onBindViewHolder: binding values to views");
-        holder.name.setText(eventList.get(position).getTitle());
-        holder.venue.setText(eventList.get(position).getVenue());
-        holder.stime.setText(eventList.get(position).getTime());
-        holder.des.setText(eventList.get(position).getDescription());
-//        holder.view.setBackgroundColor(Color.parseColor(eventList.get(position).getColor()));
+        holder.name.setText(speakersList.get(position).getName());
+        holder.venue.setText(speakersList.get(position).getVenue());
+        holder.stime.setText(speakersList.get(position).getTime());
+        holder.des.setText(speakersList.get(position).getDetail());
+//        holder.view.setBackgroundColor(Color.parseColor(speakersList.get(position).getColor()));
         // TODO : replace with actual image
         holder.img.setImageResource(R.mipmap.ic_launcher);
         //holder.img.setImageBitmap(ImageNicer.decodeSampledBitmapFromResource(context.getResources(),
-        // eventList.get(position).getImage(),100,100));
+        // speakersList.get(position).getImage(),100,100));
     }
 
     @Override
     public int getItemCount() {
-        return eventList.size();
+        return speakersList.size();
     }
 
     class SpeakersRecyclerViewHolder extends RecyclerView.ViewHolder {

@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.kraken.pantheon19.Adapters.SpeakersRecyclerViewAdapter;
 import com.kraken.pantheon19.Entities.Event;
+import com.kraken.pantheon19.Entities.Speaker;
 import com.kraken.pantheon19.R;
 
 import java.util.ArrayList;
@@ -19,7 +20,7 @@ import java.util.Random;
 public class SpeakersListActivity extends AppCompatActivity {
     private static final String TAG = "SpeakersEventActivity";
     private RecyclerView recyclerView;
-    private List<Event> events;
+    private List<Speaker> speakers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,32 +51,22 @@ public class SpeakersListActivity extends AppCompatActivity {
     }
 
     /*
-    create list of events
+    create list of speakers
     TODO : replace with repository call
      */
     private void setupEventList() {
-        events = new ArrayList<>();
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "10",
-                "kldsj", 2, 4, "lkfsjdflks", 0));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
-                2, 4, "kfakdjal", 0));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
-                2, 4, "kfakdjal", 0));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
-                2, 4, "kfakdjal", 0));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
-                2, 4, "kfakdjal", 0));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
-                2, 4, "kfakdjal", 0));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
-                2, 4, "kfakdjal", 0));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
-                2, 4, "kfakdjal", 0));
+        speakers = new ArrayList<>();
+        speakers.add(new Speaker("Rahul", "Cloud computing and distributed systems expoer", "13:00", "CAT Hall", "fb.com/rahulkraken", "linkedin.com/rahulkraken", "twitter.com/rahulkraken", R.drawable.guest_lecture));
+        speakers.add(new Speaker("Rahul", "Cloud computing and distributed systems expoer", "13:00", "CAT Hall", "fb.com/rahulkraken", "linkedin.com/rahulkraken", "twitter.com/rahulkraken", R.drawable.guest_lecture));
+        speakers.add(new Speaker("Rahul", "Cloud computing and distributed systems expoer", "13:00", "CAT Hall", "fb.com/rahulkraken", "linkedin.com/rahulkraken", "twitter.com/rahulkraken", R.drawable.guest_lecture));
+        speakers.add(new Speaker("Rahul", "Cloud computing and distributed systems expoer", "13:00", "CAT Hall", "fb.com/rahulkraken", "linkedin.com/rahulkraken", "twitter.com/rahulkraken", R.drawable.guest_lecture));
+        speakers.add(new Speaker("Rahul", "Cloud computing and distributed systems expoer", "13:00", "CAT Hall", "fb.com/rahulkraken", "linkedin.com/rahulkraken", "twitter.com/rahulkraken", R.drawable.guest_lecture));
+        speakers.add(new Speaker("Rahul", "Cloud computing and distributed systems expoer", "13:00", "CAT Hall", "fb.com/rahulkraken", "linkedin.com/rahulkraken", "twitter.com/rahulkraken", R.drawable.guest_lecture));
     }
 
     private void setupRecyclerView() {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
-        SpeakersRecyclerViewAdapter adapter = new SpeakersRecyclerViewAdapter(this, events);
+        SpeakersRecyclerViewAdapter adapter = new SpeakersRecyclerViewAdapter(this, speakers);
 
         // set on recycler view
         Log.d(TAG, "setupRecyclerView: inflating speakers recycler view");
