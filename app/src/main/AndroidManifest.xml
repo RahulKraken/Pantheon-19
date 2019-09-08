@@ -14,6 +14,20 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Activities.EventDetailActivity"
             android:launchMode="singleTop"/>
+        <activity android:name=".Activities.SpeakersActivity"
+            android:launchMode="singleTop"
+            android:parentActivityName=".Activities.HomepageActivity"/>
+        <activity android:name=".Activities.AboutUsActivity"
+            android:launchMode="singleTop"
+            android:parentActivityName=".Activities.HomepageActivity"/>
+        <activity android:name=".Activities.LeaderBoardActivity"
+            android:launchMode="singleTop"
+            android:parentActivityName=".Activities.LeaderBoardActivity"/>
+        <activity android:name=".Activities.SponsorsActivity"
+            android:launchMode="singleTop"
+            android:parentActivityName=".Activities.HomepageActivity"/>
+        <activity android:name=".Activities.EventDetailActivity"
+            android:launchMode="singleTop"/>
         <activity
             android:name=".Activities.FlagshipEventActivity"
             android:launchMode="singleTop"

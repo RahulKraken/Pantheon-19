@@ -19,19 +19,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.kraken.pantheon19.Activities.EventDetailActivity;
 import com.kraken.pantheon19.Activities.FlagshipEventActivity;
 import com.kraken.pantheon19.Entities.Event;
+import com.kraken.pantheon19.Entities.ImageNicer;
 import com.kraken.pantheon19.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class FlagshipRecyclerViewAdapter extends RecyclerView.Adapter<FlagshipRecyclerViewAdapter.FlagshipRecyclerViewHolder> {
     private static final String TAG = "FlagshipRecyclerViewAda";
 
     private Context context;
-    private List<Event> eventList = new ArrayList<>();
+    private List<Event> eventList;
 
-    public FlagshipRecyclerViewAdapter(Context context) {
+    public FlagshipRecyclerViewAdapter(Context context, List<Event> eventList) {
         this.context = context;
+        this.eventList = eventList;
     }
 
     @NonNull
@@ -49,17 +50,14 @@ public class FlagshipRecyclerViewAdapter extends RecyclerView.Adapter<FlagshipRe
         holder.time.setText(eventList.get(position).getTime());
 
         // TODO : replace with actual image
-        holder.img.setImageResource(R.mipmap.ic_launcher);
+        //holder.img.setImageResource(R.mipmap.ic_launcher);
+        holder.img.setImageBitmap(ImageNicer.decodeSampledBitmapFromResource(context.getResources(),
+                eventList.get(position).getImage(),100,100));
     }
 
     @Override
     public int getItemCount() {
         return eventList.size();
-    }
-
-    public void setEventList(List<Event> eventList) {
-        this.eventList = eventList;
-        notifyDataSetChanged();
     }
 
     class FlagshipRecyclerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {

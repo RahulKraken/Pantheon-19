@@ -4,6 +4,8 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import com.kraken.pantheon19.R;
+
 @Entity(tableName = "event_table")
 public class Event {
 
@@ -15,16 +17,17 @@ public class Event {
     private String description;
     private String status;
     private String time;
+    private String duration;
     private String venue;
     private int day;
+    private String color;
 
     @ColumnInfo(name = "team_size")
     private int teamSize;
-
     private String coordinators;
-    private int flagship;
 
-    public Event(int eventId, String title, String description, String status, String time, String venue, int day, int teamSize, String coordinators, int flagship) {
+    public Event(int eventId, String title, String description, String status, String time,String duration,
+                 String venue, int day, int teamSize, String coordinators,String color) {
         this.eventId = eventId;
         this.title = title;
         this.description = description;
@@ -34,16 +37,15 @@ public class Event {
         this.day = day;
         this.teamSize = teamSize;
         this.coordinators = coordinators;
-        this.flagship = flagship;
+        this.duration=duration;
+        this.color=color;
     }
 
     public int getEventId() {
         return eventId;
     }
 
-    public String getTitle() {
-        return title;
-    }
+    public String getTitle() { return title; }
 
     public String getDescription() {
         return description;
@@ -57,9 +59,7 @@ public class Event {
         return time;
     }
 
-    public String getVenue() {
-        return venue;
-    }
+    public String getVenue() { return venue; }
 
     public int getDay() {
         return day;
@@ -73,26 +73,9 @@ public class Event {
         return coordinators;
     }
 
-    public int getFlagship() {
-        return flagship;
-    }
+    public String getDuration(){return  duration;}
 
-    public void setFlagship(int flagship) {
-        this.flagship = flagship;
-    }
+    public String getColor() { return color; }
 
-    @Override
-    public String toString() {
-        return "Event{" +
-                "eventId=" + eventId +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", status='" + status + '\'' +
-                ", time='" + time + '\'' +
-                ", venue='" + venue + '\'' +
-                ", day=" + day +
-                ", teamSize=" + teamSize +
-                ", coordinators='" + coordinators + '\'' +
-                '}';
-    }
+    public int getImage() { return R.drawable.ic_launcher_background; }
 }
