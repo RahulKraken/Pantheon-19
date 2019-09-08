@@ -33,7 +33,7 @@ public class EventRepository {
 
 //        event = eventDao.getEvent(1);
         allEvents = eventDao.getAllEvents();
-        allFlagshipEvents = eventDao.getFlagshipEvents();
+        //allFlagshipEvents = eventDao.getFlagshipEvents();
     }
 
     // eventDao methods

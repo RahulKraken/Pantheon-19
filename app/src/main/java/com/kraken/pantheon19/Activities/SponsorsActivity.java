@@ -42,7 +42,7 @@ public class SponsorsActivity extends AppCompatActivity {
         setupEventList();
         setupRecyclerView();
     }
-
+  
     @Override
     public boolean onSupportNavigateUp() {
         Log.d(TAG, "onSupportNavigateUp: back pressed");

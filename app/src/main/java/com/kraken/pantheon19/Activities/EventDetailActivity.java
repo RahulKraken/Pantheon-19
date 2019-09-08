@@ -9,6 +9,7 @@ import android.util.Log;
 import com.kraken.pantheon19.R;
 
 public class EventDetailActivity extends AppCompatActivity {
+
     private static final String TAG = "EventDetailActivity";
 
     @Override
