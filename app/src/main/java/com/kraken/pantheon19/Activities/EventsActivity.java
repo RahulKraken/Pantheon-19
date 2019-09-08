@@ -1,6 +1,7 @@
 package com.kraken.pantheon19.Activities;
 
-import android.os.Bundle;;
+import android.os.Bundle;
+import android.util.Log;;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
@@ -19,25 +20,21 @@ public class EventsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events);
-
         Toolbar toolbar = findViewById(R.id.app_bar);
-        TabLayout tabLayout = findViewById(R.id.tab_layout);
-        ViewPager viewPager = findViewById(R.id.pager);
-
         setSupportActionBar(toolbar);
-
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle("EVENTS");
+            getSupportActionBar().setTitle("Events");
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
-
+        TabLayout tabLayout=findViewById(R.id.tab_layout);
+        ViewPager viewPager=findViewById(R.id.pager);
         viewPager.setAdapter(new SectionPagerAdapter(getSupportFragmentManager()));
         tabLayout.setupWithViewPager(viewPager);
     }
-
     @Override
     public boolean onSupportNavigateUp() {
+        Log.d("upupdowndown", "onSupportNavigateUp: back pressed");
         finish();
         return true;
     }
