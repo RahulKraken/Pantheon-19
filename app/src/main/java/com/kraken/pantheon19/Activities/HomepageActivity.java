@@ -58,7 +58,7 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
                 startActivity(new Intent(this, EventsActivity.class));
                 break;
             case R.id.guest_speaker_btn:
-                startActivity(new Intent(this, SpeakersList.class));
+                startActivity(new Intent(this, SpeakersListActivity.class));
                 break;
             case R.id.leaderboard_btn:
                 startActivity(new Intent(this, LeaderboardActivity.class));
