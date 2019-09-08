@@ -48,7 +48,7 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.info_button:
-                Log.d(TAG, "onClick: info btn clicked");
+                startActivity(new Intent(this, AboutUsActivity.class));
                 break;
             case R.id.flagship_list_button:
                 Log.d(TAG, "onClick: flagship btn clicked");
@@ -58,13 +58,13 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
                 startActivity(new Intent(this, EventsActivity.class));
                 break;
             case R.id.guest_speaker_btn:
-                Log.d(TAG, "onClick: guest speaker btn");
+                startActivity(new Intent(this, SpeakersList.class));
                 break;
             case R.id.leaderboard_btn:
-                Log.d(TAG, "onClick: leader board btn");
+                startActivity(new Intent(this, LeaderboardActivity.class));
                 break;
             case R.id.sponsors_btn:
-                Log.d(TAG, "onClick: sponsors btn");
+                startActivity(new Intent(this, SponsorsActivity.class));
                 break;
             case R.id.facebook_btn:
                 Log.d(TAG, "onClick: facebook btn");

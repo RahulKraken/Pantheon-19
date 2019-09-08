@@ -17,7 +17,7 @@ import com.kraken.pantheon19.Entities.Winner;
 /**
  * Singleton class pattern
  */
-@Database(entities = {Event.class, Winner.class}, version = 1)
+@Database(entities = {Event.class, Winner.class}, version = 1, exportSchema = false)
 public abstract class EventDatabase extends RoomDatabase {
     private static final String TAG = "EventDatabase";
 

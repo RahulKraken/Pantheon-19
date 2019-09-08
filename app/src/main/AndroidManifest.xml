@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.kraken.pantheon19">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -12,15 +10,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.EventDetailActivity"
-            android:launchMode="singleTop"/>
+        <activity android:name=".Activities.AboutUsActivity"></activity>
+        <activity android:name=".Activities.LeaderboardActivity" />
+        <activity android:name=".Activities.SponsorsActivity" />
+        <activity android:name=".Activities.SpeakersList" />
+        <activity
+            android:name=".Activities.EventDetailActivity"
+            android:launchMode="singleTop" />
         <activity
             android:name=".Activities.FlagshipEventActivity"
             android:launchMode="singleTop"
             android:parentActivityName=".Activities.HomepageActivity" />
-        <activity android:name=".Activities.EventsActivity"
+        <activity
+            android:name=".Activities.EventsActivity"
             android:launchMode="singleTop"
-            android:parentActivityName=".Activities.HomepageActivity"/>
+            android:parentActivityName=".Activities.HomepageActivity" />
         <activity android:name=".Activities.HomepageActivity" />
         <activity android:name=".Activities.SplashScreenActivity">
             <intent-filter>
@@ -30,5 +34,7 @@
             </intent-filter>
         </activity>
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

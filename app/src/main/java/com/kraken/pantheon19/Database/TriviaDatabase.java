@@ -12,7 +12,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import com.kraken.pantheon19.Dao.TriviaDao;
 import com.kraken.pantheon19.Entities.Trivia;
 
-@Database(entities = {Trivia.class}, version = 1)
+@Database(entities = {Trivia.class}, version = 1, exportSchema = false)
 public abstract class TriviaDatabase extends RoomDatabase {
     private static final String TAG = "TriviaDatabase";
 
