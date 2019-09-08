@@ -57,21 +57,19 @@ public class SponsorsActivity extends AppCompatActivity {
     private void setupEventList() {
         events = new ArrayList<>();
         events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "10",
-                "kldsj", 2, 4, "lkfsjdflks", 0));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
-                2, 4, "kfakdjal", 0));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
-                2, 4, "kfakdjal", 0));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
-                2, 4, "kfakdjal", 0));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
-                2, 4, "kfakdjal", 0));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
-                2, 4, "kfakdjal", 0));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
-                2, 4, "kfakdjal", 0));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "ksdjfl","10",
-                2, 4, "kfakdjal", 0));
+                "kldsj", 2, 4, "lkfsjdflks", 0, "1 hr"));
+        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "10",
+                "kldsj", 2, 4, "lkfsjdflks", 0, "1 hr"));
+        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "10",
+                "kldsj", 2, 4, "lkfsjdflks", 0, "1 hr"));
+        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "10",
+                "kldsj", 2, 4, "lkfsjdflks", 0, "1 hr"));
+        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "10",
+                "kldsj", 2, 4, "lkfsjdflks", 0, "1 hr"));
+        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "10",
+                "kldsj", 2, 4, "lkfsjdflks", 0, "1 hr"));
+        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "10",
+                "kldsj", 2, 4, "lkfsjdflks", 0, "1 hr"));
     }
 
     private void setupRecyclerView() {

@@ -8,7 +8,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.airbnb.lottie.LottieAnimationView;
-import com.kraken.pantheon19.NetworkServices.CallAPI;
+import com.kraken.pantheon19.NetworkServices.ApiService;
 import com.kraken.pantheon19.R;
 
 public class SplashScreenActivity extends AppCompatActivity {
@@ -21,13 +21,6 @@ public class SplashScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
         lottieAnimationView = findViewById(R.id.walking_animation);
-
-        // ============ EXPERIMENT =============
-
-        CallAPI callAPI = new CallAPI();
-        callAPI.getEvents();
-
-        // =====================================
 
         startCheckAnimation();
         new Handler().postDelayed(new Runnable() {

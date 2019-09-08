@@ -8,9 +8,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
-import com.kraken.pantheon19.Fragments.Day1Fragment;
-import com.kraken.pantheon19.Fragments.Day2Fragment;
-import com.kraken.pantheon19.Fragments.Day3Fragment;
+import com.kraken.pantheon19.Fragments.DayOneFragment;
+import com.kraken.pantheon19.Fragments.DayTwoFragment;
+import com.kraken.pantheon19.Fragments.DayThreeFragment;
 import com.kraken.pantheon19.R;
 
 public class EventsActivity extends AppCompatActivity {
@@ -51,9 +51,9 @@ public class EventsActivity extends AppCompatActivity {
         @Override
         public Fragment getItem(int position) {
             switch (position) {
-                case 0: return new Day1Fragment();
-                case 1: return new Day2Fragment();
-                default: return new Day3Fragment();
+                case 0: return new DayOneFragment();
+                case 1: return new DayTwoFragment();
+                default: return new DayThreeFragment();
             }
         }
 

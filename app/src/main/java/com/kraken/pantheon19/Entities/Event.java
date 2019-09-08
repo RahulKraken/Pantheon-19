@@ -23,8 +23,9 @@ public class Event {
 
     private String coordinators;
     private int flagship;
+    private String duration;
 
-    public Event(int eventId, String title, String description, String status, String time, String venue, int day, int teamSize, String coordinators, int flagship) {
+    public Event(int eventId, String title, String description, String status, String time, String venue, int day, int teamSize, String coordinators, int flagship, String duration) {
         this.eventId = eventId;
         this.title = title;
         this.description = description;
@@ -35,6 +36,7 @@ public class Event {
         this.teamSize = teamSize;
         this.coordinators = coordinators;
         this.flagship = flagship;
+        this.duration = duration;
     }
 
     public int getEventId() {
@@ -79,6 +81,14 @@ public class Event {
 
     public void setFlagship(int flagship) {
         this.flagship = flagship;
+    }
+
+    public String getDuration() {
+        return duration;
+    }
+
+    public void setDuration(String duration) {
+        this.duration = duration;
     }
 
     @Override
