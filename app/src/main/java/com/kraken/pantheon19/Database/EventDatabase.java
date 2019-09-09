@@ -59,6 +59,22 @@ public abstract class EventDatabase extends RoomDatabase {
             eventDao.insert(new Event(1, "event1", "desc1", "complete", "10:00", "IC", 1,  4, "Rahul", 1, "2-3 hrs"));
             eventDao.insert(new Event(2, "event2", "desc2", "complete", "11:00", "IC", 1,  4, "Rahul", 1, "1-2 hrs"));
             eventDao.insert(new Event(3, "event3", "desc3", "complete", "13:00", "IC", 2,  4, "Rahul", 1, "30 mins"));
+            eventDao.insert(new Event(4, "event3", "desc3", "complete", "13:00", "IC", 2,  4, "Rahul", 1, "30 mins"));
+            eventDao.insert(new Event(5, "event3", "desc3", "complete", "13:00", "IC", 1,  4, "Rahul", 1, "30 mins"));
+            eventDao.insert(new Event(6, "event3", "desc3", "complete", "13:00", "IC", 2,  4, "Rahul", 1, "30 mins"));
+            eventDao.insert(new Event(7, "event3", "desc3", "complete", "13:00", "IC", 2,  4, "Rahul", 1, "30 mins"));
+            eventDao.insert(new Event(8, "event3", "desc3", "complete", "13:00", "IC", 1,  4, "Rahul", 1, "30 mins"));
+            eventDao.insert(new Event(9, "event3", "desc3", "complete", "13:00", "IC", 2,  4, "Rahul", 1, "30 mins"));
+            eventDao.insert(new Event(10, "event3", "desc3", "complete", "13:00", "IC", 3,  4, "Rahul", 1, "30 mins"));
+            eventDao.insert(new Event(11, "event3", "desc3", "complete", "13:00", "IC", 3,  4, "Rahul", 1, "30 mins"));
+            eventDao.insert(new Event(12, "event3", "desc3", "complete", "13:00", "IC", 2,  4, "Rahul", 1, "30 mins"));
+            eventDao.insert(new Event(13, "event3", "desc3", "complete", "13:00", "IC", 3,  4, "Rahul", 1, "30 mins"));
+            eventDao.insert(new Event(14, "event3", "desc3", "complete", "13:00", "IC", 2,  4, "Rahul", 1, "30 mins"));
+            eventDao.insert(new Event(15, "event3", "desc3", "complete", "13:00", "IC", 3,  4, "Rahul", 1, "30 mins"));
+            eventDao.insert(new Event(16, "event3", "desc3", "complete", "13:00", "IC", 2,  4, "Rahul", 1, "30 mins"));
+            eventDao.insert(new Event(17, "event3", "desc3", "complete", "13:00", "IC", 1,  4, "Rahul", 1, "30 mins"));
+            eventDao.insert(new Event(18, "event3", "desc3", "complete", "13:00", "IC", 1,  4, "Rahul", 1, "30 mins"));
+            eventDao.insert(new Event(19, "event3", "desc3", "complete", "13:00", "IC", 1,  4, "Rahul", 1, "30 mins"));
 
             winnerDao.insert(new Winner(1, "Rahul", "Kraken", "RahulKraken"));
             winnerDao.insert(new Winner(2, "Kraken", "Rahul", "RahulKraken"));

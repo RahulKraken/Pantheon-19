@@ -21,6 +21,7 @@ public class EventRepository {
 
     private static LiveData<List<Event>> allEvents;
     private static LiveData<List<Event>> allFlagshipEvents;
+    private static LiveData<List<Event>> events;
     private static LiveData<Event> event;
     private static LiveData<Winner> winner;
     private EventDao eventDao;
@@ -34,6 +35,7 @@ public class EventRepository {
 //        event = eventDao.getEvent(1);
         allEvents = eventDao.getAllEvents();
         allFlagshipEvents = eventDao.getFlagshipEvents();
+        events = eventDao.getEventForDay(1);
     }
 
     // eventDao methods
@@ -67,6 +69,11 @@ public class EventRepository {
     public LiveData<List<Event>> getFlagshipEvents() {
         Log.d(TAG, "getFlagshipEvents: " + allFlagshipEvents.getValue());
         return allFlagshipEvents;
+    }
+
+    public LiveData<List<Event>> getEventsForDay(int day) {
+        Log.d(TAG, "getEventsForDay: " + events.getValue());
+        return eventDao.getEventForDay(day);
     }
 
     // winnerDao methods

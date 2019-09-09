@@ -24,38 +24,10 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
     private static final String TAG = "EventsRecyclerViewAdapt";
 
     private Context context;
-    private List<Event> events;
+    private List<Event> events = new ArrayList<>();
 
     public EventsRecyclerViewAdapter(Context context) {
         this.context = context;
-        events = new ArrayList<>();
-        events.add(new Event(1, "event1", "desc1", "complete", "10:00", "IC", 1,  4, "Rahul", 1, "30 mins"));
-        events.add(new Event(1, "event1", "desc1", "complete", "10:00", "IC", 1,  4, "Rahul", 1, "30 mins"));
-        events.add(new Event(1, "event1", "desc1", "complete", "10:00", "IC", 1,  4, "Rahul", 1, "30 mins"));
-        events.add(new Event(1, "event1", "desc1", "complete", "10:00", "IC", 1,  4, "Rahul", 1, "30 mins"));
-        events.add(new Event(1, "event1", "desc1", "complete", "10:00", "IC", 1,  4, "Rahul", 1, "30 mins"));
-        events.add(new Event(1, "event1", "desc1", "complete", "10:00", "IC", 1,  4, "Rahul", 1, "30 mins"));
-        events.add(new Event(1, "event1", "desc1", "complete", "10:00", "IC", 1,  4, "Rahul", 1, "30 mins"));
-        events.add(new Event(1, "event1", "desc1", "complete", "10:00", "IC", 1,  4, "Rahul", 1, "30 mins"));
-        events.add(new Event(1, "event1", "desc1", "complete", "10:00", "IC", 1,  4, "Rahul", 1, "30 mins"));
-        events.add(new Event(1, "event1", "desc1", "complete", "10:00", "IC", 1,  4, "Rahul", 1, "30 mins"));
-        events.add(new Event(1, "event1", "desc1", "complete", "10:00", "IC", 1,  4, "Rahul", 1, "30 mins"));
-        events.add(new Event(1, "event1", "desc1", "complete", "10:00", "IC", 1,  4, "Rahul", 1, "30 mins"));
-        events.add(new Event(1, "event1", "desc1", "complete", "10:00", "IC", 1,  4, "Rahul", 1, "30 mins"));
-        events.add(new Event(1, "event1", "desc1", "complete", "10:00", "IC", 1,  4, "Rahul", 1, "30 mins"));
-        events.add(new Event(1, "event1", "desc1", "complete", "10:00", "IC", 1,  4, "Rahul", 1, "30 mins"));
-        events.add(new Event(1, "event1", "desc1", "complete", "10:00", "IC", 1,  4, "Rahul", 1, "30 mins"));
-        events.add(new Event(1, "event1", "desc1", "complete", "10:00", "IC", 1,  4, "Rahul", 1, "30 mins"));
-        events.add(new Event(1, "event1", "desc1", "complete", "10:00", "IC", 1,  4, "Rahul", 1, "30 mins"));
-        events.add(new Event(1, "event1", "desc1", "complete", "10:00", "IC", 1,  4, "Rahul", 1, "30 mins"));
-        events.add(new Event(1, "event1", "desc1", "complete", "10:00", "IC", 1,  4, "Rahul", 1, "30 mins"));
-        events.add(new Event(1, "event1", "desc1", "complete", "10:00", "IC", 1,  4, "Rahul", 1, "30 mins"));
-        events.add(new Event(1, "event1", "desc1", "complete", "10:00", "IC", 1,  4, "Rahul", 1, "30 mins"));
-        events.add(new Event(1, "event1", "desc1", "complete", "10:00", "IC", 1,  4, "Rahul", 1, "30 mins"));
-        events.add(new Event(1, "event1", "desc1", "complete", "10:00", "IC", 1,  4, "Rahul", 1, "30 mins"));
-        events.add(new Event(1, "event1", "desc1", "complete", "10:00", "IC", 1,  4, "Rahul", 1, "30 mins"));
-        events.add(new Event(1, "event1", "desc1", "complete", "10:00", "IC", 1,  4, "Rahul", 1, "30 mins"));
-        events.add(new Event(1, "event1", "desc1", "complete", "10:00", "IC", 1,  4, "Rahul", 1, "30 mins"));
     }
 
     @NonNull
@@ -76,6 +48,11 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
     @Override
     public int getItemCount() {
         return events.size();
+    }
+
+    public void setEvents(List<Event> events) {
+        this.events = events;
+        notifyDataSetChanged();
     }
 
     class EventsViewHolder extends RecyclerView.ViewHolder {

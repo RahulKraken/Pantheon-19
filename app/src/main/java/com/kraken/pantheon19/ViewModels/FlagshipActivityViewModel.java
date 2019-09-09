@@ -20,7 +20,6 @@ public class FlagshipActivityViewModel extends AndroidViewModel {
     private EventRepository eventRepository;
     private LiveData<List<Event>> eventList;
 
-
     public FlagshipActivityViewModel(@NonNull Application application) {
         super(application);
         eventRepository = new EventRepository(application);
