@@ -17,7 +17,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kraken.pantheon19.Activities.EventDetailActivity;
-import com.kraken.pantheon19.Activities.FlagshipEventActivity;
 import com.kraken.pantheon19.Entities.Event;
 import com.kraken.pantheon19.R;
 

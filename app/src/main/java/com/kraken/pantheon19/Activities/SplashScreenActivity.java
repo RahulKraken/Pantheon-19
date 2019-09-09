@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.airbnb.lottie.LottieAnimationView;
 import com.kraken.pantheon19.NetworkServices.ApiService;
 import com.kraken.pantheon19.R;
+import com.kraken.pantheon19.Utils.Constants;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
@@ -21,6 +22,12 @@ public class SplashScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
         lottieAnimationView = findViewById(R.id.walking_animation);
+
+        // EXPERIMENT
+        ApiService service = new ApiService();
+        service.getFormalEvents(Constants.FORMAL_EVENTS_API);
+        service.getInormalEvents(Constants.INFORMAL_EVENTS_API);
+        service.getFlagshipEvents(Constants.FLAGSHIP_EVENTS_API);
 
         startCheckAnimation();
         new Handler().postDelayed(new Runnable() {
