@@ -15,6 +15,10 @@ import java.util.List;
 public class ApiService {
     private static final String TAG = "ApiService";
 
+    /**
+     * fetch formal events and add to database
+     * @param url : url for formal events
+     */
     public void getFormalEvents(String url) {
         StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
@@ -34,7 +38,11 @@ public class ApiService {
         MyApplication.getVolleyRequestQueue().add(request);
     }
 
-    public void getInormalEvents(String url) {
+    /**
+     * fetch informal events and add to db
+     * @param url : url for informal events
+     */
+    public void getInformalEvents(String url) {
         StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -53,6 +61,10 @@ public class ApiService {
         MyApplication.getVolleyRequestQueue().add(request);
     }
 
+    /**
+     * fetch flagship events and add to db
+     * @param url : url for flagship events
+     */
     public void getFlagshipEvents(String url) {
         StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override

@@ -58,7 +58,7 @@ public class EventDetailActivity extends AppCompatActivity {
     }
 
     private void setupViews() {
-        if (event.getFlagship() == 0) imageView.setVisibility(View.INVISIBLE);
+        if (!event.getTag().equals("flagship")) imageView.setVisibility(View.INVISIBLE);
 
         // app bar title
         if (getSupportActionBar() != null) getSupportActionBar().setTitle(event.getTitle());

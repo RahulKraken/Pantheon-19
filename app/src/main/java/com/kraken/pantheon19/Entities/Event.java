@@ -24,10 +24,10 @@ public class Event implements Serializable {
     private int teamSize;
 
     private String coordinators;
-    private int flagship;
+    private String tag;
     private String duration;
 
-    public Event(int eventId, String title, String description, String status, String time, String venue, int day, int teamSize, String coordinators, int flagship, String duration) {
+    public Event(int eventId, String title, String description, String status, String time, String venue, int day, int teamSize, String coordinators, String tag, String duration) {
         this.eventId = eventId;
         this.title = title;
         this.description = description;
@@ -37,7 +37,7 @@ public class Event implements Serializable {
         this.day = day;
         this.teamSize = teamSize;
         this.coordinators = coordinators;
-        this.flagship = flagship;
+        this.tag = tag;
         this.duration = duration;
     }
 
@@ -77,12 +77,12 @@ public class Event implements Serializable {
         return coordinators;
     }
 
-    public int getFlagship() {
-        return flagship;
+    public String getTag() {
+        return tag;
     }
 
-    public void setFlagship(int flagship) {
-        this.flagship = flagship;
+    public void setTag(String tag) {
+        this.tag = tag;
     }
 
     public String getDuration() {
@@ -105,6 +105,8 @@ public class Event implements Serializable {
                 ", day=" + day +
                 ", teamSize=" + teamSize +
                 ", coordinators='" + coordinators + '\'' +
+                ", tag='" + tag + '\'' +
+                ", duration='" + duration + '\'' +
                 '}';
     }
 }

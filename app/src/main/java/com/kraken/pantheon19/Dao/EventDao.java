@@ -33,7 +33,7 @@ public interface EventDao {
     @Query("SELECT * FROM EVENT_TABLE WHERE event_id = :eventId LIMIT 1")
     LiveData<Event> getEvent(int eventId);
 
-    @Query("SELECT * FROM EVENT_TABLE WHERE flagship = 1")
+    @Query("SELECT * FROM EVENT_TABLE WHERE tag = 'flagship'")
     LiveData<List<Event>> getFlagshipEvents();
 
     @Query("SELECT * FROM event_table WHERE day = :day")
