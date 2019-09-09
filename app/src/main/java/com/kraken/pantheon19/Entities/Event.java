@@ -10,10 +10,10 @@ import java.io.Serializable;
 public class Event implements Serializable {
 
     @PrimaryKey
-    @ColumnInfo(name = "event_id")
-    private int eventId;
+    @ColumnInfo(name = "id")
+    private int id;
 
-    private String title;
+    private String eventName;
     private String description;
     private String status;
     private String time;
@@ -21,15 +21,15 @@ public class Event implements Serializable {
     private int day;
 
     @ColumnInfo(name = "team_size")
-    private int teamSize;
+    private String teamSize;
 
     private String coordinators;
     private String tag;
     private String duration;
 
-    public Event(int eventId, String title, String description, String status, String time, String venue, int day, int teamSize, String coordinators, String tag, String duration) {
-        this.eventId = eventId;
-        this.title = title;
+    public Event(int id, String eventName, String description, String status, String time, String venue, int day, String teamSize, String coordinators, String tag, String duration) {
+        this.id = id;
+        this.eventName = eventName;
         this.description = description;
         this.status = status;
         this.time = time;
@@ -41,12 +41,12 @@ public class Event implements Serializable {
         this.duration = duration;
     }
 
-    public int getEventId() {
-        return eventId;
+    public int getId() {
+        return id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getEventName() {
+        return eventName;
     }
 
     public String getDescription() {
@@ -69,7 +69,7 @@ public class Event implements Serializable {
         return day;
     }
 
-    public int getTeamSize() {
+    public String getTeamSize() {
         return teamSize;
     }
 
@@ -96,8 +96,8 @@ public class Event implements Serializable {
     @Override
     public String toString() {
         return "Event{" +
-                "eventId=" + eventId +
-                ", title='" + title + '\'' +
+                "id=" + id +
+                ", name='" + eventName + '\'' +
                 ", description='" + description + '\'' +
                 ", status='" + status + '\'' +
                 ", time='" + time + '\'' +

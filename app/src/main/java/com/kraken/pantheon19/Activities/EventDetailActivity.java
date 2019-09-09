@@ -61,7 +61,7 @@ public class EventDetailActivity extends AppCompatActivity {
         if (!event.getTag().equals("flagship")) imageView.setVisibility(View.INVISIBLE);
 
         // app bar title
-        if (getSupportActionBar() != null) getSupportActionBar().setTitle(event.getTitle());
+        if (getSupportActionBar() != null) getSupportActionBar().setTitle(event.getEventName());
         venue.setText(event.getVenue() != null ? event.getVenue() : "-");
         time.setText(event.getTime() != null ? event.getTime() : "-");
         desc.setText(event.getDescription() != null ? event.getDescription() : "-");

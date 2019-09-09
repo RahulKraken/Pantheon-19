@@ -6,7 +6,7 @@ import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "winners_table",
-        foreignKeys = @ForeignKey(entity = Event.class, parentColumns = "event_id", childColumns = "event_id", onDelete = ForeignKey.CASCADE))
+        foreignKeys = @ForeignKey(entity = Event.class, parentColumns = "id", childColumns = "event_id", onDelete = ForeignKey.CASCADE))
 public class Winner {
 
     @PrimaryKey

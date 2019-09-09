@@ -43,7 +43,7 @@ public class FlagshipRecyclerViewAdapter extends RecyclerView.Adapter<FlagshipRe
     @Override
     public void onBindViewHolder(@NonNull FlagshipRecyclerViewHolder holder, int position) {
         Log.d(TAG, "onBindViewHolder: binding values to views");
-        holder.title.setText(eventList.get(position).getTitle());
+        holder.title.setText(eventList.get(position).getEventName());
         holder.venue.setText(eventList.get(position).getVenue());
         holder.time.setText(eventList.get(position).getTime());
 

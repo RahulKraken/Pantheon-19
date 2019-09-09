@@ -25,9 +25,9 @@ public class SplashScreenActivity extends AppCompatActivity {
 
         // EXPERIMENT
         ApiService service = new ApiService();
-        service.getFormalEvents(Constants.FORMAL_EVENTS_API);
-        service.getInformalEvents(Constants.INFORMAL_EVENTS_API);
-        service.getFlagshipEvents(Constants.FLAGSHIP_EVENTS_API);
+        service.getFormalEvents(this, Constants.FORMAL_EVENTS_API);
+        service.getInformalEvents(this, Constants.INFORMAL_EVENTS_API);
+        service.getFlagshipEvents(this, Constants.FLAGSHIP_EVENTS_API);
 
         startCheckAnimation();
         new Handler().postDelayed(new Runnable() {

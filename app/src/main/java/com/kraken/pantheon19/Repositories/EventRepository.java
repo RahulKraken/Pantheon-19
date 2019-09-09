@@ -1,11 +1,10 @@
 package com.kraken.pantheon19.Repositories;
 
-import android.app.Application;
+import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 
 import com.kraken.pantheon19.Dao.EventDao;
 import com.kraken.pantheon19.Dao.WinnerDao;
@@ -13,7 +12,6 @@ import com.kraken.pantheon19.Database.EventDatabase;
 import com.kraken.pantheon19.Entities.Event;
 import com.kraken.pantheon19.Entities.Winner;
 
-import java.nio.channels.OverlappingFileLockException;
 import java.util.List;
 
 public class EventRepository {
@@ -27,8 +25,8 @@ public class EventRepository {
     private EventDao eventDao;
     private WinnerDao winnerDao;
 
-    public EventRepository(Application application) {
-        EventDatabase eventDatabase = EventDatabase.getInstance(application);
+    public EventRepository(Context applicationContext) {
+        EventDatabase eventDatabase = EventDatabase.getInstance(applicationContext);
         eventDao = eventDatabase.eventDao();
         winnerDao = eventDatabase.winnerDao();
 
