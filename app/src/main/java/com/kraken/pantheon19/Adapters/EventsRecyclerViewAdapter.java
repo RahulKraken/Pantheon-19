@@ -4,6 +4,8 @@ package com.kraken.pantheon19.Adapters;
  */
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.kraken.pantheon19.Activities.EventDetailActivity;
 import com.kraken.pantheon19.Entities.Event;
 import com.kraken.pantheon19.R;
 
@@ -55,11 +58,11 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
         notifyDataSetChanged();
     }
 
-    class EventsViewHolder extends RecyclerView.ViewHolder {
+    class EventsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         CircleImageView imageView;
         TextView title, venue, time, duration;
 
-        public EventsViewHolder(@NonNull View itemView) {
+        EventsViewHolder(@NonNull View itemView) {
             super(itemView);
 
             imageView = itemView.findViewById(R.id.circle_image_view);
@@ -67,6 +70,16 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
             venue = itemView.findViewById(R.id.tv_event_venue);
             time = itemView.findViewById(R.id.tv_event_time);
             duration = itemView.findViewById(R.id.tv_event_duration);
+
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            Log.d(TAG, "onClick: clicked");
+            Intent intent = new Intent(context, EventDetailActivity.class);
+            intent.putExtra(context.getResources().getString(R.string.event_intent_pass_key), events.get(getAdapterPosition()));
+            context.startActivity(intent);
         }
     }
 }

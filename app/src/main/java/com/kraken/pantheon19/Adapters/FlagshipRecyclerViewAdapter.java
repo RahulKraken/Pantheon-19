@@ -82,8 +82,9 @@ public class FlagshipRecyclerViewAdapter extends RecyclerView.Adapter<FlagshipRe
         @Override
         public void onClick(View view) {
             Log.d(TAG, "onClick: view btn clicked!!");
-            // TODO : send event detail with intent
-            context.startActivity(new Intent(context, EventDetailActivity.class));
+            Intent intent = new Intent(context, EventDetailActivity.class);
+            intent.putExtra(context.getResources().getString(R.string.event_intent_pass_key), eventList.get(getAdapterPosition()));
+            context.startActivity(intent);
         }
     }
 }
