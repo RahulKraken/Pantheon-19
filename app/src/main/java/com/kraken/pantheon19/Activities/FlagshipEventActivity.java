@@ -38,7 +38,7 @@ public class FlagshipEventActivity extends AppCompatActivity {
         setContentView(R.layout.activity_flagship_event);
 
         // TODO : app bar
-        Toolbar toolbar = findViewById(R.id.flagship_page_toolbar);
+        Toolbar toolbar = findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
 
         if (getSupportActionBar() != null) {
