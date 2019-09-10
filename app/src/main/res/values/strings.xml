@@ -27,4 +27,5 @@
     <string name="contact_label">Contact</string>
     <string name="event_intent_pass_key">event_intent_pass_key</string>
     <string name="informal_tag">informal</string>
+    <string name="formal_tag">formal</string>
 </resources>

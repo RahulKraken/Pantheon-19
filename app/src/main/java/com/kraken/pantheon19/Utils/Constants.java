@@ -18,4 +18,8 @@ public class Constants {
             R.color.md_amber_500,
             R.color.md_green_500
     };
+
+    public static final int[] FLAGSHIP_POINTS = {250, 200, 150};
+    public static final int[] FORMAL_POINTS = {100, 80, 60};
+    public static final int[] INFORMAL_POINTS = {50, 30, 20};
 }

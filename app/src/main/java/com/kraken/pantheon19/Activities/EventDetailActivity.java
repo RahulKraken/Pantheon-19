@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.kraken.pantheon19.Entities.Event;
 import com.kraken.pantheon19.R;
+import com.kraken.pantheon19.Utils.Constants;
 
 public class EventDetailActivity extends AppCompatActivity {
     private static final String TAG = "EventDetailActivity";
@@ -58,12 +59,29 @@ public class EventDetailActivity extends AppCompatActivity {
     }
 
     private void setupViews() {
-        if (!event.getTag().equals("flagship")) imageView.setVisibility(View.INVISIBLE);
-
         // app bar title
         if (getSupportActionBar() != null) getSupportActionBar().setTitle(event.getEventName());
+
         venue.setText(event.getVenue() != null ? event.getVenue() : "-");
         time.setText(event.getTiming() != null ? event.getTiming() : "-");
         desc.setText(event.getDescription() != null ? event.getDescription() : "-");
+
+        switch (event.getTag()) {
+            case "informal":
+                setPoints(Constants.INFORMAL_POINTS);
+                break;
+            case "formal":
+                setPoints(Constants.FORMAL_POINTS);
+                break;
+            case "flagship":
+                setPoints(Constants.FLAGSHIP_POINTS);
+                break;
+        }
+    }
+
+    private void setPoints(int[] points) {
+        scoreOne.setText(String.valueOf(points[0]));
+        scoreTwo.setText(String.valueOf(points[1]));
+        scoreThree.setText(String.valueOf(points[2]));
     }
 }

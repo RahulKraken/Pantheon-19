@@ -31,11 +31,11 @@ public class ApiService {
                 List<Event> formalEvents = Serializer.serializeEvents(response);
                 Log.d(TAG, "onResponse: " + formalEvents.size());
 
-                for (int i = 0; i < formalEvents.size(); i++) formalEvents.get(i).setTag(context.getResources().getString(R.string.informal_tag));
+                for (int i = 0; i < formalEvents.size(); i++) formalEvents.get(i).setTag(context.getResources().getString(R.string.formal_tag));
 
                 Log.d(TAG, "onResponse: " + formalEvents.toString());
 
-                DatabaseServiceHelper.addToEventDb(context, formalEvents);
+                DatabaseServiceHelper.addToEventDb(formalEvents);
 
             }
         }, new Response.ErrorListener() {
@@ -60,6 +60,13 @@ public class ApiService {
                 // serialize raw response
                 List<Event> informalEvents = Serializer.serializeEvents(response);
                 Log.d(TAG, "onResponse: " + informalEvents.size());
+
+                for (int i = 0; i < informalEvents.size(); i++) informalEvents.get(i).setTag(context.getResources().getString(R.string.informal_tag));
+
+                Log.d(TAG, "onResponse: " + informalEvents.toString());
+
+                DatabaseServiceHelper.addToEventDb(informalEvents);
+
             }
         }, new Response.ErrorListener() {
             @Override

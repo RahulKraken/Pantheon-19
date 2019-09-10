@@ -15,9 +15,8 @@ import java.util.List;
 public class DatabaseServiceHelper {
     private static final String TAG = "DatabaseServiceHelper";
 
-    public static void addToEventDb(Context context, List<Event> events) {
-        // TODO : Replace with MyApplication.getContext()
-        EventRepository repository = new EventRepository(context.getApplicationContext());
+    public static void addToEventDb(List<Event> events) {
+        EventRepository repository = new EventRepository(MyApplication.getContext());
         Log.d(TAG, "addToEventDb: Hey dbService working");
 
         for (Event e : events) {
