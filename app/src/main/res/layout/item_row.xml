@@ -18,43 +18,47 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/circle_image_view"
-            android:layout_width="72dp"
-            android:layout_height="72dp"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_launcher_background">
-
-        </de.hdodenhof.circleimageview.CircleImageView>
+        android:layout_height="wrap_content"
+        android:baselineAligned="false">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_marginStart="8dp"
             android:layout_weight="3"
             android:layout_width="0dp"
-            android:layout_height="match_parent" >
+            android:layout_height="wrap_content" >
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circle_image_view"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_gravity="top"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:src="@drawable/ic_launcher_background">
+
+            </de.hdodenhof.circleimageview.CircleImageView>
 
             <TextView
                 android:id="@+id/tv_event_title"
                 style="@style/montserrat_medium_20"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:maxLines="1"
-                android:text="Demo name"
-                app:layout_constraintBottom_toTopOf="@id/tv_event_venue"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp"
+                android:text="Demo name and its really big"
+                app:layout_constraintBottom_toTopOf="@id/tv_event_time"
+                app:layout_constraintStart_toEndOf="@id/circle_image_view"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tv_event_venue"
+                android:id="@+id/tv_event_time"
                 style="@style/montserrat_semi_bold_14"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:maxLines="1"
-                android:text="IC Arena"
+                android:layout_marginStart="8dp"
+                android:text="IC Arena and this one is too big too much so"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@id/circle_image_view"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_event_title" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -66,24 +70,13 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/tv_event_duration"
-                style="@style/montserrat_semi_bold_14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="30 mins"
-                android:maxLines="1"
-                app:layout_constraintBottom_toTopOf="@id/tv_event_time"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/tv_event_time"
+                android:id="@+id/tv_event_venue"
                 android:text="13:00"
+                android:textAlignment="textEnd"
                 style="@style/montserrat_semi_bold_14"
-                android:maxLines="1"
-                app:layout_constraintTop_toBottomOf="@id/tv_event_duration"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 

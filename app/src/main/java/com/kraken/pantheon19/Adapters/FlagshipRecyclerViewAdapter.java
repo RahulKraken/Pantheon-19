@@ -45,7 +45,7 @@ public class FlagshipRecyclerViewAdapter extends RecyclerView.Adapter<FlagshipRe
         Log.d(TAG, "onBindViewHolder: binding values to views");
         holder.title.setText(eventList.get(position).getEventName());
         holder.venue.setText(eventList.get(position).getVenue());
-        holder.time.setText(eventList.get(position).getTime());
+        holder.time.setText(eventList.get(position).getTiming());
 
         // TODO : replace with actual image
         holder.img.setImageResource(R.mipmap.ic_launcher);

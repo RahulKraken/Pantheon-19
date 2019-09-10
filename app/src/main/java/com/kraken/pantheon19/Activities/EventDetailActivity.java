@@ -63,7 +63,7 @@ public class EventDetailActivity extends AppCompatActivity {
         // app bar title
         if (getSupportActionBar() != null) getSupportActionBar().setTitle(event.getEventName());
         venue.setText(event.getVenue() != null ? event.getVenue() : "-");
-        time.setText(event.getTime() != null ? event.getTime() : "-");
+        time.setText(event.getTiming() != null ? event.getTiming() : "-");
         desc.setText(event.getDescription() != null ? event.getDescription() : "-");
     }
 }

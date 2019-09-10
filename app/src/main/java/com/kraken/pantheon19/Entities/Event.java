@@ -16,9 +16,9 @@ public class Event implements Serializable {
     private String eventName;
     private String description;
     private String status;
-    private String time;
+    private String timing;
     private String venue;
-    private int day;
+    private String day;
 
     @ColumnInfo(name = "team_size")
     private String teamSize;
@@ -27,12 +27,12 @@ public class Event implements Serializable {
     private String tag;
     private String duration;
 
-    public Event(int id, String eventName, String description, String status, String time, String venue, int day, String teamSize, String coordinators, String tag, String duration) {
+    public Event(int id, String eventName, String description, String status, String timing, String venue, String day, String teamSize, String coordinators, String tag, String duration) {
         this.id = id;
         this.eventName = eventName;
         this.description = description;
         this.status = status;
-        this.time = time;
+        this.timing = timing;
         this.venue = venue;
         this.day = day;
         this.teamSize = teamSize;
@@ -57,15 +57,15 @@ public class Event implements Serializable {
         return status;
     }
 
-    public String getTime() {
-        return time;
+    public String getTiming() {
+        return timing;
     }
 
     public String getVenue() {
         return venue;
     }
 
-    public int getDay() {
+    public String getDay() {
         return day;
     }
 
@@ -100,7 +100,7 @@ public class Event implements Serializable {
                 ", name='" + eventName + '\'' +
                 ", description='" + description + '\'' +
                 ", status='" + status + '\'' +
-                ", time='" + time + '\'' +
+                ", time='" + timing + '\'' +
                 ", venue='" + venue + '\'' +
                 ", day=" + day +
                 ", teamSize=" + teamSize +

@@ -44,8 +44,8 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
     public void onBindViewHolder(@NonNull EventsViewHolder holder, int position) {
         holder.title.setText(events.get(position).getEventName());
         holder.venue.setText(events.get(position).getVenue());
-        holder.duration.setText(events.get(position).getDuration());
-        holder.time.setText(events.get(position).getTime());
+//        holder.duration.setText(events.get(position).getDuration());
+        holder.time.setText(events.get(position).getTiming());
     }
 
     @Override
@@ -69,7 +69,7 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
             title = itemView.findViewById(R.id.tv_event_title);
             venue = itemView.findViewById(R.id.tv_event_venue);
             time = itemView.findViewById(R.id.tv_event_time);
-            duration = itemView.findViewById(R.id.tv_event_duration);
+//            duration = itemView.findViewById(R.id.tv_event_duration);
 
             itemView.setOnClickListener(this);
         }
