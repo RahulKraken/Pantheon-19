@@ -74,7 +74,7 @@
                 <TextView
                     android:id="@+id/tv_score_one"
                     android:text="@string/demo_point"
-                    style="@style/montserrat_regular_12"
+                    style="@style/montserrat_semi_bold_16"
                     android:gravity="center"
                     android:layout_weight="1"
                     android:layout_width="0dp"
@@ -83,7 +83,7 @@
                 <TextView
                     android:id="@+id/tv_score_two"
                     android:text="@string/demo_point"
-                    style="@style/montserrat_regular_12"
+                    style="@style/montserrat_semi_bold_16"
                     android:gravity="center"
                     android:layout_weight="1"
                     android:layout_width="0dp"
@@ -92,7 +92,7 @@
                 <TextView
                     android:id="@+id/tv_score_three"
                     android:text="@string/demo_point"
-                    style="@style/montserrat_regular_12"
+                    style="@style/montserrat_semi_bold_16"
                     android:gravity="center"
                     android:layout_weight="1"
                     android:layout_width="0dp"
@@ -125,7 +125,7 @@
 
         <TextView
             android:id="@+id/tv_desc"
-            style="@style/montserrat_light_12"
+            style="@style/montserrat_medium_16"
             android:layout_margin="16dp"
             app:layout_constraintTop_toBottomOf="@id/tv_venue"
             app:layout_constraintStart_toStartOf="parent"
@@ -145,9 +145,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-        <ListView
-            android:id="@+id/contacts_list_view"
+        <LinearLayout
+            android:id="@+id/contacts_linear_layout"
+            android:orientation="vertical"
             android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_contact"

@@ -7,11 +7,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.kraken.pantheon19.Entities.Event;
 import com.kraken.pantheon19.R;
 import com.kraken.pantheon19.Utils.Constants;
+import com.kraken.pantheon19.Utils.StringUtils;
+
+import java.util.List;
 
 public class EventDetailActivity extends AppCompatActivity {
     private static final String TAG = "EventDetailActivity";
@@ -19,6 +23,7 @@ public class EventDetailActivity extends AppCompatActivity {
     private Event event;
     private TextView scoreOne, scoreTwo, scoreThree, venue, time, desc;
     private ImageView imageView;
+    private LinearLayout contactLinearLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +48,8 @@ public class EventDetailActivity extends AppCompatActivity {
         time = findViewById(R.id.tv_time);
         desc = findViewById(R.id.tv_desc);
         imageView = findViewById(R.id.image_main);
+
+        contactLinearLayout = findViewById(R.id.contacts_linear_layout);
 
         // get intent
         event = (Event) getIntent().getSerializableExtra(getResources().getString(R.string.event_intent_pass_key));
@@ -76,6 +83,17 @@ public class EventDetailActivity extends AppCompatActivity {
             case "flagship":
                 setPoints(Constants.FLAGSHIP_POINTS);
                 break;
+        }
+
+        addContactInfo();
+    }
+
+    private void addContactInfo() {
+        List<String> contacts = StringUtils.parseContact(event.getCoordinators(), "\\,");
+        for (String s : contacts) {
+            TextView textView = (TextView) getLayoutInflater().inflate(R.layout.coordinator_item_row, null);
+            textView.setText(s.trim());
+            contactLinearLayout.addView(textView);
         }
     }
 
