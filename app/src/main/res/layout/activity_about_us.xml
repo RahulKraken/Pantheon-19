@@ -43,6 +43,7 @@
             </RelativeLayout>
 
             <androidx.core.widget.NestedScrollView
+                android:background="@color/md_grey_900"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -67,6 +68,7 @@
                     <TextView
                         android:id="@+id/about_pantheon_desc"
                         android:text="@string/about_pantheon_desc"
+                        style="@style/montserrat_medium_16"
                         android:textAlignment="center"
                         app:layout_constraintTop_toBottomOf="@id/about_pantheon_title"
                         app:layout_constraintStart_toStartOf="parent"
@@ -94,6 +96,7 @@
                     <TextView
                         android:id="@+id/theme_pantheon_desc"
                         android:text="@string/theme_pantheon_desc"
+                        style="@style/montserrat_medium_16"
                         android:textAlignment="center"
                         app:layout_constraintTop_toBottomOf="@id/theme_pantheon_title"
                         app:layout_constraintStart_toStartOf="parent"
@@ -121,6 +124,7 @@
                     <TextView
                         android:id="@+id/social_campaign_pantheon_desc"
                         android:text="@string/social_campaign_pantheon_desc"
+                        style="@style/montserrat_medium_16"
                         android:textAlignment="center"
                         app:layout_constraintTop_toBottomOf="@id/social_campaign_pantheon_title"
                         app:layout_constraintStart_toStartOf="parent"
@@ -148,6 +152,7 @@
                     <TextView
                         android:id="@+id/social_cause_pantheon_desc"
                         android:text="@string/social_cause_pantheon_desc"
+                        style="@style/montserrat_medium_16"
                         android:textAlignment="center"
                         app:layout_constraintTop_toBottomOf="@id/social_cause_pantheon_title"
                         app:layout_constraintStart_toStartOf="parent"
