@@ -18,6 +18,8 @@ import com.kraken.pantheon19.R;
 
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 
 public class LeaderBoardRecyclerViewAdapter extends RecyclerView.Adapter<LeaderBoardRecyclerViewAdapter.LeaderBoardRecyclerViewHolder> {
     private static final String TAG = "LeaderBoardRecyclerView";
@@ -41,8 +43,28 @@ public class LeaderBoardRecyclerViewAdapter extends RecyclerView.Adapter<LeaderB
     public void onBindViewHolder(@NonNull LeaderBoardRecyclerViewHolder holder, int position) {
         Log.d(TAG, "onBindViewHolder: binding values to views");
         holder.teamName.setText(teamList.get(position).getTeamName());
-        //holder.teamPos.setText(teamList.get(position).getTeamPos());
-        holder.teamScore.setText(teamList.get(position).getTeamScore());
+        holder.teamPos.setText(String.valueOf(teamList.get(position).getTeamPos()));
+        holder.teamScore.setText(String.valueOf(teamList.get(position).getTeamScore()));
+
+        switch (teamList.get(position).getTeamPos()) {
+            case 1:
+                holder.teamPos.setVisibility(View.INVISIBLE);
+                holder.posImg.setVisibility(View.VISIBLE);
+                holder.posImg.setImageResource(R.drawable.one);
+                break;
+            case 2:
+                holder.teamPos.setVisibility(View.INVISIBLE);
+                holder.posImg.setVisibility(View.VISIBLE);
+                holder.posImg.setImageResource(R.drawable.two);
+                break;
+            case 3:
+                holder.teamPos.setVisibility(View.INVISIBLE);
+                holder.posImg.setVisibility(View.VISIBLE);
+                holder.posImg.setImageResource(R.drawable.three);
+                break;
+                default:
+                    holder.posImg.setVisibility(View.INVISIBLE);
+        }
     }
 
     @Override
@@ -50,15 +72,23 @@ public class LeaderBoardRecyclerViewAdapter extends RecyclerView.Adapter<LeaderB
         return teamList.size();
     }
 
+    public void setList(List<Team> teams) {
+        teamList = teams;
+        notifyDataSetChanged();
+    }
+
     class LeaderBoardRecyclerViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView teamPos,teamName,teamScore;
+        private TextView teamPos, teamName, teamScore;
+        CircleImageView posImg;
 
         LeaderBoardRecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
-            teamName = itemView.findViewById(R.id.teamName);
-            //teamPos = itemView.findViewById(R.id.teamPos);
-            teamScore=itemView.findViewById(R.id.points_scored);
+            teamName = itemView.findViewById(R.id.team_name);
+            teamPos = itemView.findViewById(R.id.team_pos);
+            teamScore = itemView.findViewById(R.id.team_score);
+
+            posImg = itemView.findViewById(R.id.pos_img_view);
         }
     }
 }

@@ -6,10 +6,10 @@ package com.kraken.pantheon19.Entities;
 public class Team {
     private int teamId;
     private String teamName;
-    private String teamPos;
-    private String teamScore;
+    private int teamPos;
+    private int teamScore;
 
-    public Team(int teamId, String teamName, String teamPos, String teamScore) {
+    public Team(int teamId, String teamName, int teamPos, int teamScore) {
         this.teamId=teamId;
         this.teamName=teamName;
         this.teamPos=teamPos;
@@ -20,7 +20,17 @@ public class Team {
 
     public String getTeamName() { return teamName; }
 
-    public String getTeamPos() { return teamPos; }
+    public int getTeamPos() { return teamPos; }
 
-    public String getTeamScore() { return teamScore; }
+    public int getTeamScore() { return teamScore; }
+
+    @Override
+    public String toString() {
+        return "Team{" +
+                "teamId=" + teamId +
+                ", teamName='" + teamName + '\'' +
+                ", teamPos=" + teamPos +
+                ", teamScore=" + teamScore +
+                '}';
+    }
 }
