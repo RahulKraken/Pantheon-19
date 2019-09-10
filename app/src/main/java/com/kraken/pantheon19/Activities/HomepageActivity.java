@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,6 +32,8 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
         ImageButton webBtn = findViewById(R.id.web_btn);
         ImageButton youtubeBtn = findViewById(R.id.youtube_btn);
 
+        ImageView shareBtn = findViewById(R.id.home_share_btn);
+
         // set onclick listener
         infoBtn.setOnClickListener(this);
         flagshipBtn.setOnClickListener(this);
@@ -42,6 +45,7 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
         instagramBtn.setOnClickListener(this);
         webBtn.setOnClickListener(this);
         youtubeBtn.setOnClickListener(this);
+        shareBtn.setOnClickListener(this);
     }
 
     @Override
@@ -77,6 +81,13 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.youtube_btn:
                 Log.d(TAG, "onClick: youtube btn");
+                break;
+            case R.id.home_share_btn:
+                Log.d(TAG, "onClick: share btn");
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.putExtra(Intent.EXTRA_TEXT, "Hey check out pantheon's app on Google play store");
+                intent.setType("text/plain");
+                startActivity(Intent.createChooser(intent, "Cool, how do you wanna share..?"));
                 break;
         }
     }
