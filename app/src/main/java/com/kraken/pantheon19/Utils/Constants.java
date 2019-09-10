@@ -23,4 +23,8 @@ public class Constants {
     public static final int[] FLAGSHIP_POINTS = {250, 200, 150};
     public static final int[] FORMAL_POINTS = {100, 80, 60};
     public static final int[] INFORMAL_POINTS = {50, 30, 20};
+
+    public static final String FACEBOOK_URL = "https://www.facebook.com/bitmesra.pantheon/";
+    public static final String INSTAGRAM_URL = "https://www.instagram.com/pantheon_techfest/";
+    public static final String WEBSITE_URL = "https://pantheonbit.com";
 }

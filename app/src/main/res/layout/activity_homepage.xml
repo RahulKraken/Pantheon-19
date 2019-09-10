@@ -107,7 +107,7 @@
                     android:id="@+id/info_button"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#1A1A1A"
+                    android:background="@color/accent_grey"
                     android:contentDescription="@string/info_btn_desc"
                     android:src="@drawable/baseline_info_24px" />
             </androidx.cardview.widget.CardView>
@@ -122,7 +122,7 @@
                     android:id="@+id/flagship_list_button"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#1A1A1A"
+                    android:background="@color/accent_grey"
                     android:contentDescription="@string/flagship_btn_desc"
                     android:src="@drawable/baseline_flag_24px" />
             </androidx.cardview.widget.CardView>
@@ -137,7 +137,7 @@
                     android:id="@+id/event_list_button"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#1A1A1A"
+                    android:background="@color/accent_grey"
                     android:contentDescription="@string/event_btn_desc"
                     android:src="@drawable/baseline_event_note_24px" />
             </androidx.cardview.widget.CardView>
@@ -154,7 +154,7 @@
                     android:id="@+id/guest_speaker_btn"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#1A1A1A"
+                    android:background="@color/accent_grey"
                     android:contentDescription="@string/info_btn_desc"
                     android:src="@drawable/guest_lecture" />
             </androidx.cardview.widget.CardView>
@@ -169,7 +169,7 @@
                     android:id="@+id/leaderboard_btn"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#1A1A1A"
+                    android:background="@color/accent_grey"
                     android:contentDescription="@string/flagship_btn_desc"
                     android:src="@drawable/leaderboard" />
             </androidx.cardview.widget.CardView>
@@ -184,7 +184,7 @@
                     android:id="@+id/sponsors_btn"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#1A1A1A"
+                    android:background="@color/accent_grey"
                     android:contentDescription="@string/event_btn_desc"
                     android:src="@drawable/money_icon" />
             </androidx.cardview.widget.CardView>

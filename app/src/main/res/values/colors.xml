@@ -10,6 +10,7 @@
 
     <!-- global use -->
     <color name="activity_background">#121212</color>
+    <color name="accent_grey">@color/md_grey_900</color>
 
     <!--flag ship card view button colors-->
     <item name="btn_default" type="color">#EAF9F8</item>
