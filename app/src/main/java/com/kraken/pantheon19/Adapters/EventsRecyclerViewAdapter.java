@@ -17,9 +17,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.kraken.pantheon19.Activities.EventDetailActivity;
 import com.kraken.pantheon19.Entities.Event;
 import com.kraken.pantheon19.R;
+import com.kraken.pantheon19.Utils.ColorService;
+import com.kraken.pantheon19.Utils.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -44,7 +48,6 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
     public void onBindViewHolder(@NonNull EventsViewHolder holder, int position) {
         holder.title.setText(events.get(position).getEventName());
         holder.venue.setText(events.get(position).getVenue());
-//        holder.duration.setText(events.get(position).getDuration());
         holder.time.setText(events.get(position).getTiming());
     }
 
@@ -60,7 +63,9 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
 
     class EventsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         CircleImageView imageView;
-        TextView title, venue, time, duration;
+        TextView title;
+        TextView venue;
+        TextView time;
 
         EventsViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -69,7 +74,8 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
             title = itemView.findViewById(R.id.tv_event_title);
             venue = itemView.findViewById(R.id.tv_event_venue);
             time = itemView.findViewById(R.id.tv_event_time);
-//            duration = itemView.findViewById(R.id.tv_event_duration);
+
+            time.setTextColor(context.getResources().getColor(ColorService.getRandomColor()));
 
             itemView.setOnClickListener(this);
         }
