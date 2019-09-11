@@ -49,6 +49,8 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
         holder.title.setText(events.get(position).getEventName());
         holder.venue.setText(events.get(position).getVenue());
         holder.time.setText(events.get(position).getTiming());
+
+        holder.time.setTextColor(context.getResources().getColor(ColorService.getRandomColor()));
     }
 
     @Override
@@ -74,8 +76,6 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
             title = itemView.findViewById(R.id.tv_event_title);
             venue = itemView.findViewById(R.id.tv_event_venue);
             time = itemView.findViewById(R.id.tv_event_time);
-
-            time.setTextColor(context.getResources().getColor(ColorService.getRandomColor()));
 
             itemView.setOnClickListener(this);
         }
