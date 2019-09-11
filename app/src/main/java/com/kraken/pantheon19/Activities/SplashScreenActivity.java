@@ -21,7 +21,7 @@ public class SplashScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-        lottieAnimationView = findViewById(R.id.walking_animation);
+        lottieAnimationView = findViewById(R.id.splashscreen);
 
         // EXPERIMENT
         ApiService service = new ApiService();

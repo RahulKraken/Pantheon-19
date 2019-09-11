@@ -30,12 +30,9 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
         ImageButton guestSpeakerBtn = findViewById(R.id.guest_speaker_btn);
         ImageButton leaderBoardBtn = findViewById(R.id.leaderboard_btn);
         ImageButton sponsorsBtn = findViewById(R.id.sponsors_btn);
-
         ImageButton facebookBtn = findViewById(R.id.facebook_btn);
         ImageButton instagramBtn = findViewById(R.id.instagram_btn);
         ImageButton webBtn = findViewById(R.id.web_btn);
-        ImageButton youtubeBtn = findViewById(R.id.youtube_btn);
-
         ImageView shareBtn = findViewById(R.id.home_share_btn);
 
         // set onclick listener
@@ -48,7 +45,6 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
         facebookBtn.setOnClickListener(this);
         instagramBtn.setOnClickListener(this);
         webBtn.setOnClickListener(this);
-        youtubeBtn.setOnClickListener(this);
         shareBtn.setOnClickListener(this);
 
         // create custom tab
@@ -64,7 +60,6 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
                 startActivity(new Intent(this, AboutUsActivity.class));
                 break;
             case R.id.flagship_list_button:
-                Log.d(TAG, "onClick: flagship btn clicked");
                 startActivity(new Intent(this, FlagshipEventActivity.class));
                 break;
             case R.id.event_list_button:
@@ -80,19 +75,13 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
                 startActivity(new Intent(this, SponsorsActivity.class));
                 break;
             case R.id.facebook_btn:
-                Log.d(TAG, "onClick: facebook btn");
                 launchCustomTab(Constants.FACEBOOK_URL);
                 break;
             case R.id.instagram_btn:
-                Log.d(TAG, "onClick: instagram btn");
                 launchCustomTab(Constants.INSTAGRAM_URL);
                 break;
             case R.id.web_btn:
-                Log.d(TAG, "onClick: web btn");
                 launchCustomTab(Constants.WEBSITE_URL);
-                break;
-            case R.id.youtube_btn:
-                Log.d(TAG, "onClick: youtube btn");
                 break;
             case R.id.home_share_btn:
                 Log.d(TAG, "onClick: share btn");
