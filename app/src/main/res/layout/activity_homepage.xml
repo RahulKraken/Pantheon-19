@@ -363,15 +363,6 @@
             android:scaleType="fitCenter"
             android:layout_width="48dp"
             android:layout_height="48dp" />
-        <ImageButton
-            android:id="@+id/youtube_btn"
-            android:src="@drawable/youtube"
-            android:background="@android:color/transparent"
-            android:contentDescription="@string/youtube_button_desc"
-            android:padding="15dp"
-            android:scaleType="fitCenter"
-            android:layout_width="48dp"
-            android:layout_height="48dp" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

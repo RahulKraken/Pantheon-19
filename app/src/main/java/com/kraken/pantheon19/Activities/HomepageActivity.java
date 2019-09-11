@@ -34,7 +34,6 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
         ImageButton facebookBtn = findViewById(R.id.facebook_btn);
         ImageButton instagramBtn = findViewById(R.id.instagram_btn);
         ImageButton webBtn = findViewById(R.id.web_btn);
-        ImageButton youtubeBtn = findViewById(R.id.youtube_btn);
 
         ImageView shareBtn = findViewById(R.id.home_share_btn);
 
@@ -48,7 +47,6 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
         facebookBtn.setOnClickListener(this);
         instagramBtn.setOnClickListener(this);
         webBtn.setOnClickListener(this);
-        youtubeBtn.setOnClickListener(this);
         shareBtn.setOnClickListener(this);
 
         // create custom tab
@@ -89,10 +87,9 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.web_btn:
                 Log.d(TAG, "onClick: web btn");
-                launchCustomTab(Constants.WEBSITE_URL);
-                break;
-            case R.id.youtube_btn:
-                Log.d(TAG, "onClick: youtube btn");
+                Intent i=new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse("http://pantheonbit.com"));
+                startActivity(i);
                 break;
             case R.id.home_share_btn:
                 Log.d(TAG, "onClick: share btn");

@@ -37,7 +37,7 @@ public class SpeakersListActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
-        recyclerView = findViewById(R.id.speakers_recycler_view);
+        //recyclerView = findViewById(R.id.speakers_recycler_view);
 
         setupEventList();
         setupRecyclerView();
@@ -70,8 +70,8 @@ public class SpeakersListActivity extends AppCompatActivity {
 
         // set on recycler view
         Log.d(TAG, "setupRecyclerView: inflating speakers recycler view");
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(adapter);
+        //recyclerView.setLayoutManager(layoutManager);
+        //recyclerView.setAdapter(adapter);
     }
 
     private String setRandomColor() {
