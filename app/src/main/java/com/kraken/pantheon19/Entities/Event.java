@@ -27,6 +27,8 @@ public class Event implements Serializable {
     private String tag;
     private String duration;
 
+    public Event() {}
+
     public Event(int id, String eventName, String description, String status, String timing, String venue, String day, String teamSize, String coordinators, String tag, String duration) {
         this.id = id;
         this.eventName = eventName;
@@ -75,6 +77,42 @@ public class Event implements Serializable {
 
     public String getCoordinators() {
         return coordinators;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setEventName(String eventName) {
+        this.eventName = eventName;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setTiming(String timing) {
+        this.timing = timing;
+    }
+
+    public void setVenue(String venue) {
+        this.venue = venue;
+    }
+
+    public void setDay(String day) {
+        this.day = day;
+    }
+
+    public void setTeamSize(String teamSize) {
+        this.teamSize = teamSize;
+    }
+
+    public void setCoordinators(String coordinators) {
+        this.coordinators = coordinators;
     }
 
     public String getTag() {
