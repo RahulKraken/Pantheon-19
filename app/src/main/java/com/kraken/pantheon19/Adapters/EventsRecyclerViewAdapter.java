@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -45,6 +47,8 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
 
     @Override
     public void onBindViewHolder(@NonNull EventsViewHolder holder, int position) {
+        holder.imageView.setAnimation(AnimationUtils.loadAnimation(context,R.anim.fade_transition_animation));
+        holder.eventCard.setAnimation(AnimationUtils.loadAnimation(context,R.anim.fade_scale_animation));
         holder.title.setText(events.get(position).getEventName());
         holder.venue.setText(events.get(position).getVenue());
         holder.time.setText(events.get(position).getTiming());
@@ -69,6 +73,7 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
         TextView title;
         TextView venue;
         TextView time;
+        LinearLayout eventCard;
 
         EventsViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -77,7 +82,7 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
             title = itemView.findViewById(R.id.tv_event_title);
             venue = itemView.findViewById(R.id.tv_event_venue);
             time = itemView.findViewById(R.id.tv_event_time);
-
+            eventCard=itemView.findViewById(R.id.container);
             itemView.setOnClickListener(this);
         }
 

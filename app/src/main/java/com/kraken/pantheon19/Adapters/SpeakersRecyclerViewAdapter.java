@@ -8,7 +8,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -40,6 +42,8 @@ public class SpeakersRecyclerViewAdapter extends RecyclerView.Adapter<SpeakersRe
     @Override
     public void onBindViewHolder(@NonNull SpeakersRecyclerViewHolder holder, int position) {
         Log.d(TAG, "onBindViewHolder: binding values to views");
+        holder.img.setAnimation(AnimationUtils.loadAnimation(context,R.anim.fade_transition_animation));
+        holder.speakerCard.setAnimation(AnimationUtils.loadAnimation(context,R.anim.fade_scale_animation));
         holder.name.setText(speakersList.get(position).getName());
         holder.venue.setText(speakersList.get(position).getVenue());
         holder.stime.setText(speakersList.get(position).getTime());
@@ -61,6 +65,7 @@ public class SpeakersRecyclerViewAdapter extends RecyclerView.Adapter<SpeakersRe
         TextView name, venue, des, stime;
         ImageView img;
         View view;
+        LinearLayout speakerCard;
 
         SpeakersRecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -70,6 +75,7 @@ public class SpeakersRecyclerViewAdapter extends RecyclerView.Adapter<SpeakersRe
             stime= itemView.findViewById(R.id.speakers_start_time);
             img = itemView.findViewById(R.id.circleView);
             view=itemView.findViewById(R.id.underline);
+            speakerCard=itemView.findViewById(R.id.speaker_layout);
         }
     }
 }

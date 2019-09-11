@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -42,6 +44,7 @@ public class LeaderBoardRecyclerViewAdapter extends RecyclerView.Adapter<LeaderB
     @Override
     public void onBindViewHolder(@NonNull LeaderBoardRecyclerViewHolder holder, int position) {
         Log.d(TAG, "onBindViewHolder: binding values to views");
+        holder.lbcard.setAnimation(AnimationUtils.loadAnimation(context,R.anim.fade_scale_animation));
         holder.teamName.setText(teamList.get(position).getTeamName());
         holder.teamPos.setText(String.valueOf(teamList.get(position).getTeamPos()));
         holder.teamScore.setText(String.valueOf(teamList.get(position).getTeamScore()));
@@ -81,13 +84,14 @@ public class LeaderBoardRecyclerViewAdapter extends RecyclerView.Adapter<LeaderB
 
         private TextView teamPos, teamName, teamScore;
         CircleImageView posImg;
+        LinearLayout lbcard;
 
         LeaderBoardRecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
             teamName = itemView.findViewById(R.id.team_name);
             teamPos = itemView.findViewById(R.id.team_pos);
             teamScore = itemView.findViewById(R.id.team_score);
-
+            lbcard=itemView.findViewById(R.id.lb_layout);
             posImg = itemView.findViewById(R.id.pos_img_view);
         }
     }
