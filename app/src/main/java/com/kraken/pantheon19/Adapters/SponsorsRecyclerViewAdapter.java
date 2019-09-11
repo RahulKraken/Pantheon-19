@@ -11,7 +11,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.browser.customtabs.CustomTabsIntent;
@@ -48,6 +50,8 @@ public class SponsorsRecyclerViewAdapter extends RecyclerView.Adapter<SponsorsRe
     @Override
     public void onBindViewHolder(@NonNull SponsorsRecyclerViewHolder holder, int position) {
         Log.d(TAG, "onBindViewHolder: binding values to views");
+        holder.img.setAnimation(AnimationUtils.loadAnimation(context,R.anim.fade_transition_animation));
+        holder.sponsorCard.setAnimation(AnimationUtils.loadAnimation(context,R.anim.fade_scale_animation));
 
         // TODO : replace with actual image
         holder.img.setImageResource(R.mipmap.ic_launcher);
@@ -60,10 +64,12 @@ public class SponsorsRecyclerViewAdapter extends RecyclerView.Adapter<SponsorsRe
 
     class SponsorsRecyclerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         ImageView img;
+        LinearLayout sponsorCard;
 
         SponsorsRecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
             img = itemView.findViewById(R.id.item_sponsor);
+            sponsorCard=itemView.findViewById(R.id.sponsors_layout);
             itemView.setOnClickListener(this);
         }
 
