@@ -6,15 +6,17 @@
     android:layout_height="match_parent"
     android:background="@color/activity_background">
 
-    <com.google.android.material.appbar.AppBarLayout
+    <include
+        android:layout_gravity="top"
+        layout="@layout/app_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/appbar">
+        android:layout_height="wrap_content" />
 
-        <include
-            layout="@layout/app_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+    <LinearLayout
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_layout"
@@ -23,12 +25,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/pager"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/pager"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
