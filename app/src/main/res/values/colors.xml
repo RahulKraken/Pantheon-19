@@ -9,7 +9,7 @@
     <color name="colorAccent">#D81B60</color>
 
     <!-- global use -->
-    <color name="activity_background">#121212</color>
+    <color name="activity_background">#000</color>
     <color name="accent_grey">@color/md_grey_900</color>
 
     <!--flag ship card view button colors-->
