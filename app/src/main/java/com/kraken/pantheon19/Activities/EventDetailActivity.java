@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.kraken.pantheon19.Entities.Event;
+import com.kraken.pantheon19.Entities.Flagship;
 import com.kraken.pantheon19.R;
 import com.kraken.pantheon19.Utils.Constants;
 import com.kraken.pantheon19.Utils.Services;
@@ -22,7 +23,8 @@ public class EventDetailActivity extends AppCompatActivity {
     private static final String TAG = "EventDetailActivity";
 
     private Event event;
-    private TextView scoreOne, scoreTwo, scoreThree, venue, time, desc;
+    private Flagship flagship;
+    private TextView scoreOne, scoreTwo, scoreThree, venue, time, desc, rulesLabel, rulesDetail;
     private ImageView imageView;
     private LinearLayout contactLinearLayout;
 
@@ -50,11 +52,16 @@ public class EventDetailActivity extends AppCompatActivity {
         desc = findViewById(R.id.tv_desc);
         imageView = findViewById(R.id.image_main);
 
+        rulesLabel = findViewById(R.id.tv_rules_label);
+        rulesDetail = findViewById(R.id.tv_rules_detail);
+
         contactLinearLayout = findViewById(R.id.contacts_linear_layout);
 
         // get intent
         event = (Event) getIntent().getSerializableExtra(getResources().getString(R.string.event_intent_pass_key));
         Log.d(TAG, "onCreate: " + event);
+        flagship = (Flagship) getIntent().getSerializableExtra(getResources().getString(R.string.flagship_intent_pass_key));
+        Log.d(TAG, "onCreate: " + flagship);
 
         setupViews();
     }
@@ -67,35 +74,58 @@ public class EventDetailActivity extends AppCompatActivity {
     }
 
     private void setupViews() {
-        // app bar title
-        if (getSupportActionBar() != null) getSupportActionBar().setTitle(event.getEventName());
+        if (event != null) {
+            // app bar title
+            if (getSupportActionBar() != null) getSupportActionBar().setTitle(event.getEventName());
 
-        venue.setText(event.getVenue() != null ? event.getVenue() : "-");
-        time.setText(event.getTiming() != null ? event.getTiming() : "-");
-        desc.setText(event.getDescription() != null ? event.getDescription() : "-");
+            rulesLabel.setVisibility(View.GONE);
+            rulesDetail.setVisibility(View.GONE);
 
-        imageView.setImageResource(Services.getImgResourceId(this, StringUtils.getImageResourceName(event.getEventName())));
+            venue.setText(event.getVenue() != null ? event.getVenue() : "-");
+            time.setText(event.getTiming() != null ? event.getTiming() : "-");
+            desc.setText(event.getDescription() != null ? event.getDescription() : "-");
 
-        switch (event.getTag()) {
-            case "informal":
-                setPoints(Constants.INFORMAL_POINTS);
-                break;
-            case "formal":
-                setPoints(Constants.FORMAL_POINTS);
-                break;
-            case "flagship":
-                setPoints(Constants.FLAGSHIP_POINTS);
-                break;
+            imageView.setImageResource(Services.getImgResourceId(this, StringUtils.getImageResourceName(event.getEventName())));
+
+            switch (event.getTag()) {
+                case "informal":
+                    setPoints(Constants.INFORMAL_POINTS);
+                    break;
+                case "formal":
+                    setPoints(Constants.FORMAL_POINTS);
+                    break;
+                case "flagship":
+                    setPoints(Constants.FLAGSHIP_POINTS);
+                    break;
+            }
+
+            addContactInfo(event.getCoordinators());
+        } else if (flagship != null) {
+            // app bar title
+            if (getSupportActionBar() != null) getSupportActionBar().setTitle(flagship.getTitle());
+
+            rulesLabel.setVisibility(View.VISIBLE);
+            rulesDetail.setVisibility(View.VISIBLE);
+
+            rulesDetail.setText(getResources().getString(flagship.getRules()));
+
+            venue.setText(flagship.getVenue());
+            time.setText(flagship.getTime());
+            desc.setText(flagship.getDesc());
+
+            imageView.setImageResource(flagship.getImageId());
+
+            setPoints(Constants.FLAGSHIP_POINTS);
+
+            addContactInfo(getResources().getString(flagship.getCoordinators()));
         }
-
-        addContactInfo();
     }
 
-    private void addContactInfo() {
-        List<String> contacts = StringUtils.parseContact(event.getCoordinators(), "\\,");
-        for (String s : contacts) {
+    private void addContactInfo(String s) {
+        List<String> contacts = StringUtils.parseContact(s, "\\,");
+        for (String contact : contacts) {
             TextView textView = (TextView) getLayoutInflater().inflate(R.layout.coordinator_item_row, null);
-            textView.setText(s.trim());
+            textView.setText(contact.trim());
             contactLinearLayout.addView(textView);
         }
     }

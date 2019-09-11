@@ -55,7 +55,7 @@ public class FlagshipEventActivity extends AppCompatActivity {
             @Override
             public void onChanged(List<Event> events) {
                 Log.d(TAG, "onChanged: data changed");
-                adapter.setEventList(events);
+//                adapter.setEventList(events);
 
                 for (Event e : events) {
                     Log.d(TAG, "onChanged: " + e);

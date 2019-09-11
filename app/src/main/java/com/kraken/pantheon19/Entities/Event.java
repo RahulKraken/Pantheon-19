@@ -2,6 +2,7 @@ package com.kraken.pantheon19.Entities;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
@@ -27,6 +28,7 @@ public class Event implements Serializable {
     private String tag;
     private String duration;
 
+    @Ignore
     public Event() {}
 
     public Event(int id, String eventName, String description, String status, String timing, String venue, String day, String teamSize, String coordinators, String tag, String duration) {
