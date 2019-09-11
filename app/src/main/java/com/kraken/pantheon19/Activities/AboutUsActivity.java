@@ -13,9 +13,6 @@ public class AboutUsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        View decorView=getWindow().getDecorView();
-//        int uiOptions=View.SYSTEM_UI_FLAG_FULLSCREEN;
-//        decorView.setSystemUiVisibility(uiOptions);
         setContentView(R.layout.activity_about_us);
         Toolbar toolbar = findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
