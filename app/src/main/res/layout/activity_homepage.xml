@@ -44,7 +44,7 @@
             android:id="@+id/main_image"
             android:contentDescription="@string/home_image_description"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_launcher_background"
+            android:src="@drawable/hb"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -363,15 +363,5 @@
             android:scaleType="fitCenter"
             android:layout_width="48dp"
             android:layout_height="48dp" />
-        <ImageButton
-            android:id="@+id/youtube_btn"
-            android:src="@drawable/youtube"
-            android:background="@android:color/transparent"
-            android:contentDescription="@string/youtube_button_desc"
-            android:padding="15dp"
-            android:scaleType="fitCenter"
-            android:layout_width="48dp"
-            android:layout_height="48dp" />
-
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
