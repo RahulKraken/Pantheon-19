@@ -3,6 +3,7 @@ package com.kraken.pantheon19.Adapters;
  * created by RahulKraken on 08-09-2019 at 20:23.
  */
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -13,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
+import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kraken.pantheon19.Entities.Event;
@@ -25,10 +27,15 @@ public class SponsorsRecyclerViewAdapter extends RecyclerView.Adapter<SponsorsRe
 
     private Context context;
     private List<Event> eventList;
+    private CustomTabsIntent customTabsIntent;
 
     public SponsorsRecyclerViewAdapter(Context context, List<Event> eventList) {
         this.context = context;
         this.eventList = eventList;
+        // setup customTabIntent
+        customTabsIntent = new CustomTabsIntent.Builder()
+                .setShowTitle(true)
+                .build();
     }
 
     @NonNull
@@ -41,10 +48,9 @@ public class SponsorsRecyclerViewAdapter extends RecyclerView.Adapter<SponsorsRe
     @Override
     public void onBindViewHolder(@NonNull SponsorsRecyclerViewHolder holder, int position) {
         Log.d(TAG, "onBindViewHolder: binding values to views");
+
         // TODO : replace with actual image
-        //holder.img.setImageResource(R.mipmap.ic_launcher);
-        //holder.img.setImageBitmap(ImageNicer.decodeSampledBitmapFromResource(context.getResources(),
-        //eventList.get(position).getImage(),100,100));
+        holder.img.setImageResource(R.mipmap.ic_launcher);
     }
 
     @Override
@@ -58,17 +64,14 @@ public class SponsorsRecyclerViewAdapter extends RecyclerView.Adapter<SponsorsRe
         SponsorsRecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
             img = itemView.findViewById(R.id.item_sponsor);
-            img.setOnClickListener(this);
+            itemView.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View view) {
             Log.d(TAG, "onClick: event was clicked!!");
-            // TODO : send event detail with intent
-            String url = "http://www.google.com";
-            Intent i = new Intent(Intent.ACTION_VIEW);
-            i.setData(Uri.parse(url));
-            context.startActivity(i);
+            // TODO : replace with sponsors website link
+            customTabsIntent.launchUrl((Activity) context, Uri.parse("https://www.google.com"));
         }
     }
 }

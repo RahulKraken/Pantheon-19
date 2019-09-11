@@ -1,10 +1,13 @@
 package com.kraken.pantheon19.Activities;
 
+import android.app.Activity;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -41,6 +44,7 @@ public class SponsorsActivity extends AppCompatActivity {
 
         setupEventList();
         setupRecyclerView();
+
     }
 
     @Override
@@ -52,7 +56,7 @@ public class SponsorsActivity extends AppCompatActivity {
 
     /*
     create list of events
-    TODO : replace with repository call
+    TODO : replace with sponsors list
      */
     private void setupEventList() {
         events = new ArrayList<>();
