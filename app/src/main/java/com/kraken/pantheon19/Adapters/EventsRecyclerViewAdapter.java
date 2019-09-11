@@ -3,6 +3,7 @@ package com.kraken.pantheon19.Adapters;
  * created by RahulKraken on 09-09-2019 at 04:13.
  */
 
+import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
@@ -17,13 +18,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.kraken.pantheon19.Activities.EventDetailActivity;
 import com.kraken.pantheon19.Entities.Event;
 import com.kraken.pantheon19.R;
-import com.kraken.pantheon19.Utils.ColorService;
-import com.kraken.pantheon19.Utils.Constants;
+import com.kraken.pantheon19.Utils.Services;
+import com.kraken.pantheon19.Utils.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -50,7 +49,9 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
         holder.venue.setText(events.get(position).getVenue());
         holder.time.setText(events.get(position).getTiming());
 
-        holder.time.setTextColor(context.getResources().getColor(ColorService.getRandomColor()));
+        holder.time.setTextColor(context.getResources().getColor(Services.getRandomColor()));
+
+        holder.imageView.setImageResource(Services.getImgResourceId(context, StringUtils.getImageResourceName(events.get(position).getEventName())));
     }
 
     @Override

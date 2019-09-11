@@ -23,7 +23,7 @@
             android:id="@+id/image_main"
             android:src="@drawable/ic_launcher_background"
             android:contentDescription="@string/event_detail_image_desc"
-            android:scaleType="centerCrop"
+            android:scaleType="center"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

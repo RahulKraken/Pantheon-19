@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.kraken.pantheon19.Entities.Event;
 import com.kraken.pantheon19.R;
 import com.kraken.pantheon19.Utils.Constants;
+import com.kraken.pantheon19.Utils.Services;
 import com.kraken.pantheon19.Utils.StringUtils;
 
 import java.util.List;
@@ -72,6 +73,8 @@ public class EventDetailActivity extends AppCompatActivity {
         venue.setText(event.getVenue() != null ? event.getVenue() : "-");
         time.setText(event.getTiming() != null ? event.getTiming() : "-");
         desc.setText(event.getDescription() != null ? event.getDescription() : "-");
+
+        imageView.setImageResource(Services.getImgResourceId(this, StringUtils.getImageResourceName(event.getEventName())));
 
         switch (event.getTag()) {
             case "informal":
