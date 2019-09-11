@@ -3,10 +3,13 @@ package com.kraken.pantheon19.Adapters;
  * created by RahulKraken on 09-09-2019 at 04:13.
  */
 
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,9 +18,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kraken.pantheon19.Activities.EventDetailActivity;
+import com.kraken.pantheon19.Activities.EventsActivity;
 import com.kraken.pantheon19.Entities.Event;
 import com.kraken.pantheon19.R;
 import com.kraken.pantheon19.Utils.Services;
@@ -68,7 +73,7 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
         notifyDataSetChanged();
     }
 
-    class EventsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    class EventsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         CircleImageView imageView;
         TextView title;
         TextView venue;
@@ -90,8 +95,14 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
         public void onClick(View view) {
             Log.d(TAG, "onClick: clicked");
             Intent intent = new Intent(context, EventDetailActivity.class);
+            //Pair[] pairs=new Pair[1];
+            //pairs[0]=new Pair<View,String>(imageView,"imageTransition");
+            //pairs[1]=new Pair<View,String>(title,"textTransition");
+            ActivityOptions options=ActivityOptions.makeSceneTransitionAnimation((Activity) context,imageView,
+                    ViewCompat.getTransitionName(imageView));
+
             intent.putExtra(context.getResources().getString(R.string.event_intent_pass_key), events.get(getAdapterPosition()));
-            context.startActivity(intent);
+            context.startActivity(intent,options.toBundle());
         }
     }
 }

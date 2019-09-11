@@ -40,7 +40,7 @@ public class SponsorsActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
-        recyclerView = findViewById(R.id.sponsors_recycler_view);
+        //recyclerView = findViewById(R.id.sponsors_recycler_view);
 
         setupEventList();
         setupRecyclerView();
@@ -82,7 +82,7 @@ public class SponsorsActivity extends AppCompatActivity {
 
         // set on recycler view
         Log.d(TAG, "setupRecyclerView: inflating speakers recycler view");
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(adapter);
+        //recyclerView.setLayoutManager(layoutManager);
+        //recyclerView.setAdapter(adapter);
     }
 }
