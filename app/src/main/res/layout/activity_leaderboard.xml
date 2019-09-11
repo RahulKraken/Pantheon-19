@@ -15,17 +15,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/leader_board_swipe_refresh_layout"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Coming soon..."
+        android:textColor="#ffffff"
+        android:textSize="32sp"
+        style="@style/montserrat_medium_20"
+        android:layout_gravity="center"/>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/lb_recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+<!--    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout-->
+<!--        android:id="@+id/leader_board_swipe_refresh_layout"-->
+<!--        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
 
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/lb_recycler_view"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content" />-->
+
+<!--    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

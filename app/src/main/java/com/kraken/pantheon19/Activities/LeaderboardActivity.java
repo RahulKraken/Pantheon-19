@@ -38,9 +38,9 @@ public class LeaderboardActivity extends AppCompatActivity implements SwipeRefre
         setContentView(R.layout.activity_leaderboard);
 
         // setup swipe refresh
-        swipeRefreshLayout = findViewById(R.id.leader_board_swipe_refresh_layout);
-        swipeRefreshLayout.setColorSchemeResources(R.color.md_red_500, R.color.md_green_500, R.color.md_blue_500, R.color.md_yellow_500);
-        swipeRefreshLayout.setOnRefreshListener(this);
+        //swipeRefreshLayout = findViewById(R.id.leader_board_swipe_refresh_layout);
+        //swipeRefreshLayout.setColorSchemeResources(R.color.md_red_500, R.color.md_green_500, R.color.md_blue_500, R.color.md_yellow_500);
+        //swipeRefreshLayout.setOnRefreshListener(this);
 
         // adding app bar
         Toolbar toolbar = findViewById(R.id.app_bar);
@@ -52,18 +52,18 @@ public class LeaderboardActivity extends AppCompatActivity implements SwipeRefre
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
-        recyclerView = findViewById(R.id.lb_recycler_view);
+        //recyclerView = findViewById(R.id.lb_recycler_view);
 
         setupRecyclerView();
 
         // trigger a refresh
-        swipeRefreshLayout.post(new Runnable() {
-            @Override
-            public void run() {
-                swipeRefreshLayout.setRefreshing(true);
-                onRefresh();
-            }
-        });
+//        swipeRefreshLayout.post(new Runnable() {
+//            @Override
+//            public void run() {
+//                swipeRefreshLayout.setRefreshing(true);
+//                onRefresh();
+//            }
+//        });
     }
 
     @Override
@@ -108,7 +108,7 @@ public class LeaderboardActivity extends AppCompatActivity implements SwipeRefre
 
         // set on recycler view
         Log.d(TAG, "setupRecyclerView: inflating recycler view");
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(adapter);
+        //recyclerView.setLayoutManager(layoutManager);
+        //recyclerView.setAdapter(adapter);
     }
 }
