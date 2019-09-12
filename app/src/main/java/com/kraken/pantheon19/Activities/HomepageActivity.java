@@ -1,17 +1,25 @@
 package com.kraken.pantheon19.Activities;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.browser.customtabs.CustomTabsIntent;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.kraken.pantheon19.R;
 import com.kraken.pantheon19.Utils.Constants;
 
@@ -46,6 +54,26 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
         instagramBtn.setOnClickListener(this);
         webBtn.setOnClickListener(this);
         shareBtn.setOnClickListener(this);
+
+        //For Notification
+
+        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
+            NotificationChannel channel =
+                    new NotificationChannel("MyNotifications","MyNotifications", NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+        }
+        FirebaseMessaging.getInstance().subscribeToTopic("pantheon")
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        String msg="Successful";
+                        if(!task.isSuccessful()){
+                            msg="Failed";
+                        }
+                        //Toast.makeText(HomepageActivity.this, msg, Toast.LENGTH_SHORT).show();
+                    }
+                });
 
         // create custom tab
         customTabsIntent = new CustomTabsIntent.Builder()
