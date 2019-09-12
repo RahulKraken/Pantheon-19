@@ -1,23 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/activity_background"
+    android:fillViewport="true"
     android:orientation="vertical"
-    android:background="#000"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
         <androidx.constraintlayout.widget.ConstraintLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:orientation="vertical"
-            android:background="#000"
-            android:layout_height="match_parent">
+            android:background="@color/activity_background"
+            android:layout_height="wrap_content">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/image_main"
@@ -80,7 +75,7 @@
                     android:id="@+id/pantheon_19_title"
                     android:text="@string/welcome_to_pantheon_19_title"
                     android:textSize="20sp"
-                    android:paddingTop="50dp"
+                    android:paddingTop="24dp"
                     android:paddingRight="20dp"
                     android:paddingLeft="20dp"
                     android:paddingBottom="20dp"
@@ -98,7 +93,6 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="16dp"
                     style="@style/montserrat_light_12"
-                    android:padding="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -108,10 +102,7 @@
                 android:id="@+id/events_buttons"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingTop="40dp"
-                android:paddingRight="20dp"
-                android:paddingLeft="20dp"
-                android:paddingBottom="20dp"
+                android:layout_marginTop="24dp"
                 app:layout_constraintBottom_toTopOf="@id/social_icons"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -352,7 +343,7 @@
             <LinearLayout
                 android:id="@+id/social_icons"
                 android:orientation="horizontal"
-                android:padding="20dp"
+                android:layout_marginTop="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -391,6 +382,7 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp" />
             </LinearLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
