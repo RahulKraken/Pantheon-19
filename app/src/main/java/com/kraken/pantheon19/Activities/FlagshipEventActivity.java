@@ -4,6 +4,7 @@ import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -12,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.content.ContextCompat;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -109,6 +111,10 @@ public class FlagshipEventActivity extends AppCompatActivity {
         toolbar.setTitleTextColor(getResources().getColor(R.color.md_white_1000));
         toolbar.setBackgroundColor(getResources().getColor(R.color.md_black_1000));
         toolbar.getNavigationIcon().setColorFilter(getResources().getColor(R.color.md_white_1000), PorterDuff.Mode.SRC_ATOP);
+        //set status bar
+        getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.md_black_1000));
+        View decorView = getWindow().getDecorView(); //set status background black
+        decorView.setSystemUiVisibility(decorView.getSystemUiVisibility() & ~View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR); //set status text  ligh
     }
 
     public void setLightTheme() {
@@ -116,5 +122,8 @@ public class FlagshipEventActivity extends AppCompatActivity {
         toolbar.setTitleTextColor(getResources().getColor(R.color.md_black_1000));
         toolbar.setBackgroundColor(getResources().getColor(R.color.md_white_1000));
         toolbar.getNavigationIcon().setColorFilter(getResources().getColor(R.color.md_black_1000), PorterDuff.Mode.SRC_ATOP);
+        //set status bar
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);//  set status text dark
+        getWindow().setStatusBarColor(ContextCompat.getColor(this,R.color.md_white_1000));// set status background white
     }
 }

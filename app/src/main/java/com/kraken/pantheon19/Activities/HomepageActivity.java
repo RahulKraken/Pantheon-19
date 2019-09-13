@@ -8,6 +8,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -20,6 +22,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -199,6 +202,9 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
         speakertext.setTextColor(getResources().getColor(R.color.md_black_1000));
         lbtext.setTextColor(getResources().getColor(R.color.md_black_1000));
         sponsortext.setTextColor(getResources().getColor(R.color.md_black_1000));
+        //set status bar
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);//  set status text dark
+        getWindow().setStatusBarColor(ContextCompat.getColor(this,R.color.md_white_1000));// set status background white
     }
 
     public void setDarkTheme() {
@@ -231,5 +237,9 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
         speakertext.setTextColor(getResources().getColor(R.color.md_white_1000));
         lbtext.setTextColor(getResources().getColor(R.color.md_white_1000));
         sponsortext.setTextColor(getResources().getColor(R.color.md_white_1000));
+        //set status bar
+        getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.md_black_1000));
+        View decorView = getWindow().getDecorView(); //set status background black
+        decorView.setSystemUiVisibility(decorView.getSystemUiVisibility() & ~View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR); //set status text  ligh
     }
 }
