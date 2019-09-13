@@ -47,7 +47,7 @@
     <!-- =========================================== flagships resources ====================================== -->
     <string name="codezilla_label">Codezilla</string>
     <string name="codezilla_desc">It is a team programming contest which will be conducted in two stages. In the first stage, an online contest will be conducted on HackerEarth where top 30 teams from BIT and top 20 from other colleges will be selected. Although there would be a common rank list for all years, top 5 teams from first year will be selected to go to the next round as well. There would be multiple problems and points would be allotted on solving the problems totally.</string>
-    <string name="codezilla_rules">1.  Participating teams will have to prepare a report of their Presentation with required graphic details, in less than 1000 words, and mail it to the address of eventsteam.pantheon@gmail.com.\n\n2.  The selected teams will be sent mails regarding their selection and will be informed about the further rounds.\n\n3.  The teams will be given 15 minutes to present their research paper with a supplementary PowerPoint presentation.\n\n4.  The selected teams have to submit at least five hard copies of their research to the esteemed panel who will be scrutinizing their research.\n\n5.  There will be an additional viva session of every team at the end of their presentations.\n\n6.  The teams will be judged on their content, level of research, presentation skills and viva performances.\n\n7.  The dress code will be strictly formal wears.\n\n8.  Plagiarism is strictly prohibited.\n\n9.  The decision of the Judging Panel will be final and binding.\n</string>
+    <string name="codezilla_rules">1.  The contest will have the ACM ICPC Style Rank List.\n2.  There is no restriction on the programming language.\n3.  All the problems have same points allotted to them.\n4.  Users are ranked according to the most problems solved. Ties will be broken by the total time for each user in ascending order of time.\n5.  The total time is the sum of the time consumed for each problem solved. The time consumed for a solved problem is the time elapsed from the beginning of the contest to the submission of the first accepted run plus 20 penalty minutes for every previously rejected run for that problem (Wrong Answer, Time Limit Exceeded, Runtime Error, etc).\n6.  There is no time consumed for a problem that is not solved.\n7.  The decision of the organizers in declaring the results will be final. No queries in this regard will be entertained.\n8.  Any participant found to be indulging in any form of malpractice will be immediately disqualified.\n</string>
     <string name="codezilla_day">2</string>
     <string name="codezilla_time">10:00 A.M.</string>
     <string name="codezilla_venue">Lab - 1, 4</string>
@@ -88,6 +88,9 @@
     <string name="eureka_time">9:00 AM</string>
     <string name="eureka_venue">Community Hall</string>
     <string name="eureka_coordinators">Sharique Khan: 8002803897, Soumya: 70091627770</string>
+
+
+
     <string name="rules_and_regulations_label">Rules and Regulations</string>
     <string name="flagship_intent_pass_key">flagship_intent_pass_key</string>
 
