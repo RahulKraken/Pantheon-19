@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:id="@+id/sponsors_list_layout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -16,6 +17,7 @@
         android:layout_height="wrap_content" />
 
     <TextView
+        android:id="@+id/comingsoon_sponsors"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Coming soon..."

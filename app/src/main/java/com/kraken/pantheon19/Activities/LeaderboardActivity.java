@@ -1,11 +1,14 @@
 package com.kraken.pantheon19.Activities;
 
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -15,6 +18,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.kraken.pantheon19.Adapters.LeaderBoardRecyclerViewAdapter;
+import com.kraken.pantheon19.Entities.SharedThemePref;
 import com.kraken.pantheon19.Entities.Team;
 import com.kraken.pantheon19.MyApplication;
 import com.kraken.pantheon19.R;
@@ -31,6 +35,11 @@ public class LeaderboardActivity extends AppCompatActivity implements SwipeRefre
     private List<Team> teams = new ArrayList<>();
     private SwipeRefreshLayout swipeRefreshLayout;
     private LeaderBoardRecyclerViewAdapter adapter;
+    SharedThemePref sharedThemePref;
+    CoordinatorLayout lbLayout;
+    Toolbar toolbar;
+    TextView coming_soon_lb;
+    boolean isDark;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +52,9 @@ public class LeaderboardActivity extends AppCompatActivity implements SwipeRefre
         //swipeRefreshLayout.setOnRefreshListener(this);
 
         // adding app bar
-        Toolbar toolbar = findViewById(R.id.app_bar);
+        coming_soon_lb=findViewById(R.id.comingsoon_lb);
+        lbLayout=findViewById(R.id.lb_list_layout);
+        toolbar = findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
 
         if (getSupportActionBar() != null) {
@@ -51,6 +62,13 @@ public class LeaderboardActivity extends AppCompatActivity implements SwipeRefre
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
+
+        sharedThemePref=new SharedThemePref();
+
+        //set theme
+        isDark = sharedThemePref.getThemeStatePref(this);
+        if(isDark) setDarkTheme();
+        else setLightTheme();
 
         //recyclerView = findViewById(R.id.lb_recycler_view);
 
@@ -110,5 +128,21 @@ public class LeaderboardActivity extends AppCompatActivity implements SwipeRefre
         Log.d(TAG, "setupRecyclerView: inflating recycler view");
         //recyclerView.setLayoutManager(layoutManager);
         //recyclerView.setAdapter(adapter);
+    }
+
+    public void setDarkTheme() {
+        lbLayout.setBackgroundColor(getResources().getColor(R.color.md_black_1000));
+        coming_soon_lb.setTextColor(getResources().getColor(R.color.md_white_1000));
+        toolbar.setTitleTextColor(getResources().getColor(R.color.md_white_1000));
+        toolbar.setBackgroundColor(getResources().getColor(R.color.md_black_1000));
+        toolbar.getNavigationIcon().setColorFilter(getResources().getColor(R.color.md_white_1000), PorterDuff.Mode.SRC_ATOP);
+    }
+
+    public void setLightTheme() {
+        lbLayout.setBackgroundColor(getResources().getColor(R.color.md_white_1000));
+        coming_soon_lb.setTextColor(getResources().getColor(R.color.md_black_1000));
+        toolbar.setTitleTextColor(getResources().getColor(R.color.md_black_1000));
+        toolbar.setBackgroundColor(getResources().getColor(R.color.md_white_1000));
+        toolbar.getNavigationIcon().setColorFilter(getResources().getColor(R.color.md_black_1000), PorterDuff.Mode.SRC_ATOP);
     }
 }
