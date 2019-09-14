@@ -26,6 +26,11 @@ public class DayTwoFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private EventsRecyclerViewAdapter adapter;
+    boolean isDark;
+
+    public DayTwoFragment(boolean isDark) {
+        this.isDark=isDark;
+    }
 
     @Nullable
     @Override
@@ -50,7 +55,7 @@ public class DayTwoFragment extends Fragment {
     }
 
     private void initRecyclerView() {
-        adapter = new EventsRecyclerViewAdapter(getContext());
+        adapter = new EventsRecyclerViewAdapter(getContext(),isDark);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
 
         recyclerView.setAdapter(adapter);

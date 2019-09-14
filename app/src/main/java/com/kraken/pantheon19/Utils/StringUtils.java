@@ -32,7 +32,8 @@ public class StringUtils {
     public static String getImageResourceName(String eventName) {
         eventName = eventName.toLowerCase()
                 .replace(" ", "_")
-                .replace("-", "_");
+                .replace("-", "_")
+                .replace(".", "_");
         if (eventName.contains("'")) {
             String[] s = eventName.split("'");
             eventName = "";

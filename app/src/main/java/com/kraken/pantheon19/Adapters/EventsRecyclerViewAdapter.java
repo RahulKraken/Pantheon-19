@@ -8,6 +8,7 @@ import android.app.ActivityOptions;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.util.Log;
 import android.util.Pair;
 import android.view.LayoutInflater;
@@ -18,6 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -35,12 +37,13 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecyclerViewAdapter.EventsViewHolder> {
     private static final String TAG = "EventsRecyclerViewAdapt";
-
     private Context context;
     private List<Event> events = new ArrayList<>();
+    boolean isDark=true;
 
-    public EventsRecyclerViewAdapter(Context context) {
+    public EventsRecyclerViewAdapter(Context context,boolean isDark) {
         this.context = context;
+        this.isDark=isDark;
     }
 
     @NonNull
@@ -57,9 +60,7 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
         holder.title.setText(events.get(position).getEventName());
         holder.venue.setText(events.get(position).getVenue());
         holder.time.setText(events.get(position).getTiming());
-
         holder.time.setTextColor(context.getResources().getColor(Services.getRandomColor()));
-
         holder.imageView.setImageResource(Services.getImgResourceId(context, StringUtils.getImageResourceName(events.get(position).getEventName())));
     }
 
@@ -73,14 +74,15 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
         notifyDataSetChanged();
     }
 
-    class EventsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class EventsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         CircleImageView imageView;
         TextView title;
         TextView venue;
         TextView time;
         LinearLayout eventCard;
+        ConstraintLayout eventRow;
 
-        EventsViewHolder(@NonNull View itemView) {
+        public EventsViewHolder(@NonNull View itemView) {
             super(itemView);
 
             imageView = itemView.findViewById(R.id.circle_image_view);
@@ -88,21 +90,35 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
             venue = itemView.findViewById(R.id.tv_event_venue);
             time = itemView.findViewById(R.id.tv_event_time);
             eventCard=itemView.findViewById(R.id.container);
+            eventRow=itemView.findViewById(R.id.events_row_layout);
             itemView.setOnClickListener(this);
+            if(isDark) setDarkTheme();
+            else setLightTheme();
         }
 
         @Override
         public void onClick(View view) {
             Log.d(TAG, "onClick: clicked");
             Intent intent = new Intent(context, EventDetailActivity.class);
-            //Pair[] pairs=new Pair[1];
-            //pairs[0]=new Pair<View,String>(imageView,"imageTransition");
-            //pairs[1]=new Pair<View,String>(title,"textTransition");
             ActivityOptions options=ActivityOptions.makeSceneTransitionAnimation((Activity) context,imageView,
                     ViewCompat.getTransitionName(imageView));
 
             intent.putExtra(context.getResources().getString(R.string.event_intent_pass_key), events.get(getAdapterPosition()));
             context.startActivity(intent,options.toBundle());
+        }
+
+        public void setDarkTheme() {
+            eventRow.setBackgroundColor(Color.parseColor("#000000"));
+            title.setTextColor(Color.parseColor("#ffffff"));
+            venue.setTextColor(Color.parseColor("#ffffff"));
+            eventCard.setBackgroundResource(R.drawable.card_events_dark);
+        }
+
+        public void setLightTheme() {
+            eventRow.setBackgroundColor(Color.parseColor("#ffffff"));
+            title.setTextColor(Color.parseColor("#000000"));
+            venue.setTextColor(Color.parseColor("#000000"));
+            eventCard.setBackgroundResource(R.drawable.card_events_white);
         }
     }
 }
