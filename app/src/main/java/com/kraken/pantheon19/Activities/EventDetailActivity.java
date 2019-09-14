@@ -76,14 +76,16 @@ public class EventDetailActivity extends AppCompatActivity {
         flagship = (Flagship) getIntent().getSerializableExtra(getResources().getString(R.string.flagship_intent_pass_key));
         Log.d(TAG, "onCreate: " + flagship);
 
-        setupViews();
-
         sharedThemePref=new SharedThemePref();
 
         //set theme
         isDark = sharedThemePref.getThemeStatePref(this);
         if(isDark) setDarkTheme();
         else setLightTheme();
+
+        setupViews();
+
+
     }
 
     @Override
@@ -142,6 +144,7 @@ public class EventDetailActivity extends AppCompatActivity {
     }
 
     private void addContactInfo(String s) {
+        isDark=sharedThemePref.getThemeStatePref(EventDetailActivity.this);
         List<String> contacts = StringUtils.parseContact(s, "\\,");
         for (String contact : contacts) {
             contactDetail = (TextView) getLayoutInflater().inflate(R.layout.coordinator_item_row, null);
@@ -150,6 +153,9 @@ public class EventDetailActivity extends AppCompatActivity {
             else contactDetail.setTextColor(getResources().getColor(R.color.md_black_1000));
             contactLinearLayout.addView(contactDetail);
         }
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        params.setMargins(0,0,0,96);
+        contactDetail.setLayoutParams(params);
     }
 
     private void setPoints(int[] points) {

@@ -50,7 +50,7 @@
 
             <ImageView
                 android:id="@+id/pantheon_title_img"
-                android:src="@drawable/pantheon_19_white"
+                android:src="@drawable/pantheon_19_new"
                 android:contentDescription="@string/home_image_description"
                 android:elevation="1dp"
                 app:layout_constraintTop_toTopOf="parent"
