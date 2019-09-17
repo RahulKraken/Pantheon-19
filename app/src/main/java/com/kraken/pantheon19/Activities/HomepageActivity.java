@@ -7,19 +7,19 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.CompoundButton;
+import android.webkit.WebView;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
@@ -31,6 +31,10 @@ import com.kraken.pantheon19.Entities.SharedThemePref;
 import com.kraken.pantheon19.R;
 import com.kraken.pantheon19.Utils.Constants;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
 public class HomepageActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "HomepageActivity";
     private CustomTabsIntent customTabsIntent;
@@ -40,6 +44,50 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
     private ImageView imageView;
     SharedThemePref sharedThemePref;
     ImageButton instagramBtn,facebookBtn,webBtn,infoBtn,flagshipBtn,eventsBtn,guestSpeakerBtn,leaderBoardBtn,sponsorsBtn;
+    Toolbar toolbar;
+    Button ok;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.hp_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_s: {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.putExtra(Intent.EXTRA_TEXT, "Hey check out BIT MESRA Pantheon`19 App at http://play.google.com/store/apps/details?id=com.kraken.pantheon19");
+                intent.setType("text/plain");
+                startActivity(Intent.createChooser(intent, "Cool, how do you wanna share..?"));
+                break;
+            }
+            case R.id.action_pp: {
+                startActivity(new Intent(this,PrivacyPolicyActivity.class));
+                break;
+            }
+        }
+        return true;
+    }
+
+    private String readTextFromResource(int privacy_policy_text) {
+        InputStream raw = getResources().openRawResource(privacy_policy_text);
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        int i;
+        try
+        {
+            i = raw.read();
+            while (i != -1)
+            {
+                stream.write(i);
+                i = raw.read();
+            }
+            raw.close();
+        }
+	    catch (IOException e){ e.printStackTrace(); }
+        return stream.toString();
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -55,7 +103,7 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
         facebookBtn = findViewById(R.id.facebook_btn);
         instagramBtn = findViewById(R.id.instagram_btn);
         webBtn = findViewById(R.id.web_btn);
-        ImageView shareBtn = findViewById(R.id.home_share_btn);
+        //ImageView shareBtn = findViewById(R.id.home_share_btn);
         constraintLayout=findViewById(R.id.home_layout);
         welcome=findViewById(R.id.pantheon_19_title);
         des=findViewById(R.id.pantheon_19_description);
@@ -73,6 +121,10 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
         sponsortext=findViewById(R.id.sponsors_home_text);
         imageView=findViewById(R.id.theme_switcher);
         sharedThemePref=new SharedThemePref();
+        toolbar=findViewById(R.id.app_bar);
+
+        //set drop down
+        setSupportActionBar(toolbar);
 
         //set theme
         isDark = sharedThemePref.getThemeStatePref(this);
@@ -89,7 +141,7 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
         facebookBtn.setOnClickListener(this);
         instagramBtn.setOnClickListener(this);
         webBtn.setOnClickListener(this);
-        shareBtn.setOnClickListener(this);
+        //shareBtn.setOnClickListener(this);
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -157,13 +209,13 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
             case R.id.web_btn:
                 launchCustomTab(Constants.WEBSITE_URL);
                 break;
-            case R.id.home_share_btn:
-                Log.d(TAG, "onClick: share btn");
-                Intent intent = new Intent(Intent.ACTION_SEND);
-                intent.putExtra(Intent.EXTRA_TEXT, "Hey check out pantheon's app on Google play store");
-                intent.setType("text/plain");
-                startActivity(Intent.createChooser(intent, "Cool, how do you wanna share..?"));
-                break;
+//            case R.id.home_share_btn:
+//                Log.d(TAG, "onClick: share btn");
+//                Intent intent = new Intent(Intent.ACTION_SEND);
+//                intent.putExtra(Intent.EXTRA_TEXT, "Hey check out pantheon's app on Google play store");
+//                intent.setType("text/plain");
+//                startActivity(Intent.createChooser(intent, "Cool, how do you wanna share..?"));
+//                break;
         }
     }
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.kraken.pantheon19">
 
     <application
@@ -14,6 +15,7 @@
         <activity android:name=".Activities.AboutUsActivity" />
         <activity android:name=".Activities.LeaderboardActivity" />
         <activity android:name=".Activities.SponsorsActivity" />
+        <activity android:name=".Activities.PrivacyPolicyActivity" />
         <activity android:name=".Activities.SpeakersListActivity" />
         <activity
             android:name=".Activities.EventDetailActivity"

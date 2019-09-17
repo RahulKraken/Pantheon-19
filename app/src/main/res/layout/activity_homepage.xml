@@ -8,12 +8,46 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/home_layout"
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:background="@color/activity_background"
         android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:background="@color/activity_background"
+            app:layout_constraintTop_toTopOf="parent"
+            app:elevation="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/app_bar"
+                android:elevation="6dp"
+                app:layout_scrollFlags="scroll|snap|enterAlways"
+                android:background="@color/activity_background"
+                android:layout_width="wrap_content"
+                android:layout_gravity="end"
+                android:layout_height="?attr/actionBarSize">
+
+                <ImageView
+                    android:id="@+id/theme_switcher"
+                    android:src="@drawable/theme"
+                    android:tint="#fff"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:elevation="8dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"/>
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/image_main"
@@ -25,28 +59,26 @@
             android:layout_height="292dp">
 
             <ImageView
-                android:id="@+id/theme_switcher"
+                android:src="@drawable/ic_action_menu"
+                android:tint="#fff"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:elevation="8dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"/>
+
+            <ImageView
                 android:src="@drawable/theme"
                 android:tint="#fff"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
-                android:elevation="2dp"
+                android:elevation="8dp"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="17dp"
-                android:layout_marginEnd="56dp"/>
-
-            <ImageView
-                android:id="@+id/home_share_btn"
-                android:src="@drawable/ic_share_white_24dp"
-                android:contentDescription="@string/home_image_description"
-                android:elevation="1dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_width="28dp"
-                android:layout_height="28dp" />
+                android:layout_marginEnd="60dp"/>
 
             <ImageView
                 android:id="@+id/pantheon_title_img"
