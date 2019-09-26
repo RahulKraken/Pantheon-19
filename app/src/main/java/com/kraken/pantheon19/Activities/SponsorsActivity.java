@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.kraken.pantheon19.Adapters.SponsorsRecyclerViewAdapter;
 import com.kraken.pantheon19.Entities.Event;
 import com.kraken.pantheon19.Entities.SharedThemePref;
+import com.kraken.pantheon19.Entities.Sponsor;
 import com.kraken.pantheon19.R;
 
 import java.util.ArrayList;
@@ -28,21 +29,17 @@ public class SponsorsActivity extends AppCompatActivity {
 
     private static final String TAG = "SponsorsEventActivity";
     private RecyclerView recyclerView;
-    private List<Event> events;
+    private List<Sponsor> sponsorList;
     SharedThemePref sharedThemePref;
     CoordinatorLayout sponsorLayout;
     Toolbar toolbar;
-    TextView coming_soon_sponsor;
     boolean isDark;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_sponsors);
-
         // TODO : app bar
-        coming_soon_sponsor=findViewById(R.id.comingsoon_sponsors);
         sponsorLayout=findViewById(R.id.sponsors_list_layout);
         toolbar = findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
@@ -60,7 +57,7 @@ public class SponsorsActivity extends AppCompatActivity {
         if(isDark) setDarkTheme();
         else setLightTheme();
 
-        //recyclerView = findViewById(R.id.sponsors_recycler_view);
+        recyclerView = findViewById(R.id.sponsors_recycler_view);
 
         setupEventList();
         setupRecyclerView();
@@ -79,36 +76,78 @@ public class SponsorsActivity extends AppCompatActivity {
     TODO : replace with sponsors list
      */
     private void setupEventList() {
-        events = new ArrayList<>();
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "10",
-                "kldsj", "2", "4", "lkfsjdflks", "formal", "1 hr"));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "10",
-                "kldsj", "2", "4", "lkfsjdflks", "formal", "1 hr"));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "10",
-                "kldsj", "2", "4", "lkfsjdflks", "formal", "1 hr"));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "10",
-                "kldsj", "2", "4", "lkfsjdflks", "formal", "1 hr"));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "10",
-                "kldsj", "2", "4", "lkfsjdflks", "formal", "1 hr"));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "10",
-                "kldsj", "2", "4", "lkfsjdflks", "formal", "1 hr"));
-        events.add(new Event(85, "kjdsfl", "skdjf", "kdsjfl", "10",
-                "kldsj", "2", "4", "lkfsjdflks", "formal", "1 hr"));
+        sponsorList = new ArrayList<>();
+        sponsorList.add(new Sponsor("Co-Sponsor",0));
+        sponsorList.add(new Sponsor("",R.drawable.emami));
+        sponsorList.add(new Sponsor("",R.drawable.teqip));
+        sponsorList.add(new Sponsor("Food Partners",0));
+        sponsorList.add(new Sponsor("",R.drawable.baba_munchies));
+        sponsorList.add(new Sponsor("",R.drawable.attitude));
+        sponsorList.add(new Sponsor("",R.drawable.kareems));;
+        sponsorList.add(new Sponsor("Happiness Partner",0));
+        sponsorList.add(new Sponsor("",R.drawable.nescafe));
+        sponsorList.add(new Sponsor("Self Car Drive Partner",0));
+        sponsorList.add(new Sponsor("",R.drawable.zoomcar));
+        sponsorList.add(new Sponsor("Healthcare Partner",0));
+        sponsorList.add(new Sponsor("",R.drawable.aveta));
+        sponsorList.add(new Sponsor("CAT coaching partner",0));
+        sponsorList.add(new Sponsor("",R.drawable.b_factory));
+        sponsorList.add(new Sponsor("Audio Partner",0));
+        sponsorList.add(new Sponsor("",R.drawable.zebronics));
+        sponsorList.add(new Sponsor("Dessert Partner",0));
+        sponsorList.add(new Sponsor("",R.drawable.thancos_natural));
+        sponsorList.add(new Sponsor("Restaurant Partner",0));
+        sponsorList.add(new Sponsor("",R.drawable.nirvana));
+        sponsorList.add(new Sponsor("Hosting Partner",0));
+        sponsorList.add(new Sponsor("",R.drawable.hackerearth));
+        sponsorList.add(new Sponsor("Radio Partner",0));
+        sponsorList.add(new Sponsor("",R.drawable.bigfm));
+        sponsorList.add(new Sponsor("Sanitary Partner",0));
+        sponsorList.add(new Sponsor("",R.drawable.niine));
+        sponsorList.add(new Sponsor("Apparel Partner",0));
+        sponsorList.add(new Sponsor("",R.drawable.shoppers_mart));
+        sponsorList.add(new Sponsor("Coding Partner",0));
+        sponsorList.add(new Sponsor("",R.drawable.codingninjas));
+        sponsorList.add(new Sponsor("Beauty Partners",0));
+        sponsorList.add(new Sponsor("",R.drawable.cora));
+        sponsorList.add(new Sponsor("Beverage Partner",0));
+        sponsorList.add(new Sponsor("",R.drawable.cocacola));
+        sponsorList.add(new Sponsor("Student Partner",0));
+        sponsorList.add(new Sponsor("",R.drawable.olcademy));
+        sponsorList.add(new Sponsor("Gifting Partner",0));
+        sponsorList.add(new Sponsor("",R.drawable.nestle));
+        sponsorList.add(new Sponsor("Ice-cream Partner",0));
+        sponsorList.add(new Sponsor("",R.drawable.rollick));
+        sponsorList.add(new Sponsor("Creative Partner",0));
+        sponsorList.add(new Sponsor("",R.drawable.indigo_paints));
+        sponsorList.add(new Sponsor("Makeup Partner",0));
+        sponsorList.add(new Sponsor("",R.drawable.citygirl));
+        sponsorList.add(new Sponsor("Optical Partner",0));
+        sponsorList.add(new Sponsor("",R.drawable.himalaya_opticals));
+        sponsorList.add(new Sponsor("Online Publicity Partner",0));
+        sponsorList.add(new Sponsor("",R.drawable.knowafest));
+        sponsorList.add(new Sponsor("Youth Partner",0));
+        sponsorList.add(new Sponsor("",R.drawable.fasttrack));
+        sponsorList.add(new Sponsor("Internship Partner",0));
+        sponsorList.add(new Sponsor("",R.drawable.hellointern));
+        sponsorList.add(new Sponsor("Digital Media Partner",0));
+        sponsorList.add(new Sponsor("",R.drawable.yourstory));
+        sponsorList.add(new Sponsor("Fitness Partner",0));
+        sponsorList.add(new Sponsor("",R.drawable.fitnesspro));
     }
 
     private void setupRecyclerView() {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
-        SponsorsRecyclerViewAdapter adapter = new SponsorsRecyclerViewAdapter(this, events);
+        SponsorsRecyclerViewAdapter adapter = new SponsorsRecyclerViewAdapter(this, sponsorList);
 
         // set on recycler view
         Log.d(TAG, "setupRecyclerView: inflating speakers recycler view");
-        //recyclerView.setLayoutManager(layoutManager);
-        //recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
     }
 
     public void setDarkTheme() {
         sponsorLayout.setBackgroundColor(getResources().getColor(R.color.md_black_1000));
-        coming_soon_sponsor.setTextColor(getResources().getColor(R.color.md_white_1000));
         toolbar.setTitleTextColor(getResources().getColor(R.color.md_white_1000));
         toolbar.setBackgroundColor(getResources().getColor(R.color.md_black_1000));
         toolbar.getNavigationIcon().setColorFilter(getResources().getColor(R.color.md_white_1000), PorterDuff.Mode.SRC_ATOP);
@@ -120,7 +159,6 @@ public class SponsorsActivity extends AppCompatActivity {
 
     public void setLightTheme() {
         sponsorLayout.setBackgroundColor(getResources().getColor(R.color.md_white_1000));
-        coming_soon_sponsor.setTextColor(getResources().getColor(R.color.md_black_1000));
         toolbar.setTitleTextColor(getResources().getColor(R.color.md_black_1000));
         toolbar.setBackgroundColor(getResources().getColor(R.color.md_white_1000));
         toolbar.getNavigationIcon().setColorFilter(getResources().getColor(R.color.md_black_1000), PorterDuff.Mode.SRC_ATOP);

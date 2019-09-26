@@ -5,17 +5,15 @@ package com.kraken.pantheon19.Entities;
 
 public class Speaker {
 
-    private String name, detail, time, venue, fbLink, linkedinLink, twitterLink;
+    private String name, detail, time, venue, day;
     private int imageId;
 
-    public Speaker(String name, String detail, String time, String venue, String fbLink, String linkedinLink, String twitterLink, int imageId) {
+    public Speaker(String name, String detail, String time, String venue, String day, int imageId) {
         this.name = name;
         this.detail = detail;
         this.time = time;
         this.venue = venue;
-        this.fbLink = fbLink;
-        this.linkedinLink = linkedinLink;
-        this.twitterLink = twitterLink;
+        this.day=day;
         this.imageId = imageId;
     }
 
@@ -27,9 +25,7 @@ public class Speaker {
         this.name = name;
     }
 
-    public String getDetail() {
-        return detail;
-    }
+    public String getDetail() { return detail; }
 
     public void setDetail(String detail) {
         this.detail = detail;
@@ -43,36 +39,20 @@ public class Speaker {
         this.time = time;
     }
 
+    public String getDay() {
+        return day;
+    }
+
+    public void setDay(String time) {
+        this.day = day;
+    }
+
     public String getVenue() {
         return venue;
     }
 
     public void setVenue(String venue) {
         this.venue = venue;
-    }
-
-    public String getFbLink() {
-        return fbLink;
-    }
-
-    public void setFbLink(String fbLink) {
-        this.fbLink = fbLink;
-    }
-
-    public String getLinkedinLink() {
-        return linkedinLink;
-    }
-
-    public void setLinkedinLink(String linkedinLink) {
-        this.linkedinLink = linkedinLink;
-    }
-
-    public String getTwitterLink() {
-        return twitterLink;
-    }
-
-    public void setTwitterLink(String twitterLink) {
-        this.twitterLink = twitterLink;
     }
 
     public int getImageId() {

@@ -4,6 +4,7 @@ package com.kraken.pantheon19.Adapters;
  */
 
 import android.content.Context;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.kraken.pantheon19.Entities.Speaker;
 import com.kraken.pantheon19.R;
+import com.kraken.pantheon19.Utils.Services;
 
 import java.util.List;
 
@@ -26,10 +28,12 @@ public class SpeakersRecyclerViewAdapter extends RecyclerView.Adapter<SpeakersRe
 
     private Context context;
     private List<Speaker> speakersList;
+    boolean isDark;
 
-    public SpeakersRecyclerViewAdapter(Context context, List<Speaker> speakersList) {
+    public SpeakersRecyclerViewAdapter(Context context, List<Speaker> speakersList,boolean isDark) {
         this.context = context;
         this.speakersList = speakersList;
+        this.isDark=isDark;
     }
 
     @NonNull
@@ -47,10 +51,12 @@ public class SpeakersRecyclerViewAdapter extends RecyclerView.Adapter<SpeakersRe
         holder.name.setText(speakersList.get(position).getName());
         holder.venue.setText(speakersList.get(position).getVenue());
         holder.stime.setText(speakersList.get(position).getTime());
+        holder.stime.setTextColor(context.getResources().getColor(Services.getRandomColor()));
+        holder.day.setText(speakersList.get(position).getDay());
         holder.des.setText(speakersList.get(position).getDetail());
-//        holder.view.setBackgroundColor(Color.parseColor(speakersList.get(position).getColor()));
+        holder.view.setBackgroundColor(context.getResources().getColor(Services.getRandomColor()));
         // TODO : replace with actual image
-        holder.img.setImageResource(R.mipmap.ic_launcher);
+        holder.img.setImageResource(speakersList.get(position).getImageId());
         //holder.img.setImageBitmap(ImageNicer.decodeSampledBitmapFromResource(context.getResources(),
         // speakersList.get(position).getImage(),100,100));
     }
@@ -62,7 +68,7 @@ public class SpeakersRecyclerViewAdapter extends RecyclerView.Adapter<SpeakersRe
 
     class SpeakersRecyclerViewHolder extends RecyclerView.ViewHolder {
 
-        TextView name, venue, des, stime;
+        TextView name, venue, des, stime, day;
         ImageView img;
         View view;
         LinearLayout speakerCard;
@@ -73,9 +79,30 @@ public class SpeakersRecyclerViewAdapter extends RecyclerView.Adapter<SpeakersRe
             venue = itemView.findViewById(R.id.speakers_venue);
             des = itemView.findViewById(R.id.speaker_description);
             stime= itemView.findViewById(R.id.speakers_start_time);
+            day= itemView.findViewById(R.id.speakers_day);
             img = itemView.findViewById(R.id.circleView);
             view=itemView.findViewById(R.id.underline);
             speakerCard=itemView.findViewById(R.id.speaker_layout);
+            if(isDark) setDarkTheme();
+            else setLightTheme();
+        }
+
+        public void setDarkTheme() {
+            speakerCard.setBackgroundResource(R.drawable.card_events_dark);
+            name.setTextColor(Color.parseColor("#ffffff"));
+            venue.setTextColor(Color.parseColor("#ffffff"));
+            des.setTextColor(Color.parseColor("#ffffff"));
+            stime.setTextColor(Color.parseColor("#ffffff"));
+            day.setTextColor(Color.parseColor("#ffffff"));
+        }
+
+        public void setLightTheme() {
+            speakerCard.setBackgroundResource(R.drawable.card_events_white);
+            name.setTextColor(Color.parseColor("#000000"));
+            venue.setTextColor(Color.parseColor("#000000"));
+            des.setTextColor(Color.parseColor("#000000"));
+            stime.setTextColor(Color.parseColor("#000000"));
+            day.setTextColor(Color.parseColor("#000000"));
         }
     }
 }

@@ -2,18 +2,27 @@
 <LinearLayout
     android:id="@+id/sponsors_layout"
     android:orientation="vertical"
-    android:layout_marginTop="8dp"
+    android:layout_marginTop="16dp"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
+    android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/sponsor_text"
+        style="@style/montserrat_medium_20"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp">
+    </TextView>
 
     <ImageView
         android:id="@+id/item_sponsor"
-        android:src="@drawable/ic_launcher_background"
+        android:layout_marginBottom="0dp"
         android:scaleType="centerInside"
         android:contentDescription="@string/sponsor_icon_desc"
-        android:layout_gravity="center_vertical"
+        android:layout_gravity="center_horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
