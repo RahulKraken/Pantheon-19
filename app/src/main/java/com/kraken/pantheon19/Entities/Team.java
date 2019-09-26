@@ -7,13 +7,13 @@ public class Team {
     private int teamId;
     private String teamName;
     private int teamPos;
-    private int teamScore;
+    private int points;
 
-    public Team(int teamId, String teamName, int teamPos, int teamScore) {
-        this.teamId=teamId;
-        this.teamName=teamName;
-        this.teamPos=teamPos;
-        this.teamScore=teamScore;
+    public Team(int teamId, String teamName, int teamPos, int points) {
+        this.teamId = teamId;
+        this.teamName = teamName;
+        this.teamPos = teamPos;
+        this.points = points;
     }
 
     public int getTeamId() { return teamId; }
@@ -22,7 +22,11 @@ public class Team {
 
     public int getTeamPos() { return teamPos; }
 
-    public int getTeamScore() { return teamScore; }
+    public void setTeamPos(int teamPos) {
+        this.teamPos = teamPos;
+    }
+
+    public int getPoints() { return points; }
 
     @Override
     public String toString() {
@@ -30,7 +34,7 @@ public class Team {
                 "teamId=" + teamId +
                 ", teamName='" + teamName + '\'' +
                 ", teamPos=" + teamPos +
-                ", teamScore=" + teamScore +
+                ", points=" + points +
                 '}';
     }
 }

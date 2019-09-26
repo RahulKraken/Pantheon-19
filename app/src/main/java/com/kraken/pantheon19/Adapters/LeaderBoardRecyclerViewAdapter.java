@@ -44,10 +44,10 @@ public class LeaderBoardRecyclerViewAdapter extends RecyclerView.Adapter<LeaderB
     @Override
     public void onBindViewHolder(@NonNull LeaderBoardRecyclerViewHolder holder, int position) {
         Log.d(TAG, "onBindViewHolder: binding values to views");
-        holder.lbcard.setAnimation(AnimationUtils.loadAnimation(context,R.anim.fade_scale_animation));
+        holder.lbCard.setAnimation(AnimationUtils.loadAnimation(context,R.anim.fade_scale_animation));
         holder.teamName.setText(teamList.get(position).getTeamName());
         holder.teamPos.setText(String.valueOf(teamList.get(position).getTeamPos()));
-        holder.teamScore.setText(String.valueOf(teamList.get(position).getTeamScore()));
+        holder.teamScore.setText(String.valueOf(teamList.get(position).getPoints()));
 
         switch (teamList.get(position).getTeamPos()) {
             case 1:
@@ -67,6 +67,7 @@ public class LeaderBoardRecyclerViewAdapter extends RecyclerView.Adapter<LeaderB
                 break;
                 default:
                     holder.posImg.setVisibility(View.INVISIBLE);
+                    holder.teamPos.setVisibility(View.VISIBLE);
         }
     }
 
@@ -83,15 +84,15 @@ public class LeaderBoardRecyclerViewAdapter extends RecyclerView.Adapter<LeaderB
     class LeaderBoardRecyclerViewHolder extends RecyclerView.ViewHolder {
 
         private TextView teamPos, teamName, teamScore;
-        CircleImageView posImg;
-        LinearLayout lbcard;
+        private CircleImageView posImg;
+        private LinearLayout lbCard;
 
         LeaderBoardRecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
             teamName = itemView.findViewById(R.id.team_name);
             teamPos = itemView.findViewById(R.id.team_pos);
             teamScore = itemView.findViewById(R.id.team_score);
-            lbcard=itemView.findViewById(R.id.lb_layout);
+            lbCard = itemView.findViewById(R.id.lb_layout);
             posImg = itemView.findViewById(R.id.pos_img_view);
         }
     }
