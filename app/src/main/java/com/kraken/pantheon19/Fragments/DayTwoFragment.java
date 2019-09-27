@@ -43,7 +43,7 @@ public class DayTwoFragment extends Fragment {
         EventActivityViewModel viewModel = ViewModelProviders.of(this).get(EventActivityViewModel.class);
 
         // now observe data
-        viewModel.getEventList(2).observe(this, new Observer<List<Event>>() {
+        viewModel.getEventList("%2%").observe(this, new Observer<List<Event>>() {
             @Override
             public void onChanged(List<Event> events) {
                 Log.d(TAG, "onChanged: " + events.toString());

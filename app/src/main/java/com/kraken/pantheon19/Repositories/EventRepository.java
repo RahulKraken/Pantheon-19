@@ -33,7 +33,7 @@ public class EventRepository {
 //        event = eventDao.getEvent(1);
         allEvents = eventDao.getAllEvents();
         allFlagshipEvents = eventDao.getFlagshipEvents();
-        events = eventDao.getEventForDay(1);
+        events = eventDao.getEventForDay("%1%");
     }
 
     // eventDao methods
@@ -69,7 +69,7 @@ public class EventRepository {
         return allFlagshipEvents;
     }
 
-    public LiveData<List<Event>> getEventsForDay(int day) {
+    public LiveData<List<Event>> getEventsForDay(String day) {
         Log.d(TAG, "getEventsForDay: " + events.getValue());
         return eventDao.getEventForDay(day);
     }

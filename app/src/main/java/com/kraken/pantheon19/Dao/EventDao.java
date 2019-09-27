@@ -36,6 +36,6 @@ public interface EventDao {
     @Query("SELECT * FROM EVENT_TABLE WHERE tag = 'flagship'")
     LiveData<List<Event>> getFlagshipEvents();
 
-    @Query("SELECT * FROM event_table WHERE day = :day")
-    LiveData<List<Event>> getEventForDay(int day);
+    @Query("SELECT * FROM event_table WHERE day LIKE :day")
+    LiveData<List<Event>> getEventForDay(String day);
 }

@@ -23,10 +23,10 @@ public class EventActivityViewModel extends AndroidViewModel {
     public EventActivityViewModel(@NonNull Application application) {
         super(application);
         eventRepository = new EventRepository(application);
-        eventList = eventRepository.getEventsForDay(1);
+        eventList = eventRepository.getEventsForDay("%1%");
     }
 
-    public LiveData<List<Event>> getEventList(int day) {
+    public LiveData<List<Event>> getEventList(String day) {
         eventList = eventRepository.getEventsForDay(day);
         return eventList;
     }
