@@ -4,6 +4,8 @@ package com.kraken.pantheon19.Adapters;
  */
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kraken.pantheon19.Entities.Team;
@@ -28,10 +31,12 @@ public class LeaderBoardRecyclerViewAdapter extends RecyclerView.Adapter<LeaderB
 
     private Context context;
     private List<Team> teamList;
+    boolean isDark;
 
-    public LeaderBoardRecyclerViewAdapter(Context context, List<Team> teamList) {
+    public LeaderBoardRecyclerViewAdapter(Context context, List<Team> teamList,boolean isDark) {
         this.context = context;
         this.teamList = teamList;
+        this.isDark=isDark;
     }
 
     @NonNull
@@ -94,6 +99,22 @@ public class LeaderBoardRecyclerViewAdapter extends RecyclerView.Adapter<LeaderB
             teamScore = itemView.findViewById(R.id.team_score);
             lbCard = itemView.findViewById(R.id.lb_layout);
             posImg = itemView.findViewById(R.id.pos_img_view);
+            if(isDark) setDarkTheme();
+            else setLightTheme();
+        }
+
+        public void setDarkTheme() {
+            teamName.setTextColor(Color.parseColor("#ffffff"));
+            teamPos.setTextColor(Color.parseColor("#ffffff"));
+            teamScore.setTextColor(Color.parseColor("#ffffff"));
+            lbCard.setBackgroundResource(R.drawable.card_events_dark);
+        }
+
+        public void setLightTheme() {
+            teamName.setTextColor(Color.parseColor("#000000"));
+            teamPos.setTextColor(Color.parseColor("#000000"));
+            teamScore.setTextColor(Color.parseColor("#000000"));
+            lbCard.setBackgroundResource(R.drawable.card_events_white);
         }
     }
 }

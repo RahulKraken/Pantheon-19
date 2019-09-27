@@ -138,7 +138,7 @@ public class LeaderboardActivity extends AppCompatActivity implements SwipeRefre
 
     private void setupRecyclerView() {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        adapter = new LeaderBoardRecyclerViewAdapter(this, teams);
+        adapter = new LeaderBoardRecyclerViewAdapter(this, teams,isDark);
 
         // set on recycler view
         Log.d(TAG, "setupRecyclerView: inflating recycler view");
