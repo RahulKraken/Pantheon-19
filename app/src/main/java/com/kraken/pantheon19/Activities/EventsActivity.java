@@ -1,5 +1,7 @@
 package com.kraken.pantheon19.Activities;
 
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.transition.Fade;
@@ -45,7 +47,6 @@ public class EventsActivity extends AppCompatActivity {
         fade.excludeTarget(android.R.id.navigationBarBackground,true);
         getWindow().setEnterTransition(fade);
         getWindow().setExitTransition(fade);
-        final int[] icons=new int[]{R.drawable.one,R.drawable.two};
 
         tabLayout=findViewById(R.id.tab_layout);
         toolbar = findViewById(R.id.app_bar);
@@ -70,8 +71,8 @@ public class EventsActivity extends AppCompatActivity {
 
         viewPager.setAdapter(new SectionPagerAdapter(getSupportFragmentManager()));
         tabLayout.setupWithViewPager(viewPager);
-        Objects.requireNonNull(tabLayout.getTabAt(0)).setIcon(icons[0]);
-        Objects.requireNonNull(tabLayout.getTabAt(1)).setIcon(icons[1]);
+        Objects.requireNonNull(tabLayout.getTabAt(0)).setText("DAY 1");
+        Objects.requireNonNull(tabLayout.getTabAt(1)).setText("DAY 2");
     }
 
     @Override
@@ -123,6 +124,7 @@ public class EventsActivity extends AppCompatActivity {
     public void setLightTheme() {
         eventsList.setBackgroundColor(getResources().getColor(R.color.md_white_1000));
         tabLayout.setBackground(getDrawable(R.drawable.tabs_light));
+        tabLayout.setTabTextColors(ContextCompat.getColorStateList(this, R.color.md_black_1000));
         toolbar.setTitleTextColor(getResources().getColor(R.color.md_black_1000));
         toolbar.setBackgroundColor(getResources().getColor(R.color.md_white_1000));
         toolbar.getNavigationIcon().setColorFilter(getResources().getColor(R.color.md_black_1000), PorterDuff.Mode.SRC_ATOP);

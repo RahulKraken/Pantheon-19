@@ -2,7 +2,7 @@
     <string name="app_name">Pantheon 19</string>
     <string name="home_image_description">home_image_description</string>
     <string name="welcome_to_pantheon_19_title">Welcome to Pantheon \'19</string>
-    <string name="welcome_to_pantheon_19_description">Pantheon is an intricately strung assortment of technological marvels blended with a unique taste of youthful exuberance. This edition of Pantheon dove deeper into the wondrous world of technology through its intriguing theme “Cosmos: Beyond the Realms”.</string>
+    <string name="welcome_to_pantheon_19_description">Pantheon is an intricately strung assortment of technological marvels blended with a unique taste of youthful exuberance. This edition of Pantheon dives deeper into the wondrous world of technology through its intriguing theme “Cosmos: Beyond the Realms”.</string>
     <string name="info_btn_desc">info_btn_desc</string>
     <string name="flagship_btn_desc">flagship btn description</string>
     <string name="event_btn_desc">event btn description</string>
@@ -30,7 +30,7 @@
 
     <!-- =========================================== about page resources ====================================== -->
 
-    <string name="about_pantheon_desc">With an ambition to provide a platform for the youth to showcase their technical skills and display cutting-edge technologies, BIT conducts one of the biggest technical fests of Eastern India- Pantheon. Pantheon is an intricately strung assortment of technological marvels blended with a unique taste of youthful exuberance. This edition of Pantheon dove deeper into the wondrous world of technology through its intriguing theme “Cosmos: Beyond the Realms”.</string>
+    <string name="about_pantheon_desc">With an ambition to provide a platform for the youth to showcase their technical skills and display cutting-edge technologies, BIT conducts one of the biggest technical fests of Eastern India- Pantheon. Pantheon is an intricately strung assortment of technological marvels blended with a unique taste of youthful exuberance. This edition of Pantheon dives deeper into the wondrous world of technology through its intriguing theme “Cosmos: Beyond the Realms”.</string>
 
     <string name="theme_pantheon_label">Theme \"Cosmos: Beyond the Realms\"</string>
 

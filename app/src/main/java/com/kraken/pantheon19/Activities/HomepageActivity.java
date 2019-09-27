@@ -58,7 +58,7 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
         switch (item.getItemId()) {
             case R.id.action_s: {
                 Intent intent = new Intent(Intent.ACTION_SEND);
-                intent.putExtra(Intent.EXTRA_TEXT, "Hey check out BIT MESRA Pantheon`19 App at http://play.google.com/store/apps/details?id=com.kraken.pantheon19");
+                intent.putExtra(Intent.EXTRA_TEXT, "Get ready to explore the cosmos realm and beyond on our very own Pantheon App. Available for Android on Google PlayStore. Download Now !! http://play.google.com/store/apps/details?id=com.kraken.pantheon19");
                 intent.setType("text/plain");
                 startActivity(Intent.createChooser(intent, "Cool, how do you wanna share..?"));
                 break;

@@ -60,8 +60,17 @@ public class SponsorsRecyclerViewAdapter extends RecyclerView.Adapter<SponsorsRe
         holder.sponsorCard.setAnimation(AnimationUtils.loadAnimation(context,R.anim.fade_scale_animation));
 
         // TODO : replace with actual image
-        holder.textView.setText(sponsorList.get(position).getSponsorName());
-        holder.img.setImageResource(sponsorList.get(position).getSponsorImage());
+        if (sponsorList.get(position).getSponsorName().equals("")) holder.textView.setVisibility(View.GONE);
+        else {
+            holder.textView.setText(sponsorList.get(position).getSponsorName());
+            holder.textView.setVisibility(View.VISIBLE);
+        }
+
+        if (sponsorList.get(position).getSponsorImage() == 0) holder.img.setVisibility(View.GONE);
+        else {
+            holder.img.setImageResource(sponsorList.get(position).getSponsorImage());
+            holder.img.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
