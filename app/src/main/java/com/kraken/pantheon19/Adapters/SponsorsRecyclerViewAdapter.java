@@ -6,6 +6,7 @@ package com.kraken.pantheon19.Adapters;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -32,10 +33,12 @@ public class SponsorsRecyclerViewAdapter extends RecyclerView.Adapter<SponsorsRe
     private Context context;
     private List<Sponsor> sponsorList;
     private CustomTabsIntent customTabsIntent;
+    boolean isDark;
 
-    public SponsorsRecyclerViewAdapter(Context context, List<Sponsor> sponsorList) {
+    public SponsorsRecyclerViewAdapter(Context context, List<Sponsor> sponsorList,boolean isDark) {
         this.context = context;
         this.sponsorList = sponsorList;
+        this.isDark=isDark;
         // setup customTabIntent
         customTabsIntent = new CustomTabsIntent.Builder()
                 .setShowTitle(true)
@@ -66,7 +69,7 @@ public class SponsorsRecyclerViewAdapter extends RecyclerView.Adapter<SponsorsRe
         return sponsorList.size();
     }
 
-    class SponsorsRecyclerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    class SponsorsRecyclerViewHolder extends RecyclerView.ViewHolder {
         TextView textView;
         ImageView img;
         LinearLayout sponsorCard;
@@ -76,14 +79,16 @@ public class SponsorsRecyclerViewAdapter extends RecyclerView.Adapter<SponsorsRe
             textView=itemView.findViewById(R.id.sponsor_text);
             img = itemView.findViewById(R.id.item_sponsor);
             sponsorCard=itemView.findViewById(R.id.sponsors_layout);
-            itemView.setOnClickListener(this);
+            if(isDark) setDarkTheme();
+            else setLightTheme();
         }
 
-        @Override
-        public void onClick(View view) {
-            Log.d(TAG, "onClick: event was clicked!!");
-            // TODO : replace with sponsors website link
-            customTabsIntent.launchUrl((Activity) context, Uri.parse("https://www.google.com"));
+        public void setDarkTheme() {
+            textView.setTextColor(Color.parseColor("#ffffff"));
+        }
+
+        public void setLightTheme() {
+            textView.setTextColor(Color.parseColor("#000000"));
         }
     }
 }
