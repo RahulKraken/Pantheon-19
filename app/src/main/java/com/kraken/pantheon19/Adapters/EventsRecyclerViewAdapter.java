@@ -39,7 +39,7 @@ public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecycl
     private static final String TAG = "EventsRecyclerViewAdapt";
     private Context context;
     private List<Event> events = new ArrayList<>();
-    boolean isDark=true;
+    boolean isDark;
 
     public EventsRecyclerViewAdapter(Context context,boolean isDark) {
         this.context = context;
